@@ -66,10 +66,13 @@ export class UserIndexComponent {
     }
   }
 
-  // btnonclick() {
-  //   this.visible = false;
-  //   this.btnvisible = !this.btnvisible;
 
-  // }
+  hotelvisible: boolean = false;
+
+  public getRoomListByHotelId(){
+    this.btnvisible = false;
+    this.hotelvisible = !this.hotelvisible;
+
+  }
 
 }

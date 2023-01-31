@@ -124,7 +124,7 @@
                                     <a href="#">
                                         <p class="link-info">Show on map</p>
                                     </a><br>
-                                    <a class="btn btn-outline-primary">See availability</a>
+                                    <a class="btn btn-outline-primary" (click)="getRoomListByHotelId()">{{h.hid}}See availability</a>
                                 </div>
                                 <div class="col-3">
                                     <p><span>Average Price : $</span>{{h.haverageprice}}</p>
@@ -134,6 +134,43 @@
                         </mat-card>
                     </div>
                 </div>
+
+
+                <!-- ********************************************************************************* -->
+
+                <div class="container mt-5" *ngIf="hotelvisible">
+                    <div class="col-md-10 offset-md-1 mt-2 border p-1 border" *ngFor="let h of hotelByLid | async">
+                        <mat-card class="p-4 ">
+                            <div class="row">
+                                <div class="col-3">
+                                    <img src="assets/images/hotel/h2.jpg" alt="samima" height="250" width="250">
+                                </div>
+                                <div class="col-6 ml-1">
+                                    <h1>fdaf</h1>
+                                    <p>dsfdsf</p>
+                                    <a href="#">
+                                        <p>sdfsdaf</p>
+                                    </a><br>
+                                    <a href="#">
+                                        <p class="link-info">Show on map</p>
+                                    </a><br>
+                                    <a class="btn btn-outline-primary" >{{h.hid}}See availability</a>
+                                </div>
+                                <div class="col-3">
+                                    <p><span>Average Price : $</span></p>
+                                    <p><span>Rating : </span></p>
+                                </div>
+                            </div>
+                        </mat-card>
+                    </div>
+                </div>
+
+
+
+
+
+
+
             </div>
         </div>
         <br>
