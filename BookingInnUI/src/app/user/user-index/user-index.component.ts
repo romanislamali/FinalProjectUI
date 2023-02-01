@@ -36,9 +36,9 @@ export class UserIndexComponent {
   }
 
 
-  hotelByLid?: any;
+  hotelList?: any;
   onSubmit() {
-    this.hotelByLid = this.hotelService.getAllHotelByLocation(this.id);
+    this.hotelList = this.hotelService.getAllHotelByLocation(this.id);
     this.visible = false;
     this.btnvisible = !this.btnvisible;
   }
@@ -79,13 +79,10 @@ export class UserIndexComponent {
     // this.btnvisible = false;
     // this.hotelvisible = !this.hotelvisible;
     this.hotleId = value;
-    this.router.navigate(['availableroom',value])
+    this.router.navigate(['availableroom/',value])
     console.log(this.hotleId)
 
   }
 
-  public sendHotelId(){
-
-  }
 
 }

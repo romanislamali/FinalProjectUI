@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import {Router, ActivatedRoute} from '@angular/router';
+import { HotelService } from 'src/app/service/hotel.service';
+import { RoomService } from 'src/app/service/room.service';
 
 @Component({
   selector: 'app-available-room',
@@ -8,15 +10,17 @@ import {Router, ActivatedRoute} from '@angular/router';
 })
 export class AvailableRoomComponent {
 
-  constructor(private router :Router, private route :ActivatedRoute ){
+  constructor(private roomService: RoomService, private router :Router, private route :ActivatedRoute ){
 
   }
 
-  roomByLid?: any;
+  roomByHid?: any;
 
   ngOnInit() {
-    this.roomByLid =this.route.snapshot.params['id'];
-    console.log("this is hotel id for get room list"+this.roomByLid)
+    this.roomByHid =this.route.snapshot.params['id'];
+    this.roomService.getAllRoomByLocationId(this.roomByHid);
+    console.log(this.roomByHid)
   }
+
 
 }
