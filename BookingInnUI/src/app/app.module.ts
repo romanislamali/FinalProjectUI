@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { UserIndexComponent } from './user/user-index/user-index.component';
 import { HeaderComponent } from './user/header/header.component';
 import { FooterComponent } from './user/footer/footer.component';
+import { AvailableRoomComponent } from './user/available-room/available-room.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { FooterComponent } from './user/footer/footer.component';
     FooterComponent,
     HotellistComponent,
     RoomlistComponent,
-    UserIndexComponent
+    UserIndexComponent,
+    AvailableRoomComponent
    
     
   ],

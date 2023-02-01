@@ -1,5 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { HotelService } from 'src/app/service/hotel.service';
 
 @Component({
@@ -9,8 +10,8 @@ import { HotelService } from 'src/app/service/hotel.service';
 })
 export class UserIndexComponent {
 
-  id?: any;
-  hotelByLid?: any;
+ 
+
 
   visible: boolean = false;
   public valueadult: number = 1;
@@ -19,7 +20,7 @@ export class UserIndexComponent {
   //  --------------show adult, children, room card-------------
   hotel: any;
   location: any;
-  constructor(private hotelService: HotelService){
+  constructor(private hotelService: HotelService, private router: Router){
 
    }
 
@@ -27,11 +28,15 @@ export class UserIndexComponent {
     this.location = this.hotelService.getAllLocation();
   }
 
+
+  id?: any;
   getLid(value: any) {
     this.id = value;
     console.log(this.id)
   }
 
+
+  hotelByLid?: any;
   onSubmit() {
     this.hotelByLid = this.hotelService.getAllHotelByLocation(this.id);
     this.visible = false;
@@ -68,10 +73,18 @@ export class UserIndexComponent {
 
 
   hotelvisible: boolean = false;
+  hotleId?:any;
 
-  public getRoomListByHotelId(){
-    this.btnvisible = false;
+  public getRoomListByHotelId(value: any){
+      this.btnvisible = false;
     this.hotelvisible = !this.hotelvisible;
+    this.hotleId = value;
+    this.router.navigate(['availableroom',value])
+    console.log(this.hotleId)
+
+  }
+
+  public sendHotelId(){
 
   }
 

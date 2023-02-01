@@ -108,8 +108,8 @@
 
                  <!-- ********************************************************************************* -->
 
-                <div class="container mt-5" *ngIf="btnvisible">
-                    <div class="col-md-10 offset-md-1 mt-2 border p-1 border" *ngFor="let h of hotelByLid | async">
+                <div class="container mt-5" *ngIf="btnvisible" [(ngModel)]="id">
+                    <div class="col-md-10 offset-md-1 mt-2 border p-1 border"   *ngFor="let h of hotelByLid | async">
                         <mat-card class="p-4 ">
                             <div class="row">
                                 <div class="col-3">
@@ -124,7 +124,8 @@
                                     <a href="#">
                                         <p class="link-info">Show on map</p>
                                     </a><br>
-                                    <a class="btn btn-outline-primary" (click)="getRoomListByHotelId()">{{h.hid}}See availability</a>
+                                    <button (click)="getRoomListByHotelId(h.hid)" [(ngModel)]="id">See availability</button>
+
                                 </div>
                                 <div class="col-3">
                                     <p><span>Average Price : $</span>{{h.haverageprice}}</p>
