@@ -76,8 +76,8 @@ export class UserIndexComponent {
   hotleId?:any;
 
   public getRoomListByHotelId(value: any){
-      this.btnvisible = false;
-    this.hotelvisible = !this.hotelvisible;
+    // this.btnvisible = false;
+    // this.hotelvisible = !this.hotelvisible;
     this.hotleId = value;
     this.router.navigate(['availableroom',value])
     console.log(this.hotleId)
