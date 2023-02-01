@@ -5,7 +5,7 @@
             <div class="bootstrap-warpper">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-10 offset-md-1 mt-2 border p-1 bg-success ">
+                        <div class="col-md-8 offset-md-2 border p-1 bg-success ">
                             <mat-card class="p-4">
                                 <form (ngSubmit)="onSubmit()">
                                     <div class="row form-control">
@@ -52,10 +52,10 @@
                     </div>
 
 
-                    <!-- ********************************************************************************* -->
+                    <!-- ******************** Person selection tab *********************** -->
 
                     <div class="row">
-                        <div *ngIf="visible" class="col-6 offset-md-3 mt-5"
+                        <div *ngIf="persontab" class="col-6 offset-md-3 mt-5"
                             style="background-color:rgb(252, 255, 255);">
                             <mat-card class="p-4">
                                 <div class="row border text-dark bg-opacity-10 p-1">
@@ -106,11 +106,11 @@
                     </div>
                 </div>
 
-                 <!-- ************************ Hotel list ************************** -->
-
-                <div class="container mt-5" *ngIf="btnvisible" >
+                 <!-- ************************ Hotel list card ************************** -->
+                 
+                <div class="container mt-5" *ngIf="hotelListCard" >
                     <div class="col-md-10 offset-md-1 mt-2 border p-1 border" *ngFor="let h of hotelList | async" >
-                        <mat-card class="p-4 ">
+                        <mat-card class="p-4" style="background-color: rgb(255,0,255)">
                             <div class="row">
                                 <div class="col-3">
                                     <img src="assets/images/hotel/h2.jpg" alt="samima" height="250" width="250">
@@ -124,7 +124,7 @@
                                     <a href="#">
                                         <p class="link-info">Show on map</p>
                                     </a><br>
-                                    <a class="btn btn-outline-primary" (click)="getRoomListByHotelId(h.hid)">See availability</a>
+                                    <a class="btn btn-outline-primary" (click)="getHotelId(h.hid)">Available Room</a>
                                 </div>
                                 <div class="col-3">
                                     <p><span>Average Price : $</span>{{h.haverageprice}}</p>
@@ -136,34 +136,31 @@
                 </div>
 
 
-                <!-- ********************************************************************************* -->
+                <!-- **************************** Room list card ************************* -->
 
-                <!-- <div class="container mt-5" *ngIf="hotelvisible">
-                    <div class="col-md-10 offset-md-1 mt-2 border p-1 border" *ngFor="let h of hotelByLid | async">
-                        <mat-card class="p-4 ">
+                <div class="container mt-5" *ngIf="roomListCard">
+                    <div class="col-md-12 mt-2 border p-1 border" *ngFor="let r of roomList | async">
+                        <mat-card class="p-4" style="background-color: rgb(255,20,147)">
                             <div class="row">
-                                <div class="col-3">
-                                    <img src="assets/images/hotel/h2.jpg" alt="samima" height="250" width="250">
+                                <div class="col-6">
+                                    <img src="assets/images/hotel/h2.jpg" alt="samima" height="350" width="350">
                                 </div>
-                                <div class="col-6 ml-1">
-                                    <h1>fdaf</h1>
-                                    <p>dsfdsf</p>
-                                    <a href="#">
-                                        <p>sdfsdaf</p>
-                                    </a><br>
-                                    <a href="#">
-                                        <p class="link-info">Show on map</p>
-                                    </a><br>
-                                    <a class="btn btn-outline-primary" >{{h.hid}}See availability</a>
+                                <div class="col-3 ml-1">
+                                    <h1>This is Title</h1>
+                                    <p>{{r.rRoomAddress}}</p>                         
+                                    <p>{{r.rTitle}}</p>                                
                                 </div>
                                 <div class="col-3">
-                                    <p><span>Average Price : $</span></p>
                                     <p><span>Rating : </span></p>
+                                    <p><span>Price : $ </span></p>
+                                    <p><span>Room Size : </span></p>
+                                    <p><span>Room Type : </span></p>
+                                    <a class="btn btn-outline-info" (click)="bookRoom()">Book Now</a>
                                 </div>
                             </div>
                         </mat-card>
                     </div>
-                </div> -->
+                </div>
 
 
 

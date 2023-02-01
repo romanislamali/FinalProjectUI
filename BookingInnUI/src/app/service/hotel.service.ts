@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Hotel } from '../model/hotel.model';
 import { Hotelfacilities } from '../model/hotelfacilities.model';
 import { Location } from '../model/location.model';
+import { Room } from '../model/room.model';
 
 @Injectable({
   providedIn: 'root'
@@ -28,6 +29,11 @@ export class HotelService {
     return this.httpClient.get<Location>(this.baseUrl+"location/all");
    }
 
+   getAllRoomByHotelId(hid:number):Observable<Room>{
+
+    return this.httpClient.get<Room>(this.baseUrl+"roombyhotelid/"+hid);
+
+   }
 
 
   

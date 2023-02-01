@@ -14,9 +14,9 @@ export class RoomService {
 
 
 
-  getAllRoomByLocationId(hid:number):Observable<Room>{
+  // getAllRoomByLocationId(hid:number):Observable<Room>{
 
-    return this.httpClient.get<Room>(this.baseUrl+"roombyhotelid/"+hid);
+  //   return this.httpClient.get<Room>(this.baseUrl+"roombyhotelid/"+hid);
 
-   }
+  //  }
 }

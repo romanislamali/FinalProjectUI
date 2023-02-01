@@ -11,12 +11,14 @@ import { HotelService } from 'src/app/service/hotel.service';
 export class UserIndexComponent {
 
  
+  persontab: boolean = false;
+  hotelListCard: boolean = false;
+  roomListCard: boolean = false;
 
-
-  visible: boolean = false;
   public valueadult: number = 1;
   public valuechildren = 0;
   public valueroom = 1;
+
   //  --------------show adult, children, room card-------------
   hotel: any;
   location: any;
@@ -36,17 +38,17 @@ export class UserIndexComponent {
   }
 
 
+
   hotelList?: any;
   onSubmit() {
     this.hotelList = this.hotelService.getAllHotelByLocation(this.id);
-    this.visible = false;
-    this.btnvisible = !this.btnvisible;
+    this.hotelListCard =true;
+    this.roomListCard = false; 
   }
 
-
-  btnvisible: boolean = false;
+ 
   onclick() {
-    this.visible = !this.visible
+    this.persontab = !this.persontab
   }
 
   // increment and decrememt adult, childern and room count
@@ -72,17 +74,22 @@ export class UserIndexComponent {
   }
 
 
-  hotelvisible: boolean = false;
-  hotleId?:any;
+  hotleId? :any;
+  roomList? :any;
 
-  public getRoomListByHotelId(value: any){
-    // this.btnvisible = false;
-    // this.hotelvisible = !this.hotelvisible;
+  public getHotelId(value: any){
     this.hotleId = value;
-    this.router.navigate(['availableroom/',value])
+    this.roomList = this.hotelService.getAllRoomByHotelId(this.hotleId);
+    this.roomListCard = true;
+    this.hotelListCard = false;
+    // this.router.navigate(['availableroom/',value])
     console.log(this.hotleId)
-
+    console.log(this.roomList)
   }
 
+
+  bookRoom(){
+
+  }
 
 }

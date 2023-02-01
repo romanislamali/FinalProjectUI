@@ -14,12 +14,12 @@ export class AvailableRoomComponent {
 
   }
 
-  roomByHid?: any;
+  // roomByHid?: any;
 
   ngOnInit() {
-    this.roomByHid =this.route.snapshot.params['id'];
-    this.roomService.getAllRoomByLocationId(this.roomByHid);
-    console.log(this.roomByHid)
+    // this.roomByHid =this.route.snapshot.params['id'];
+    // this.roomService.getAllRoomByLocationId(this.roomByHid);
+    // console.log(this.roomByHid)
   }
 
 
