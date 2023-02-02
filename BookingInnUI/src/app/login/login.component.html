@@ -25,8 +25,6 @@
           </div>
         </div>
 
-
-
         <div class=" fadeInDown" *ngIf="registerCard">
           <div id="formContent">
             <!-- Tabs Titles -->
@@ -34,13 +32,13 @@
             <h3 class="text-center mt-5"> Registration Form </h3>
             <hr>
             <!-- Login Form -->
-            <form>
-              <input type="text" class="fadeIn second" name="login" placeholder="Name">
-              <input type="text" class="fadeIn third" name="login" placeholder="Cell"><br>
-              <input type="text" class="fadeIn third" name="login" placeholder="Email"><br>
-              <input type="text" id="password" class="fadeIn third" name="login" placeholder="Password"><br>
-              <input type="text" class="fadeIn third" name="login" placeholder="Address"><br>
-              <button type="submit" class="btn btn-primary" value="Log In">Register</button>
+            <form (ngSubmit)="formSubmit()">
+              <input type="text" class="fadeIn second" name="uname" placeholder="Name" [(ngModel)]="user.uname">
+              <input type="text" class="fadeIn third" name="ucell" placeholder="Cell" [(ngModel)]="user.ucell"><br>
+              <input type="text" class="fadeIn third" name="uemail" placeholder="Email"[(ngModel)]="user.uemail"><br>
+              <input type="text" id="password" class="fadeIn third" name="upassword" placeholder="Password"[(ngModel)]="user.upassword"><br>
+              <input type="text" class="fadeIn third" name="uaddress" placeholder="Address"[(ngModel)]="user.uaddress"><br>
+              <button type="submit" class="btn btn-primary" >Register</button>
               <p>Already registered? click here <a routerLink="/login" (click)="showLogin()">Login
               </a></p>
             </form>
