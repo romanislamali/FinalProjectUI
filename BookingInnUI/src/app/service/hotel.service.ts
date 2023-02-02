@@ -29,9 +29,9 @@ export class HotelService {
     return this.httpClient.get<Location>(this.baseUrl+"location/all");
    }
 
-   getAllRoomByHotelId(hid:number):Observable<Room>{
+   getAllRoomByHotelId(hid:number): Observable<any>{
 
-    return this.httpClient.get<Room>(this.baseUrl+"roombyhotelid/"+hid);
+    return this.httpClient.get<any>(this.baseUrl+"roombyhotelid/"+hid);
 
    }
 

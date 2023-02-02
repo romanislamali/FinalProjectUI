@@ -43,7 +43,8 @@ export class UserIndexComponent {
   onSubmit() {
     this.hotelList = this.hotelService.getAllHotelByLocation(this.id);
     this.hotelListCard =true;
-    this.roomListCard = false; 
+    this.roomListCard = false;
+
   }
 
  
@@ -78,13 +79,15 @@ export class UserIndexComponent {
   roomList? :any;
 
   public getHotelId(value: any){
+    
     this.hotleId = value;
     this.roomList = this.hotelService.getAllRoomByHotelId(this.hotleId);
     this.roomListCard = true;
     this.hotelListCard = false;
     // this.router.navigate(['availableroom/',value])
-    console.log(this.hotleId)
-    console.log(this.roomList)
+    console.log(this.hotleId);
+    console.log(this.roomList.rtitle);
+
   }
 
 

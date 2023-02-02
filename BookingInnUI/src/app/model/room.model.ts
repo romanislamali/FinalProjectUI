@@ -5,25 +5,23 @@ import { Hotel } from "./hotel.model";
 
 export class Room{
     
-    rId: number | undefined;
-    rTitle: string | undefined;
-    rDescription: string | undefined;
-    rRoomAddress: string | undefined;
-    rAvailableRoom: string | undefined;
-    rGallery: string | undefined;
-    rRoomPrice: number | undefined;
-    rDiscount: number | undefined;
-    rAdultNumber: number | undefined;
-    rChildrenNumber: number | undefined;
-    rBedNumber: number | undefined;
-    rRoomSize: number | undefined;
-    rAvailability: number | undefined;
-    rDetails: string | undefined;
-    roomtype: string | undefined;
-    hphoto: string | undefined;
+    rid: number | undefined;
+    rtitle: string | undefined;
+    rdescription: string | undefined;
+    rroomAddress: string | undefined;
+    ravailableRoom: string | undefined;
+    rgallery: string | undefined;
+    rroomPrice: number | undefined;
+    rdiscount: number | undefined;
+    radultNumber: number | undefined;
+    rchildrenNumber: number | undefined;
+    rbedNumber: number | undefined;
+    rroomSize: number | undefined;
+    ravailability: number | undefined;
+    rdetails: string | undefined;
    
-    roomfacilities: RoomFacilities[] | undefined;
-    roomtypes: Roomtype[] | undefined;
+    roomFacilities: RoomFacilities[] | undefined;
+    roomtype: Roomtype[] | undefined;
     hotel: Hotel[] | undefined;
 
 
