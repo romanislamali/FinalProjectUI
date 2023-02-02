@@ -106,10 +106,10 @@
                     </div>
                 </div>
 
-                 <!-- ************************ Hotel list card ************************** -->
-                 
-                <div class="container mt-5" style="margin: top 200px;" *ngIf="hotelListCard" >
-                    <div class="col-md-10 offset-md-1 mt-2 border p-1 border" *ngFor="let h of hotelList | async" >
+                <!-- ************************ Hotel list card ************************** -->
+
+                <div class="container mt-5" style="margin: top 200px;" *ngIf="hotelListCard">
+                    <div class="col-md-10 offset-md-1 mt-2 border p-1 border" *ngFor="let h of hotelList | async">
                         <mat-card class="p-4" style="background-color: rgb(109, 228, 199)">
                             <div class="row">
                                 <div class="col-3">
@@ -134,39 +134,12 @@
                         </mat-card>
                     </div>
                 </div>
-
-
-                <!-- **************************** Room list card ************************* -->
-
-                <!-- <div class="container mt-5" *ngIf="roomListCard">
-                    <div class="col-md-12 mt-2 border p-1 border" *ngFor="let r of roomList | async">
-                        <mat-card class="p-4" style="background-color: rgb(82, 142, 221)">
-                            <div class="row">
-                                <div class="col-6">
-                                    <img src="assets/images/hotel/h2.jpg" alt="samima" height="350" width="350">
-                                </div>
-                                <div class="col-3 ml-1">
-                                    <h1>{{r.rtitle}}</h1>
-                                    <p>{{r.hotel.hname}}</p>                         
-                                    <p>{{r.rTitle}}</p>                                
-                                </div>
-                                <div class="col-3">
-                                    <p><span>Rating : </span></p>
-                                    <p><span>Price : $ </span></p>
-                                    <p><span>Room Size : </span></p>
-                                    <p><span>Room Type : </span></p>
-                                    <a class="btn btn-outline-info" (click)="bookRoom()">Book Now</a>
-                                </div>
-                            </div>
-                        </mat-card>
-                    </div>
-                </div> -->
             </div>
         </div>
         <br>
         <br>
         <div class="row">
-            <!-- <div class="col-sm-12">
+            <div class="col-sm-12">
                 <div class="single-about-us">
                     <div class="about-us-txt">
                         <h2>
@@ -180,7 +153,7 @@
                         </div>
                     </div>
                 </div>
-            </div> -->
+            </div>
             <div class="col-sm-0">
                 <div class="single-about-us">
 
@@ -194,31 +167,118 @@
 <!--about-us end -->
 
 
-<!-- **************************** Room list card ************************* -->
+<!-- **************************** Room list card start ************************* -->
 
 <div class="container mt-5" *ngIf="roomListCard">
-    <div class="col-md-12 mt-2 border p-1 border" *ngFor="let r of roomList | async">
-        <mat-card class="p-4" style="background-color: rgb(82, 142, 221)">
-            <div class="row">
-                <div class="col-6">
-                    <img src="assets/images/hotel/h2.jpg" alt="samima" height="350" width="350">
+    <div class="col-md-12 mt-2 border p-1 border">
+        <mat-card class="p-4">
+            <div class="row" *ngFor="let r of roomList | async" style="background-color: rgb(203, 215, 233)">
+                <div class="col-12 ml-1">
+                    <h1><b>{{r.hotel.hname}}</b></h1>
+                    <span>
+                        <a><span class="show_map_icon"></span></a>
+                        {{r.hotel.haddress}}
+                        <a href="#">
+                            <p class="link-success">Show map</p>
+                        </a>
+                    </span>
+
                 </div>
-                <div class="col-3 ml-1">
-                    <h1>{{r.rtitle}}</h1>
-                    <p>{{r.hotel.hname}}</p>                         
-                    <p>{{r.rTitle}}</p>                                
+                <div class="row">
+                    <div class="col-4">
+                        <div class="row">
+                            <img src="assets/images/hotel/h2.jpg" alt="samima" height="100" width="200">
+                        </div><br>
+                        <div class="row">
+                            <img src="assets/images/hotel/h2.jpg" alt="samima" height="100" width="200">
+                        </div><br>
+                    </div>
+                    <div class="col-8">
+                        <img src="assets/images/hotel/h2.jpg" alt="samima" height="550" width="760">
+                    </div>
                 </div>
-                <div class="col-3">
-                    <p><span>Rating : </span></p>
-                    <p><span>Price : $ </span></p>
-                    <p><span>Room Size : </span></p>
+            </div><br>
+
+            <div class="row" style="background-color: rgb(40, 176, 203)">
+                <div class="col-2 card rc">
+                    <i class="fa-solid fa-house"></i>Entire apartment
+                </div>
+                <div class="col-2 card rc">
+                    150 m² Size
+                </div>
+
+                <div class="col-1 card rc">
+                    View
+                </div>
+                <div class="col-1 card rc">
+                    Balcony
+                </div>
+                <div class="col-2 card rc">
+                    Kitchen
+                </div>
+                <div class="col-2 card rc">
+                    Washing machine
+                </div><br>
+
+
+                <div class="row">
+                    <div class="col-4 card rc">
+                        Free parking
+                    </div>
+                    <div class="col-3 card rc">
+                        Air conditioning
+                    </div>
+                    <div class="col-4 card rc">
+                        Parking on site
+                    </div>
+                </div><br>
+            </div><br>
+            <div class="row" *ngFor="let r of roomList | async" style="background-color: rgb(40, 176, 203)">
+                <div class="col-2" style="background-color: floralwhite">
+                    <h3>Room Details</h3>
+                    <li>{{r.roomtype.rtName}}</li>
+                    <li>Size: {{r.rroomSize}}</li>
+                    <li>Bed: {{r.rbedNumber}}</li>
+                    <li>{{r.roomtype.rtDescription}}</li>
+                </div>
+                <div class="col-2" style="background-color: floralwhite">
+                    <h3>Sleeps</h3>
+                    <li>Adult Person: {{r.radultNumber}}</li>
+                    <li>Child Person: {{r.rchildrenNumber}}</li>
+                    <li>Bed: {{r.rbedNumber}}</li>
+                    <li>{{r.roomtype.rtDescription}}</li>
+                </div>
+                <div class="col-2" style="background-color: floralwhite">
+                    <h3>Room Facilities</h3>
+                    <li>Facilities: {{r.roomFacilities.rfName}}</li>
+                    <li>Details: {{r.roomFacilities.rfDescription}}</li>
+                </div>
+                <div class="col-2" style="background-color: floralwhite">
+                    <h3>Today's price</h3>
+                    <li>Price: {{r.rroomPrice}}</li>
+                    <li>Discount: {{r.rdiscount}}</li>
+                </div>
+                <div class="col-2" style="background-color: floralwhite">
+                    <h3>Your choice</h3>
+                    <li>Total cost to cancel</li>
+                    <span>NO PREPAYMENT NEEDED</span>
+                    "- pay at the property"
                     <p><span>Room Type : </span></p>
-                    <a class="btn btn-outline-info" (click)="bookRoom()">Book Now</a>
                 </div>
+                <div class="col-2" style="background-color: floralwhite">
+                    <a class="btn btn-outline-primary">Book Now</a>
+                    <p>* Confirmation is immediate</p>
+                    <p>* No booking or credit card fees!</p>
+                    <b>No credit card</b>
+                    "needed!"
+                </div>
+                <hr>
             </div>
         </mat-card>
     </div>
+    <br>
 </div>
+<!-- **************************** Room list card end ************************* -->
 
 
 
