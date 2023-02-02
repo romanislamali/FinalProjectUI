@@ -1,0 +1,57 @@
+<div class="bootstrap-warpper">
+  <div class="container">
+    <div class="row mt-5" style="margin-top: 20;">
+      <div class="col-md-6 offset-md-3">
+        <div class=" fadeInDown" *ngIf="loginCard">
+          <div id="formContent">
+            <!-- Tabs Titles -->
+            <br>
+            <h3 class="text-center mt-5"> Login </h3>
+            <hr>
+
+            <!-- Login Form -->
+            <!-- <form> -->
+            <input type="text" class="fadeIn second" name="login" placeholder="login">
+            <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
+            <input type="submit" class="fadeIn fourth" value="Log In">
+            <!-- </form> -->
+
+            <!-- Remind Passowrd -->
+            <div id="formFooter">
+              <a class="underlineHover" href="#">Forgot Password?</a>
+              <p>Are you new? click here <a routerLink="/login" (click)="showRegister()">Register
+                </a></p>
+
+
+            </div>
+
+          </div>
+        </div>
+
+
+
+        <div class=" fadeInDown" *ngIf="registerCard">
+          <div id="formContent">
+            <!-- Tabs Titles -->
+            <br>
+            <h3 class="text-center mt-5"> Registration Form </h3>
+            <hr>
+            <!-- Login Form -->
+            <form>
+              <input type="text" class="fadeIn second" name="login" placeholder="Name">
+              <input type="text" class="fadeIn third" name="login" placeholder="Cell"><br>
+              <input type="text" class="fadeIn third" name="login" placeholder="Email"><br>
+              <input type="text" id="password" class="fadeIn third" name="login" placeholder="Password"><br>
+              <input type="text" class="fadeIn third" name="login" placeholder="Address"><br>
+              <button type="submit" class="btn btn-primary" value="Log In">Register</button>
+              <p>Already registered? click here <a routerLink="/login" (click)="showLogin()">Login
+              </a></p>
+            </form>
+            <br>
+            <!-- Remind Passowrd -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
