@@ -12,9 +12,10 @@ import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { UserIndexComponent } from './user/user-index/user-index.component';
-import { HeaderComponent } from './user/header/header.component';
-import { FooterComponent } from './user/footer/footer.component';
+import { HeaderComponent } from './header/header.component';
 import { AvailableRoomComponent } from './user/available-room/available-room.component';
+import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { AvailableRoomComponent } from './user/available-room/available-room.com
     HotellistComponent,
     RoomlistComponent,
     UserIndexComponent,
-    AvailableRoomComponent
+    AvailableRoomComponent,
+    AdminDashboardComponent
    
     
   ],

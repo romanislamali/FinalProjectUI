@@ -108,9 +108,9 @@
 
                  <!-- ************************ Hotel list card ************************** -->
                  
-                <div class="container mt-5" *ngIf="hotelListCard" >
+                <div class="container mt-5" style="margin: top 200px;" *ngIf="hotelListCard" >
                     <div class="col-md-10 offset-md-1 mt-2 border p-1 border" *ngFor="let h of hotelList | async" >
-                        <mat-card class="p-4" style="background-color: rgb(255,0,255)">
+                        <mat-card class="p-4" style="background-color: rgb(109, 228, 199)">
                             <div class="row">
                                 <div class="col-3">
                                     <img src="assets/images/hotel/h2.jpg" alt="samima" height="250" width="250">
@@ -140,7 +140,7 @@
 
                 <div class="container mt-5" *ngIf="roomListCard">
                     <div class="col-md-12 mt-2 border p-1 border" *ngFor="let r of roomList | async">
-                        <mat-card class="p-4" style="background-color: rgb(255,20,147)">
+                        <mat-card class="p-4" style="background-color: rgb(82, 142, 221)">
                             <div class="row">
                                 <div class="col-6">
                                     <img src="assets/images/hotel/h2.jpg" alt="samima" height="350" width="350">
@@ -161,19 +161,12 @@
                         </mat-card>
                     </div>
                 </div>
-
-
-
-
-
-
-
             </div>
         </div>
         <br>
         <br>
         <div class="row">
-            <div class="col-sm-12">
+            <!-- <div class="col-sm-12">
                 <div class="single-about-us">
                     <div class="about-us-txt">
                         <h2>
@@ -184,22 +177,21 @@
                             <button class="about-view">
                                 explore now
                             </button>
-                        </div><!--/.about-btn-->
-                    </div><!--/.about-us-txt-->
-                </div><!--/.single-about-us-->
-            </div><!--/.col-->
+                        </div>
+                    </div>
+                </div>
+            </div> -->
             <div class="col-sm-0">
                 <div class="single-about-us">
 
                 </div><!--/.single-about-us-->
             </div><!--/.col-->
-        </div><!--/.row-->
+        </div>
     </div><!--/.about-us-content-->
     <!--/.container-->
 
 </section><!--/.about-us-->
 <!--about-us end -->
-
 
 
 <!--galley start-->
