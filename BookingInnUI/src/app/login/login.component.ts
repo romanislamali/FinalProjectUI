@@ -14,17 +14,6 @@ export class LoginComponent {
 
   }
 
-  // public user = {
-  //   uid:'',
-  //   uname: '',
-  //   uaddress: '',
-  //   ucell: '',
-  //   uemail: '',
-  //   upassword: '',
-  // };
-
-
-
   
 
   registerCard: boolean = false;
@@ -41,7 +30,27 @@ export class LoginComponent {
     this.registerCard = false;
   }
 
-  user : User = new User();
+
+  public user : User = new User();
+
+  public alluser!:any;
+  getAllUser(){
+    this.alluser = this.userservice.getAllUser();
+    
+  }
+
+  login(){
+    if(this.user.uemail==this.alluser.uemail){
+      console.log("******************");
+      alert('Login Successfull');
+    }
+    else{
+      alert('Email or Password invaid!!');
+    }
+
+  }
+
+  
 
   formSubmit(){
   

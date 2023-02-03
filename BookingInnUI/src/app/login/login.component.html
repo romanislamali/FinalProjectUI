@@ -1,21 +1,20 @@
 <div class="bootstrap-warpper">
   <div class="container">
-    <div class="row mt-5" style="margin-top: 20;">
+    <div class="row mt-5" style="margin-top: 150px;">
       <div class="col-md-6 offset-md-3">
+
         <div class=" fadeInDown" *ngIf="loginCard">
           <div id="formContent">
             <!-- Tabs Titles -->
             <br>
             <h3 class="text-center mt-5"> Login </h3>
             <hr>
-
             <!-- Login Form -->
-            <!-- <form> -->
-            <input type="text" class="fadeIn second" name="login" placeholder="login">
-            <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
-            <input type="submit" class="fadeIn fourth" value="Log In">
-            <!-- </form> -->
-
+            <form (ngSubmit)="login()">
+              <input type="text" class="fadeIn third" name="uemail" placeholder="Email"[(ngModel)]="user.uemail"><br>
+              <input type="text" id="password" class="fadeIn third" name="upassword" placeholder="Password"[(ngModel)]="user.upassword"><br>
+              <button type="submit"  class="btn btn-primary" >Login</button>
+            </form>
             <!-- Remind Passowrd -->
             <div id="formFooter">
               <a class="underlineHover" href="#">Forgot Password?</a>
@@ -25,7 +24,7 @@
           </div>
         </div>
 
-        <div class=" fadeInDown" *ngIf="registerCard">
+        <div class=" fadeInDown mt-5" *ngIf="registerCard">
           <div id="formContent">
             <!-- Tabs Titles -->
             <br>
@@ -46,6 +45,7 @@
             <!-- Remind Passowrd -->
           </div>
         </div>
+
       </div>
     </div>
   </div>
