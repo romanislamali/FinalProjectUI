@@ -1,20 +1,22 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { User } from '../model/user.model';
 
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class BookingService {
+
 
   baseUrl: string = "http://localhost:8085";
   constructor(private httpClient: HttpClient) { }
 
-  public createuser(user: any) {
-    return this.httpClient.post(`${this.baseUrl}/usersave`, user);
+  public createbooking(booking: any) {
+    return this.httpClient.post(`${this.baseUrl}/booksave`, booking);
 
   }
-  
+
+
+
 
 
 

@@ -175,7 +175,7 @@
                         <div class="row form-control">
                             <div class="col-3">
                                 <p>Locaction choose</p>
-                                <select class="col-12 " [(ngModel)]="id" (ngModelChange)="getLid($event)" name="sdf">
+                                <select class="col-12 " [(ngModel)]="locationId" (ngModelChange)="getLid($event)" name="sdf">
                                     <option *ngFor="let l of location | async" name="lid" [ngValue]="l.lid">
                                         {{l.lname}}</option>
                                 </select>
@@ -329,7 +329,7 @@
 
                     <div class="row" style="background-color: rgb(40, 176, 203)">
                         <div class="col-2 card rc">
-                            <i class="fa-solid fa-house"></i>Entire apartment
+                            Entire apartment
                         </div>
                         <div class="col-2 card rc">
                             150 m² Size
@@ -398,7 +398,7 @@
                             <p>* No booking or credit card fees!</p>
                             <b>No credit card</b>
                             "needed!"
-                            <a class="btn btn-outline-primary">Book Now</a>
+                            <a class="btn btn-outline-primary" (click)="bookRoom(r.rid)">Book Now</a>
                         </div>
                         <hr>
                     </div>
