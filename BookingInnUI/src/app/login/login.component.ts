@@ -21,7 +21,6 @@ export class LoginComponent {
   //   ucell: '',
   //   uemail: '',
   //   upassword: '',
-
   // };
 
 
@@ -62,9 +61,8 @@ export class LoginComponent {
           console.log(error);
           alert('not submitted');
           
+        } 
 
-        }
-        
       )
     }
 
@@ -76,7 +74,7 @@ export class LoginComponent {
     this.user.uaddress='';
     this.user.uemail='';
     this.user.upassword='';
-    
+
   }
 
 

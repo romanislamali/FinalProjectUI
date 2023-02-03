@@ -96,17 +96,19 @@ export class UserIndexComponent {
   user: User = new User();
   roomId? :any;
 
-  userid:any = 1;
+  userid:number = 1;
   
   bookRoom(value:any){
     this.roomId=value;
-    console.log(this.locationId);
-    console.log(this.hotelId);
-    console.log(this.roomId);
+    // console.log(this.locationId);
+    // console.log(this.hotelId);
+    // console.log(this.roomId);
 
-    this.booking = this.hotelId;
-    this.booking = this.roomId;
-    this.booking =this.userid;
+    this.booking.hid = this.hotelId;
+    this.booking.rid = this.roomId;
+    this.booking.uid =this.userid;
+    this.booking.bdate ="date";
+    this.booking.lid =this.locationId;
    
       // console.log(this.booking)
     this.bookingservice.createbooking(this.booking).subscribe(
