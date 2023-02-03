@@ -24,6 +24,10 @@ export class LoginComponent {
 
   // };
 
+
+
+  
+
   registerCard: boolean = false;
   loginCard: boolean = true;
 
@@ -53,9 +57,11 @@ export class LoginComponent {
         (data)=>{
           console.log(data);
           alert('data submitted successfully');
+          this.clear();
         }, (error)=>{
           console.log(error);
           alert('not submitted');
+          
 
         }
         
@@ -64,7 +70,14 @@ export class LoginComponent {
 
   }
 
-
+  clear(){
+    this.user.uname='';
+    this.user.ucell='';
+    this.user.uaddress='';
+    this.user.uemail='';
+    this.user.upassword='';
+    
+  }
 
 
 
