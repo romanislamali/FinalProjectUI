@@ -103,26 +103,26 @@ export class UserIndexComponent {
     console.log(this.locationId);
     console.log(this.hotelId);
     console.log(this.roomId);
+    console.log(this.userid);
 
+    this.booking = this.locationId;
     this.booking = this.hotelId;
     this.booking = this.roomId;
-    this.booking =this.userid;
+    this.booking = this.userid;
    
       // console.log(this.booking)
     this.bookingservice.createbooking(this.booking).subscribe(
 
-      data => console.log(this.booking)
-
-      // (data)=>{
-      //   console.log(data);
-      //   alert('Booking successfully');
+      (data)=>{
+        console.log(data);
+        alert('Booking successfully');
        
-      // }, (error)=>{
-      //   console.log(error);
-      //   alert('Something wrong, try again ');
+      }, (error)=>{
+        console.log(error);
+        alert('Something wrong, try again ');
         
 
-      // }
+      }
       
     )
 

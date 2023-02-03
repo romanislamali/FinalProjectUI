@@ -8,10 +8,10 @@ import { User } from "./user.model";
 export class Booking{
 bid:number | undefined;
 bdate:string | undefined;
-rId: number | undefined;
-lid: number| undefined;
-hid: number| undefined;
-uid: number | undefined;
+location: any | undefined;
+hotel: any| undefined;
+room: any| undefined;
+user: any | undefined;
 
 }
 

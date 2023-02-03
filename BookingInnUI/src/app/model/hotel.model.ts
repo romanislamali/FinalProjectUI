@@ -22,7 +22,7 @@ export class Hotel{
     hphoto: string | undefined;
 
 
-    location: Location[] | undefined;
-    hotelfacilities: Hotelfacilities[] | undefined;
+    location: number | undefined;
+    hotelfacilities: number | undefined;
 
 }

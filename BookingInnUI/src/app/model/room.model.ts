@@ -20,9 +20,9 @@ export class Room{
     ravailability: number | undefined;
     rdetails: string | undefined;
    
-    roomFacilities: RoomFacilities[] | undefined;
-    roomtype: Roomtype[] | undefined;
-    hotel: Hotel[] | undefined;
+    roomFacilities: number | undefined;
+    roomtype: number | undefined;
+    hotel: number | undefined;
 
 
 
