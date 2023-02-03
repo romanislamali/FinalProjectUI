@@ -170,7 +170,8 @@
     <section>
         <div class="row">
             <div class="col-md-8 offset-md-2 border p-1 bg-success " style="margin-top: 100px;">
-                <mat-card class="p-4" >
+                <mat-card class="p-4" style="background-color: lightseagreen">
+                    <marquee behavior="" direction=""><h1 style="color:aliceblue">CHOOCE YOUR FAVOURITE HOTEL</h1></marquee>
                     <form (ngSubmit)="onSubmit()">
                         <div class="row form-control">
                             <div class="col-3">
@@ -267,8 +268,8 @@
         <!-- ***************Hotel list card start******************** -->
 
         <div class="container mt-5" style="margin: top 200px;" *ngIf="hotelListCard">
-            <div class="col-md-10 offset-md-1 mt-2 border p-1 border" *ngFor="let h of hotelList | async">
-                <mat-card class="p-4" style="background-color: rgb(109, 228, 199)">
+            <div class="col-md-12 mt-2 border p-1 border" *ngFor="let h of hotelList | async">
+                <mat-card class="p-4" style="background-color: lightyellow">
                     <div class="row">
                         <div class="col-3">
                             <img src="assets/images/hotel/h2.jpg" alt="samima" height="250" width="250">
@@ -315,10 +316,10 @@
                         <div class="row">
                             <div class="col-4">
                                 <div class="row">
-                                    <img src="assets/images/hotel/h2.jpg" alt="samima" height="100" width="200">
+                                    <img src="assets/images/hotel/h1.jpg" alt="samima" height="100" width="200">
                                 </div><br>
                                 <div class="row">
-                                    <img src="assets/images/hotel/h2.jpg" alt="samima" height="100" width="200">
+                                    <img src="assets/images/hotel/h3.jpg" alt="samima" height="100" width="200">
                                 </div><br>
                             </div>
                             <div class="col-8">
@@ -418,9 +419,7 @@
                 <h2>
                     top destination
                 </h2>
-                <p>
-                    Duis aute irure dolor in velit esse cillum dolore eu fugiat nulla.
-                </p>
+
             </div><!--/.gallery-header-->
             <div class="gallery-box">
                 <div class="gallery-content">
@@ -441,7 +440,7 @@
 
                             <div class="col-md-6">
                                 <div class="filtr-item">
-                                    <img src="assets/images/gallary/g2.jpg" alt="portfolio image" />
+                                    <img src="assets/images/gallary/venezuela.jpg" alt="portfolio image" />
                                     <div class="item-title">
                                         <a href="#">
                                             venuzuala
@@ -453,7 +452,7 @@
 
                             <div class="col-md-4">
                                 <div class="filtr-item">
-                                    <img src="assets/images/gallary/g3.jpg" alt="portfolio image" />
+                                    <img src="assets/images/gallary/brazil.jpg" alt="portfolio image" />
                                     <div class="item-title">
                                         <a href="#">
                                             brazil
@@ -465,7 +464,7 @@
 
                             <div class="col-md-4">
                                 <div class="filtr-item">
-                                    <img src="assets/images/gallary/g4.jpg" alt="portfolio image" />
+                                    <img src="assets/images/gallary/australia.jpg" alt="portfolio image" />
                                     <div class="item-title">
                                         <a href="#">
                                             australia
@@ -477,7 +476,7 @@
 
                             <div class="col-md-4">
                                 <div class="filtr-item">
-                                    <img src="assets/images/gallary/g5.jpg" alt="portfolio image" />
+                                    <img src="assets/images/gallary/netherlands.jpg" alt="portfolio image" />
                                     <div class="item-title">
                                         <a href="#">
                                             netharland
@@ -489,7 +488,7 @@
 
                             <div class="col-md-8">
                                 <div class="filtr-item">
-                                    <img src="assets/images/gallary/g6.jpg" alt="portfolio image" />
+                                    <img src="assets/images/gallary/turkey.jpg" alt="portfolio image" />
                                     <div class="item-title">
                                         <a href="#">
                                             turkey
@@ -562,7 +561,7 @@
 
                 <div class="col-md-4 col-sm-6">
                     <div class="single-package-item">
-                        <img src="assets/images/packages/p1.jpg" alt="package-place">
+                        <img src="assets/images/packages/italy.jpg" alt="package-place">
                         <div class="single-package-item-txt">
                             <h3>italy <span class="pull-right">$499</span></h3>
                             <div class="packages-para">
