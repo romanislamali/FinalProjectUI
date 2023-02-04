@@ -1,10 +1,29 @@
-import { Component } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-admin-dashboard',
   templateUrl: './admin-dashboard.component.html',
   styleUrls: ['./admin-dashboard.component.css']
 })
-export class AdminDashboardComponent {
+export class AdminDashboardComponent implements OnInit{
+  constructor(private router:Router) { }
 
+  ngOnInit(): void {
+  }
+
+  students(){
+    this.router.navigateByUrl("/astudents");
+  }
+
+  faculties(){
+    this.router.navigateByUrl("/afaculties");
+  }
+
+  staff(){
+    this.router.navigateByUrl("/astaff");
+  }
+
+  courses(){
+    this.router.navigateByUrl("/acourse");
+  }
 }

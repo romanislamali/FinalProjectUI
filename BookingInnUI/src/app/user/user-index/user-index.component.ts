@@ -110,7 +110,6 @@ export class UserIndexComponent {
     )
   }
 
-
   sendAllIdToLoginTs() {
     console.log(this.locationId);
     console.log(this.hotelId);
