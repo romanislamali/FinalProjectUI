@@ -1,112 +1,109 @@
-
-  <!-- this is admin dashboard sideber start point -->
-  <nav id="sidebarMenu" *ngIf="sidebertab" class="collapse d-lg-block sidebar collapse" style="margin-top: 80px; background-color: lightseagreen;">
-    <div class="position-sticky">
-      <div class="list-group list-group-flush mx-3 mt-4">
-
-        <img src="/assets/admin-logo.jpg" height="140" width="" alt="" loading="" class="center" /> <br>
-      
-        <!-- <a class="nav-item nav-link active" aria-current="page" routerLink="/home" routerLinkActive="active" href="">Home</a> -->
-        <a class="list-group-item list-group-item-action py-2 ripple" aria-current="page"><i
-            class="fas fa-users fa-fw me-3"></i><span (click)="showHotel()">Hotel</span></a>
-        <a class="list-group-item list-group-item-action py-2 ripple" aria-current="page" routerLink="/afaculties"
-          routerLinkActive="active" href=""><i class="fas fa-users fa-fw me-3"></i><span>Faculties</span></a>
-        
-        <!-- <a href="#" class="list-group-item list-group-item-action py-2 ripple">
-          <i class="fas fa-chart-area fa-fw me-3"></i><span>Webiste traffic</span>
-        </a>
-        <a href="#" class="list-group-item list-group-item-action py-2 ripple"
-          ><i class="fas fa-lock fa-fw me-3"></i><span>Password</span></a
-        >
-        <a href="#" class="list-group-item list-group-item-action py-2 ripple"
-          ><i class="fas fa-chart-line fa-fw me-3"></i><span>Analytics</span></a
-        >
-        <a href="#" class="list-group-item list-group-item-action py-2 ripple">
-          <i class="fas fa-chart-pie fa-fw me-3"></i><span>SEO</span>
-        </a>
-        <a href="#" class="list-group-item list-group-item-action py-2 ripple"
-          ><i class="fas fa-chart-bar fa-fw me-3"></i><span>Orders</span></a
-        > -->
-        <a class="list-group-item list-group-item-action py-2 ripple" aria-current="page" routerLink="/acourse"
-          routerLinkActive="active" href=""><i class="fas fa-globe fa-fw me-3"></i><span>Branch</span></a>
-        <!-- <a class="list-group-item list-group-item-action py-2 ripple" aria-current="page" routerLink="/aattendence" routerLinkActive="active" href=""
-          ><i class="fas fa-building fa-fw me-3"></i><span>Attendence</span></a
-        >
-        <a class="list-group-item list-group-item-action py-2 ripple" aria-current="page" routerLink="/amarksheet" routerLinkActive="active" href=""
-          ><i class="fas fa-calendar fa-fw me-3"></i><span>Marksheet</span></a>-->
-
-        <!-- <a href="#" class="list-group-item list-group-item-action py-2 ripple"
-          ><i class="fas fa-users fa-fw me-3"></i><span>Students</span></a
-        > -->
-        <a class="list-group-item list-group-item-action py-2 ripple" aria-current="page" routerLink="/anotification"
-          routerLinkActive="active" href=""><i class="fas fa-money-bill fa-fw me-3"></i><span>Reports</span></a>
-        <a class="list-group-item list-group-item-action py-2 ripple" aria-current="page" routerLink="/admin"
-          routerLinkActive="active" href=""><i class="fas fa-lock fa-fw me-3"></i><span>Logout</span></a>
-        <!-- <a href="#" class="list-group-item list-group-item-action py-2 ripple"
-          ><i class="fas fa-calendar fa-fw me-3"></i><span>Calendar</span></a
-        >
-        <a href="#" class="list-group-item list-group-item-action py-2 ripple"
-          ><i class="fas fa-users fa-fw me-3"></i><span>Users</span></a
-        >
-        <a href="#" class="list-group-item list-group-item-action py-2 ripple"
-          ><i class="fas fa-money-bill fa-fw me-3"></i><span>Sales</span></a
-        > -->
-      </div>
-    </div>
-  </nav>
-  <!-- this is admin dashboard sideber end point -->
-
-  <!-- This is admin dashboard button tab -->
-  <div class="container" *ngIf="hotelbtntab">
-    <div class="main">
-      <h1 style="text-align:center;"><span>Dashboard</span></h1><br><br><br><br>
-      <div class="gallery">
-        <!-- <a target="_blank" href="/assets/g2.jpg"> -->
-        <!-- <img src="/assets/g2.jpg" alt="" width="800" height="600"> -->
-        <!-- </a> -->
-        <!--<div class="desc">Add a description of the image here</div>-->
-        <h1 style="text-align:center;color: rgb(77, 75, 214);">Trainee</h1><br>
-        <h3 style="text-align:center;">Total Trainee: 15</h3>
-        <h3 style="text-align:center;">Newely Added: 5</h3><br>
-        <button class="button">Go to Page</button>
-      </div>
-
-      <div class="gallery">
-        <!-- <a target="_blank" href="/assets/G1.jpg">
-      <img src="/assets/G1.jpg" alt="" width="800" height="600">
-    </a> -->
-        <!--<div class="desc">Add a description of the image here</div>-->
-        <h1 style="text-align:center;color: rgb(49, 78, 204);">Instructor</h1><br>
-        <h3 style="text-align:center;">Total Instructor: 12</h3>
-        <h3 style="text-align:center;">Newely Added: 3</h3><br>
-        <button class="button" (click)="faculties()">Go to Page</button>
-
-      </div>
-
-      <div class="gallery">
-        <!-- <a target="_blank" href="/assets/g3.jpg">
-      <img src="/assets/g3.jpg" alt="" width="800" height="600">
-    </a> -->
-        <!--<div class="desc">Add a description of the image here</div>-->
-        <h1 style="text-align:center;color: rgb(54, 102, 235);">All Staff</h1><br>
-        <h3 style="text-align:center;">Total Staff: 8</h3>
-        <h3 style="text-align:center;">Newely Added: 2</h3><br>
-        <button class="button" (click)="staff()">Go to Page</button>
-      </div>
-
-      <div class="gallery">
-        <!-- <a target="_blank" href="/assets/g3.jpg">
-      <img src="/assets/g3.jpg" alt="" width="800" height="600">
-    </a> -->
-        <!--<div class="desc">Add a description of the image here</div>-->
-        <h1 style="text-align:center;color: rgb(77, 80, 209);">TSP</h1><br>
-        <h3 style="text-align:center;">Total TSP: 3</h3>
-        <h3 style="text-align:center;">Newely Added: 1</h3><br>
-        <button class="button" (click)="courses()">Go to Page</button>
-      </div><br><br>
-      <p>&nbsp;&nbsp;&nbsp;</p>
+<!-- this is admin dashboard sideber start point -->
+<nav id="sidebarMenu" *ngIf="sidebertab" class="collapse d-lg-block sidebar collapse"
+  style="margin-top: 80px; background-color: lightseagreen;">
+  <div class="position-sticky">
+    <div class="list-group list-group-flush mx-3 mt-4">
+      <img src="assets/images/home/banner.jpg" height="20" width="" alt="" loading="" class="center" /> <br>
+      <button class="btn btn-outline-light" (click)="showHotel()">
+        <h1>Hotel</h1>
+      </button>
+      <button class="btn btn-outline-light" (click)="showRoom()">
+        <h1>Room</h1>
+      </button>
+      <button class="btn btn-outline-light" (click)="showLocation()">
+        <h1>Location</h1>
+      </button>
+      <button class="btn btn-outline-light" (click)="showHotel()">
+        <h1>Booking</h1>
+      </button>
+      <button class="btn btn-outline-light" (click)="showHotel()">
+        <h1>Payment</h1>
+      </button>
+      <button class="btn btn-outline-light" (click)="showHotel()">
+        <h1>User</h1>
+      </button>
     </div>
   </div>
+</nav>
+<div >
+  <img src="assets/images/admin/admin.jpg" height="20" width="" alt="" loading="" class="center" /> <br>
+</div>
+<!-- this is admin dashboard sideber end point -->
+
+
+<!-- This is start Hotel button tab -->
+<div>
+  <div class="container" *ngIf="locationbtntab">
+    <div class="main">
+      <a href="">
+        <div class="gallery" style="text-align: center;">
+          <h1 style="text-align:center;color: rgb(49, 78, 204);">Location</h1><br>
+          <h3 style="text-align:center;">Total Location: 12</h3>
+          <h3 style="text-align:center;">Newely Added: 3</h3><br>
+          <h1 style="text-align:center;"><b>See All Location</b></h1><br>
+        </div>
+      </a>
+    </div>
+  </div>
+  <!-- This is end of Hotel button tab -->
+
+
+
+  <!-- This is start Hotel button tab -->
+  <div class="container" *ngIf="hotelbtntab">
+    <div class="main">
+      <a href="">
+        <div class="gallery" style="text-align: center;">
+          <h1 style="text-align:center;color: rgb(49, 78, 204);">Hotel</h1><br>
+          <h3 style="text-align:center;">Total Hotel: 12</h3>
+          <h3 style="text-align:center;">Newely Added: 3</h3><br>
+          <h1 style="text-align:center;"><b>See All Hotel</b></h1><br>
+        </div>
+      </a>
+      <a href="">
+        <div class="gallery" style="text-align: center;">
+          <h1 style="text-align:center;color: rgb(49, 78, 204);">Hotel Facilities</h1><br>
+          <h3 style="text-align:center;">Total Facilities: 12</h3>
+          <h3 style="text-align:center;">Newely Added: 3</h3><br>
+          <h1 style="text-align:center;"><b>See All Facilities</b></h1><br>
+        </div>
+      </a>
+    </div>
+  </div>
+  <!-- This is end of Hotel button tab -->
+
+
+  <!-- This is start of Room button tab -->
+  <div class="container" *ngIf="roombtntab">
+    <div class="main">
+      <a href="">
+        <div class="gallery" style="text-align: center;">
+          <h1 style="text-align:center;color: rgb(49, 78, 204);">Room</h1><br>
+          <h3 style="text-align:center;">Total Room: 12</h3>
+          <h3 style="text-align:center;">Newely Added: 3</h3><br>
+          <h1 style="text-align:center;"><b>See All Room</b></h1><br>
+        </div>
+      </a>
+      <a href="">
+        <div class="gallery" style="text-align: center;">
+          <h1 style="text-align:center;color: rgb(49, 78, 204);">Room Facilities</h1><br>
+          <h3 style="text-align:center;">Total Room: 12</h3>
+          <h3 style="text-align:center;">Newely Added: 3</h3><br>
+          <h1 style="text-align:center;"><b>All Room Facilities</b></h1><br>
+        </div>
+      </a>
+      <a href="">
+        <div class="gallery" style="text-align: center;">
+          <h1 style="text-align:center;color: rgb(49, 78, 204);">Room Type</h1><br>
+          <h3 style="text-align:center;">Total Room Type: 12</h3>
+          <h3 style="text-align:center;">Newely Added: 3</h3><br>
+          <h1 style="text-align:center;"><b>All Room Type</b></h1><br>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+<!-- This is end of Room button tab -->
 
 <!-- <p>&nbsp;&nbsp;&nbsp;</p>
 <p>&nbsp;&nbsp;&nbsp;</p>

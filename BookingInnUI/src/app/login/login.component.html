@@ -14,7 +14,7 @@
             <form (ngSubmit)="login()">
               <input type="text" class="fadeIn third" name="uemail" placeholder="Email"[(ngModel)]="user.uemail"><br>
               <input type="text" id="password" class="fadeIn third" name="upassword" placeholder="Password"[(ngModel)]="user.upassword"><br>
-              <button type="submit"  class="btn btn-primary" >Login</button>
+              <button type="submit"  class="btn btn-primary" routerLink="/admindash" >Login</button>
             </form>
             <!-- Remind Passowrd -->
             <div id="formFooter">

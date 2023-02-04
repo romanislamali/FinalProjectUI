@@ -8,7 +8,9 @@ import { Router } from '@angular/router';
 export class AdminDashboardComponent implements OnInit{
   constructor(private router:Router) { }
 
+  locationbtntab: boolean = false;
   hotelbtntab: boolean = false;
+  roombtntab: boolean = false;
   sidebertab: boolean = true;
 
   ngOnInit(): void {
@@ -16,17 +18,23 @@ export class AdminDashboardComponent implements OnInit{
 
   showHotel(){
     this.hotelbtntab =true;
+    this.roombtntab=false;
+    this.locationbtntab= false;
   }
 
-  faculties(){
-    this.router.navigateByUrl("/afaculties");
+  showRoom(){
+    this.roombtntab=true;
+    this.hotelbtntab =false;
+    this.locationbtntab= false;
   }
 
-  staff(){
-    this.router.navigateByUrl("/astaff");
+  showLocation(){
+    this.locationbtntab=true;
+    this.roombtntab=false;
+    this.hotelbtntab =false;
   }
 
-  courses(){
+  showUser(){
     this.router.navigateByUrl("/acourse");
   }
 }
