@@ -9,7 +9,5 @@ lid: number| undefined;
 hid: number| undefined;
 uid: number | undefined;
 
-
-
 }
 

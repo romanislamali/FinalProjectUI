@@ -13,7 +13,7 @@ import { HotelService } from 'src/app/service/hotel.service';
 })
 export class UserIndexComponent {
 
- 
+
   persontab: boolean = false;
   hotelListCard: boolean = false;
   roomListCard: boolean = false;
@@ -25,9 +25,8 @@ export class UserIndexComponent {
   //  --------------show adult, children, room card-------------
   hotel: any;
   location: any;
-  constructor(private hotelService: HotelService, private bookingservice : BookingService, private router: Router){
-
-   }
+  constructor(private hotelService: HotelService, private bookingservice: BookingService, private router: Router) {
+  }
 
   ngOnInit() {
     this.location = this.hotelService.getAllLocation();
@@ -37,7 +36,6 @@ export class UserIndexComponent {
   locationId?: any;
   getLid(value: any) {
     this.locationId = value;
-    // console.log(this.locationId);
   }
 
 
@@ -45,12 +43,10 @@ export class UserIndexComponent {
   hotelList?: any;
   onSubmit() {
     this.hotelList = this.hotelService.getAllHotelByLocation(this.locationId);
-    this.hotelListCard =true;
+    this.hotelListCard = true;
     this.roomListCard = false;
-
   }
 
- 
   onclick() {
     this.persontab = !this.persontab
   }
@@ -59,9 +55,7 @@ export class UserIndexComponent {
 
   public adultcount(str: String) {
     if ((this.valueadult >= 1) && (this.valueadult < 10)) {
-
       (str === 'add') ? this.valueadult++ : this.valueadult--;
-
     }
   }
 
@@ -78,67 +72,46 @@ export class UserIndexComponent {
   }
 
 
-  hotelId? :any;
-  roomList? :any;
+  hotelId?: any;
+  roomList?: any;
 
-  public getHotelId(value: any){
-    
+  public getHotelId(value: any) {
     this.hotelId = value;
     this.roomList = this.hotelService.getAllRoomByHotelId(this.hotelId);
     this.roomListCard = true;
     this.hotelListCard = false;
-    // this.router.navigate(['availableroom/',value])
-    // console.log(this.hotelId);
-    // console.log(this.roomList.rtitle);
 
   }
+
   booking: Booking = new Booking();
   user: User = new User();
-  roomId? :any;
+  roomId?: any;
+  userid: number = 1;
 
-  userid:number = 1;
-  
-  bookRoom(value:any){
-    this.roomId=value;
+  bookRoom(value: any) {
+    this.roomId = value;
 
-    // console.log(this.locationId);
-    // console.log(this.hotelId);
-    // console.log(this.roomId);
-
+    this.booking.bdate = "date";
+    this.booking.lid = this.locationId;
     this.booking.hid = this.hotelId;
     this.booking.rid = this.roomId;
-    this.booking.uid =this.userid;
-    this.booking.bdate ="date";
-    this.booking.lid =this.locationId;
+    this.booking.uid = this.userid;
 
-   
-   
-      // console.log(this.booking)
+
     this.bookingservice.createbooking(this.booking).subscribe(
-
-      (data)=>{
+      (data) => {
         console.log(data);
         alert('Booking successfully');
-       
-      }, (error)=>{
+      },
+      (error) => {
         console.log(error);
         alert('Something wrong, try again ');
-        
-
       }
-      
     )
-
-   
-
-
-
   }
 
 
-
-
-  sendAllIdToLoginTs(){
+  sendAllIdToLoginTs() {
     console.log(this.locationId);
     console.log(this.hotelId);
     console.log(this.roomId);
