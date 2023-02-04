@@ -8,11 +8,14 @@ import { Router } from '@angular/router';
 export class AdminDashboardComponent implements OnInit{
   constructor(private router:Router) { }
 
+  hotelbtntab: boolean = false;
+  sidebertab: boolean = true;
+
   ngOnInit(): void {
   }
 
-  students(){
-    this.router.navigateByUrl("/astudents");
+  showHotel(){
+    this.hotelbtntab =true;
   }
 
   faculties(){
