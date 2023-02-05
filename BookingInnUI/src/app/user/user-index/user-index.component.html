@@ -171,7 +171,7 @@
         <div class="row">
             <div class="col-md-8 offset-md-2 border p-1 bg-success " style="margin-top: 100px;">
                 <mat-card class="p-4" style="background-color: lightseagreen">
-                    <marquee behavior="" direction=""><h1 style="color:aliceblue">🏩CHOOSE YOUR FAVOURITE HOTEL🏩</h1></marquee>
+                    <marquee behavior="" direction=""><h1 style="color:aliceblue">CHOOSE YOUR FAVOURITE HOTEL</h1></marquee>
                     <form (ngSubmit)="onSubmit()">
                         <div class="row form-control">
                             <div class="col-3">
@@ -374,7 +374,6 @@
                             <h3>Sleeps</h3>
                             <li>Adult Person: {{r.radultNumber}}</li>
                             <li>Child Person: {{r.rchildrenNumber}}</li>
-                            <li>Bed: {{r.rbedNumber}}</li>
                             <li>{{r.roomtype.rtDescription}}</li>
                         </div>
                         <div class="col-2" style="background-color: floralwhite">
@@ -384,7 +383,7 @@
                         </div>
                         <div class="col-2" style="background-color: floralwhite">
                             <h3>Today's price</h3>
-                            <li>Price: {{r.rroomPrice}}</li>
+                            <li>Price: ${{r.rroomPrice}}</li>
                             <li>Discount: {{r.rdiscount}}</li>
                         </div>
                         <div class="col-2" style="background-color: floralwhite">

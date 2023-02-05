@@ -35,12 +35,12 @@
 <div>
   <div class="container" *ngIf="locationbtntab">
     <div class="main">
-      <a href="">
+      <a  (click)="showHotelList()">
         <div class="gallery" style="text-align: center;">
           <h1 style="text-align:center;color: rgb(49, 78, 204);">Location</h1><br>
           <h3 style="text-align:center;">Total Location: 12</h3>
           <h3 style="text-align:center;">Newely Added: 3</h3><br>
-          <h1 style="text-align:center;"><b>See All Location</b></h1><br>
+          <button style="text-align:center;"><b>See All Location</b></button><br>
         </div>
       </a>
     </div>
@@ -52,7 +52,7 @@
   <!-- This is start Hotel button tab -->
   <div class="container" *ngIf="hotelbtntab">
     <div class="main">
-      <a href="">
+      <a (click)="showHotelList()">
         <div class="gallery" style="text-align: center;">
           <h1 style="text-align:center;color: rgb(49, 78, 204);">Hotel</h1><br>
           <h3 style="text-align:center;">Total Hotel: 12</h3>
@@ -101,6 +101,32 @@
         </div>
       </a>
     </div>
+  </div>
+
+  <div class="row" *ngIf="hoteltabletab">
+    <table class="table col-7 offset-md-3 table-info" *ngFor="let h of hotelList | async">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Hotel Name</th>
+          <th>Location</th>
+          <th>Address</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>#00{{h.hid}}</td>
+          <td>{{h.hname}}</td>
+          <td>{{h.location.lname}}</td>
+          <td>{{h.haddress}}</td>
+          <td>
+            <button class="btn btn-outline-primary">Update</button>
+            <button class="btn btn-outline-danger">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
 <!-- This is end of Room button tab -->
