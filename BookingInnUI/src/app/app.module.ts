@@ -15,14 +15,11 @@ import { AvailableRoomComponent } from './user/available-room/available-room.com
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
-<<<<<<< HEAD
 import { BookinglistComponent } from './bookinglist/bookinglist.component';
-
-=======
 import { LocationComponent } from './management/location/location.component';
 import { HotelComponent } from './management/hotel/hotel.component';
 import { RoomComponent } from './management/room/room.component';
->>>>>>> 2a9a4b11c470ea47621f0202f72fc757c8254c11
+
 
 
 @NgModule({
@@ -34,15 +31,10 @@ import { RoomComponent } from './management/room/room.component';
     AvailableRoomComponent,
     AdminDashboardComponent,
     LoginComponent,
-<<<<<<< HEAD
     BookinglistComponent,
- 
-=======
     LocationComponent,
     HotelComponent,
     RoomComponent
->>>>>>> 2a9a4b11c470ea47621f0202f72fc757c8254c11
-   
     
   ],
   imports: [
