@@ -87,7 +87,7 @@ export class UserIndexComponent {
 
   }
 
-  booking: Booking = new Booking();
+ booking: Booking = new Booking();
   user: User = new User();
   roomId?: any;
   userid: number = 1;

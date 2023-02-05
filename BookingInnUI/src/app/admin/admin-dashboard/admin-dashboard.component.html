@@ -13,7 +13,7 @@
       <button class="btn btn-outline-light" (click)="showLocation()">
         <h1>Location</h1>
       </button>
-      <button class="btn btn-outline-light" (click)="showHotel()">
+      <button class="btn btn-outline-light" (click)="showBook()">
         <h1>Booking</h1>
       </button>
       <button class="btn btn-outline-light" (click)="showHotel()">
@@ -41,9 +41,11 @@
           <h3 style="text-align:center;">Total Location: 12</h3>
           <h3 style="text-align:center;">Newely Added: 3</h3><br>
           <button style="text-align:center;"><b>See All Location</b></button><br>
+          
         </div>
       </a>
     </div>
+   
   </div>
   <!-- This is end of Hotel button tab -->
 
@@ -129,6 +131,42 @@
     </table>
   </div>
 </div>
+
+
+<div class="container" *ngIf="bookbtntab">
+  <div class="main">
+    <a (click)="showBookList()">
+      <div class="gallery" style="text-align: center;">
+        <h1 style="text-align:center;color: rgb(49, 78, 204);">Book</h1><br>
+        <h3 style="text-align:center;">Total Hotel: 50</h3>
+        <h3 style="text-align:center;">Newely Added: 3</h3><br>
+        <h1 style="text-align:center;"><b>All show BookList</b></h1><br>
+      </div>
+    </a>
+    <a href="">
+      <div class="gallery" style="text-align: center;">
+        <h1 style="text-align:center;color: rgb(49, 78, 204);">Request Book</h1><br>
+        <h3 style="text-align:center;">Total Request accepted: 12</h3>
+        <h3 style="text-align:center;">Newely Request: 3</h3><br>
+        <h1 style="text-align:center;"><b>See All </b></h1><br>
+      </div>
+    </a>
+  </div>
+</div>
+
+
+<div class="container" *ngIf="booklist">
+  <div class="main">
+  
+     <app-bookinglist></app-bookinglist> 
+  </div>
+</div>
+
+
+
+
+
+
 <!-- This is end of Room button tab -->
 
 <!-- <p>&nbsp;&nbsp;&nbsp;</p>
