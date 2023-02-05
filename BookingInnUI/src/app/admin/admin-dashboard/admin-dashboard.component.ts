@@ -19,6 +19,7 @@ export class AdminDashboardComponent implements OnInit{
   }
 
   showHotel(){
+    this.router.navigateByUrl("/allhotel");
     this.hotelbtntab =true;
     this.roombtntab=false;
     this.locationbtntab= false;

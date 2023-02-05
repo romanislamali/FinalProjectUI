@@ -1,0 +1,26 @@
+
+<div class="row">
+    <table class="table col-7 offset-md-3 table-info" *ngFor="let h of hotelList | async">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Hotel Name</th>
+          <th>Location</th>
+          <th>Address</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>#00{{h.hid}}</td>
+          <td>{{h.hname}}</td>
+          <td>{{h.location.lname}}</td>
+          <td>{{h.haddress}}</td>
+          <td>
+            <button class="btn btn-outline-primary">Update</button>
+            <button class="btn btn-outline-danger">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

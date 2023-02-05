@@ -15,6 +15,9 @@ import { AvailableRoomComponent } from './user/available-room/available-room.com
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
+import { LocationComponent } from './management/location/location.component';
+import { HotelComponent } from './management/hotel/hotel.component';
+import { RoomComponent } from './management/room/room.component';
 
 
 @NgModule({
@@ -25,7 +28,10 @@ import { LoginComponent } from './login/login.component';
     UserIndexComponent,
     AvailableRoomComponent,
     AdminDashboardComponent,
-    LoginComponent
+    LoginComponent,
+    LocationComponent,
+    HotelComponent,
+    RoomComponent
    
     
   ],
