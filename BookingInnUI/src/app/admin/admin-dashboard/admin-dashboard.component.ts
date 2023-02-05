@@ -21,12 +21,20 @@ export class AdminDashboardComponent implements OnInit {
   ngOnInit(): void {
   }
 
+<<<<<<< HEAD
   showHotel() {
     this.hotelbtntab = true;
     this.roombtntab = false;
     this.locationbtntab = false;
     this.booklist = false;
     this.bookbtntab=false;
+=======
+  showHotel(){
+    this.router.navigateByUrl("/allhotel");
+    this.hotelbtntab =true;
+    this.roombtntab=false;
+    this.locationbtntab= false;
+>>>>>>> 2a9a4b11c470ea47621f0202f72fc757c8254c11
   }
 
   hotelList?: any;
