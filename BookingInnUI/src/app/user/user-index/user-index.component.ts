@@ -1,10 +1,10 @@
 
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { Booking } from 'src/app/model/booking.model';
 import { User } from 'src/app/model/user.model';
-import { BookingService } from 'src/app/service/bookingservice.service';
+import { BookingService } from 'src/app/service/booking.service';
 import { HotelService } from 'src/app/service/hotel.service';
+import { RoomService } from 'src/app/service/room.service';
 
 @Component({
   selector: 'app-user-index',
@@ -25,7 +25,11 @@ export class UserIndexComponent {
   //  --------------show adult, children, room card-------------
   hotel: any;
   location: any;
-  constructor(private hotelService: HotelService, private bookingservice: BookingService, private router: Router) {
+  constructor(
+    private hotelService: HotelService,
+    private roomService: RoomService,
+    private bookingservice: BookingService,
+    ) {
   }
 
   ngOnInit() {
@@ -77,7 +81,7 @@ export class UserIndexComponent {
 
   public getHotelId(value: any) {
     this.hotelId = value;
-    this.roomList = this.hotelService.getAllRoomByHotelId(this.hotelId);
+    this.roomList = this.roomService.getAllRoomByHotelId(this.hotelId);
     this.roomListCard = true;
     this.hotelListCard = false;
 

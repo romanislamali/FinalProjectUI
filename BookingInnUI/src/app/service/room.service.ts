@@ -12,4 +12,10 @@ export class RoomService {
 
   constructor(private httpClient : HttpClient) { }
 
+  getAllRoomByHotelId(hid:number): Observable<any>{
+
+    return this.httpClient.get<any>(this.baseUrl+"roombyhotelid/"+hid);
+
+   }
+
 }

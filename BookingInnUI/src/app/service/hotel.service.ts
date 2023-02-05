@@ -33,11 +33,7 @@ export class HotelService {
     return this.httpClient.get<Hotel>(this.baseUrl+"hotel/all");
    }
 
-   getAllRoomByHotelId(hid:number): Observable<any>{
 
-    return this.httpClient.get<any>(this.baseUrl+"roombyhotelid/"+hid);
-
-   }
 
 
   

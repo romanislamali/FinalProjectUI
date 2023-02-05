@@ -6,18 +6,12 @@ import { Injectable } from '@angular/core';
 })
 export class BookingService {
 
+  baseUrl:string = "http://localhost:8085/";
 
-  baseUrl: string = "http://localhost:8085";
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient : HttpClient) { }
 
   public createbooking(booking: any) {
-    return this.httpClient.post(`${this.baseUrl}/booksave`, booking);
+    return this.httpClient.post(`${this.baseUrl}booksave`, booking);
 
   }
-
-
-
-
-
-
 }
