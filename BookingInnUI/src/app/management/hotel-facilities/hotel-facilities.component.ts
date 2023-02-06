@@ -46,6 +46,14 @@ export class HotelFacilitiesComponent {
     );
   }
 
+  facId?:any;
+  facById?:any;
+  updateHotelFacilities(value:any){
+    this.facilitiesList= false;
+    this.addform =true;
+    this.facId= value;
+    this.facById = this.hotelService.updateFacilities(this.facId);
+  }
 
   clear(){
     this.hf.hfacname='';

@@ -17,7 +17,7 @@
             <td>{{hf.hfacdiscription}}</td>
             <td>{{hf.hfackeyword}}</td>               
             <td>
-                <button class="btn btn-success">Update</button>
+                <button class="btn btn-success"(click)="updateHotelFacilities(hf.hfacid)">Update</button>
                 <button class="btn btn-danger"(click)="deleteHotelFacilities(hf.hfacid)">Delete</button>        
             </td>
         </tr>
@@ -28,9 +28,9 @@
 <div *ngIf="addform" class="card" style="background-color: aliceblue">
     <button class="btn btn-info" (click)="ngOnInit()">See All</button>
     <form (ngSubmit)="hFacilitiesAdd()">
-        <input type="text" placeholder="Facilities" [(ngModel)]="hf.hfacname" name="first">
-        <input type="text" placeholder="Description" [(ngModel)]="hf.hfacdiscription" name="second">
-        <input type="text" placeholder="Keyword" [(ngModel)]="hf.hfackeyword" name="third">
+        <input type="text"  placeholder="Facilities" [(ngModel)]="hf.hfacname" name="first">
+        <input type="text"  placeholder="Description" [(ngModel)]="hf.hfacdiscription" name="second">
+        <input type="text"  placeholder="Keyword" [(ngModel)]="hf.hfackeyword" name="third">
         <button class="btn btn-info">Add</button>
     </form>
 </div>
