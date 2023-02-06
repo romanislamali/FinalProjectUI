@@ -19,9 +19,12 @@ import { LoginComponent } from './login/login.component';
 import { HotelComponent } from './management/hotel/hotel.component';
 import { RoomComponent } from './management/room/room.component';
 import { BookingComponent } from './management/booking/booking.component';
+<<<<<<< Updated upstream
 import { HotelFacilitiesComponent } from './management/hotel-facilities/hotel-facilities.component';
 import { InventoryComponent } from './management/inventory/inventory.component';
 import { UserComponent } from './management/user/user.component';
+=======
+>>>>>>> Stashed changes
 import { LocationComponent } from './management/location/location.component';
 
 
@@ -38,9 +41,12 @@ import { LocationComponent } from './management/location/location.component';
     HotelComponent,
     RoomComponent,
     BookingComponent,
+<<<<<<< Updated upstream
     HotelFacilitiesComponent,
     InventoryComponent,
     UserComponent,
+=======
+>>>>>>> Stashed changes
     LocationComponent
     
     

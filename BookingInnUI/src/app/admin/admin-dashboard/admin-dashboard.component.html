@@ -35,19 +35,62 @@
 <div>
   <div class="container" *ngIf="locationbtntab">
     <div class="main">
-      <a  (click)="showHotelList()">
+      <a  (click)="showLocationList()">
         <div class="gallery" style="text-align: center;">
           <h1 style="text-align:center;color: rgb(49, 78, 204);">Location</h1><br>
           <h3 style="text-align:center;">Total Location: 12</h3>
           <h3 style="text-align:center;">Newely Added: 3</h3><br>
           <button style="text-align:center;"><b>See All Location</b></button><br>
-          
         </div>
       </a>
     </div>
    
   </div>
   <!-- This is end of Hotel button tab -->
+
+
+  <div class="container" *ngIf="locationshow">
+    <div class="main">  
+       <app-location></app-location> 
+       <!-- <table class="table table-hover  bordered ">
+        <thead>
+            <tr>
+                <th>Country Name</th>
+                <th>Description</th>
+                <th>Lat</th>
+                <th>Long</th>
+                <th>Location Name</th>
+                <th>Photo</th>
+                <th>ZipCode</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let l of locationlist | async">
+                <td>{{l.lcountry}}</td>
+                <td>{{l.ldescription}}</td>
+                <td>{{l.llat}}</td>
+                <td>{{l.llong}}</td>
+                <td>{{l.lname}}</td>
+                <td>{{l.lphoto}}</td>
+                <td>{{l.lzipcode}}</td>
+                <td>
+                    <button class="btn btn-danger">Delete</button>
+                    <button class="btn btn-success">Update</button>
+                    <button class="btn btn-worning" (click)="updateStudent(student.id)">Update</button>
+                </td>
+            </tr>
+        </tbody>
+    </table> -->
+
+
+
+    </div>
+  </div>
+
+
+  
+
 
 
 
