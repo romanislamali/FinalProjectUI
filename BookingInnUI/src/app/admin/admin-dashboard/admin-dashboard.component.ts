@@ -10,20 +10,14 @@ import { LocationService } from 'src/app/service/location.service';
   styleUrls: ['./admin-dashboard.component.css']
 })
 export class AdminDashboardComponent implements OnInit {
-<<<<<<< Updated upstream
-  constructor(
-    private router: Router,
-    private hotelService: HotelService, 
-    private bookingService:BookingService,
-    // private hotelFacilities:HotelFacilitiesComponent
-    ) { }
-=======
+
+
   constructor(private router: Router,
              private hotelService: HotelService,
               private bookingService:BookingService,
               private locationService: LocationService
               ) { }
->>>>>>> Stashed changes
+
 
   locationbtntab: boolean = false;
   hotelbtntab: boolean = false;

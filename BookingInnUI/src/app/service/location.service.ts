@@ -1,10 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-<<<<<<< Updated upstream
 import { ApiResponse } from '../model/api.response';
-=======
->>>>>>> Stashed changes
+
 
 
 @Injectable({
@@ -23,17 +21,13 @@ export class LocationService {
     return this.httpClient.get<Location>(this.baseUrl+"/location/all");
    }
 
-<<<<<<< Updated upstream
+
    deleteLocationbyid(lid : number): Observable<ApiResponse>{
-    return this.httpClient.delete<ApiResponse>(this.baseUrl+"/location/delete/{id}");
+    return this.httpClient.delete<ApiResponse>(this.baseUrl+"/location/delete/{lid}");
    }
 
    
 
-=======
-   deleteLocationbyid(lid : number){
-    return this.httpClient.delete<Location>(this.baseUrl+"/location/delete/{id}");
-   }
 
->>>>>>> Stashed changes
+
 }
