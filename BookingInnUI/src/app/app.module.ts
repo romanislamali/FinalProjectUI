@@ -19,9 +19,12 @@ import { LoginComponent } from './login/login.component';
 import { HotelComponent } from './management/hotel/hotel.component';
 import { RoomComponent } from './management/room/room.component';
 import { BookingComponent } from './management/booking/booking.component';
+
 import { HotelFacilitiesComponent } from './management/hotel-facilities/hotel-facilities.component';
 import { InventoryComponent } from './management/inventory/inventory.component';
 import { UserComponent } from './management/user/user.component';
+
+import { LocationComponent } from './management/location/location.component';
 
 
 
@@ -40,6 +43,7 @@ import { UserComponent } from './management/user/user.component';
     HotelFacilitiesComponent,
     InventoryComponent,
     UserComponent,
+    LocationComponent
     
     
   ],

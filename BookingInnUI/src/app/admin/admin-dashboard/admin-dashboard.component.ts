@@ -3,18 +3,21 @@ import { Router } from '@angular/router';
 import { HotelFacilitiesComponent } from 'src/app/management/hotel-facilities/hotel-facilities.component';
 import { BookingService } from 'src/app/service/booking.service';
 import { HotelService } from 'src/app/service/hotel.service';
+import { LocationService } from 'src/app/service/location.service';
 @Component({
   selector: 'app-admin-dashboard',
   templateUrl: './admin-dashboard.component.html',
   styleUrls: ['./admin-dashboard.component.css']
 })
 export class AdminDashboardComponent implements OnInit {
-  constructor(
-    private router: Router,
-    private hotelService: HotelService, 
-    private bookingService:BookingService,
-    // private hotelFacilities:HotelFacilitiesComponent
-    ) { }
+
+
+  constructor(private router: Router,
+             private hotelService: HotelService,
+              private bookingService:BookingService,
+              private locationService: LocationService
+              ) { }
+
 
   locationbtntab: boolean = false;
   hotelbtntab: boolean = false;
@@ -95,5 +98,21 @@ booklists?: any;
     this.booklists = this.bookingService.getBookDtlByUser(this.userId);
     
   }
+
+
+
+  // -------------------------------
+
+
+  locationshow : boolean = false;
+  showLocationList(){
+    this.locationshow=true;  
+  }
+
+
+
+
+
+
 
 }
