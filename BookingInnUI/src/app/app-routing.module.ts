@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
 
+
 import { LoginComponent } from './login/login.component';
 import { HotelComponent } from './management/hotel/hotel.component';
 import { AvailableRoomComponent } from './user/available-room/available-room.component';
@@ -11,7 +12,8 @@ const routes: Routes = [
 {path:'availableroom/:id', component:AvailableRoomComponent},
 {path: 'admindash', component:AdminDashboardComponent},
 {path:'login', component:LoginComponent},
-{path:'allhotel', component:HotelComponent}
+{path:'allhotel', component:HotelComponent},
+
 
 
 ];
