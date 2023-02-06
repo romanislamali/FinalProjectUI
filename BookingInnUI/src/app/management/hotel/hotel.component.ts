@@ -11,13 +11,9 @@ export class HotelComponent {
 
   constructor(private router:Router, private hotelService: HotelService) { }
 
-  // hoteltabletab: boolean = false;
-
   hotelList?:any;
   showHotelList(){
     this.hotelList= this.hotelService.getAllHotel();
-
-    // this.hoteltabletab= true;
   }
 
 }

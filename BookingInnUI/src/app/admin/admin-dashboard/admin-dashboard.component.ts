@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { HotelFacilitiesComponent } from 'src/app/management/hotel-facilities/hotel-facilities.component';
 import { BookingService } from 'src/app/service/booking.service';
 import { HotelService } from 'src/app/service/hotel.service';
 @Component({
@@ -8,7 +9,12 @@ import { HotelService } from 'src/app/service/hotel.service';
   styleUrls: ['./admin-dashboard.component.css']
 })
 export class AdminDashboardComponent implements OnInit {
-  constructor(private router: Router, private hotelService: HotelService, private bookingService:BookingService) { }
+  constructor(
+    private router: Router,
+    private hotelService: HotelService, 
+    private bookingService:BookingService,
+    // private hotelFacilities:HotelFacilitiesComponent
+    ) { }
 
   locationbtntab: boolean = false;
   hotelbtntab: boolean = false;
@@ -17,6 +23,8 @@ export class AdminDashboardComponent implements OnInit {
   hoteltabletab: boolean = false;
   booklist:boolean=false;
   bookbtntab: boolean = false;
+  hotelList: boolean = false;
+  hotelFacilitieslist: boolean = false;
 
   ngOnInit(): void {
   }
@@ -29,15 +37,14 @@ export class AdminDashboardComponent implements OnInit {
     this.bookbtntab=false;
   }
 
-  hotelList?: any;
+  
   showHotelList() {
-    this.hotelList = this.hotelService.getAllHotel();
-    this.hotelbtntab = false;
-    this.roombtntab = false;
-    this.locationbtntab = false;
-    this.hoteltabletab = true;
-    this.booklist = false;
+    this.hotelList = true;
     
+  }
+  showHotelFacilitiesList() {
+    // this.hotelFacilities.showHFList();
+    this.hotelFacilitieslist = true;   
   }
 
   showRoom() {
@@ -67,8 +74,18 @@ export class AdminDashboardComponent implements OnInit {
     this.roombtntab = false;
     this.locationbtntab = false;
     this.hoteltabletab = false;
-
   }
+
+  showHotelFacilitiesBtn(){
+    this.hotelFacilitieslist = true;
+    this.bookbtntab = false;
+    this.hotelbtntab = false;
+    this.roombtntab = false;
+    this.locationbtntab = false;
+    this.hoteltabletab = false;
+  }
+
+
 
 public userId:number=1;
 booklists?: any;
