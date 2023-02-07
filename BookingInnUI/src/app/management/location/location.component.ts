@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ApiResponse } from 'src/app/model/api.response';
 import { Location } from 'src/app/model/location.model';
 import { BookingService } from 'src/app/service/booking.service';
 import { HotelService } from 'src/app/service/hotel.service';
@@ -13,8 +14,7 @@ import { LocationService } from 'src/app/service/location.service';
 export class LocationComponent {
 
   constructor(private router: Router,
-    private hotelService: HotelService,
-    private bookingService: BookingService,
+    private route:ActivatedRoute,
     private locationService: LocationService
   ) { }
   locationlist?: any;
@@ -53,20 +53,46 @@ export class LocationComponent {
 
    deleteLocation(lid:number){
     this.locationService.deleteLocationById(lid).subscribe(
-      data=>{alert('Location delete successfull!!');     
+      data=>{alert('Location delete successfull!!');  
+      this.listofLocation();
     },
      error =>alert('Something is wrong, Please try agin!!')
     );
    }
 
-  //  deleteHotelFacilities(id:number){
-  //   this.hotelService.deleteFacilities(id).subscribe(
-  //     data =>{alert('Facilities deleted!!');
-  //     this.ngOnInit();
-  //   },
-  //   error=>alert('Something is wrong!!')
+// -------------------------working on update---------------
+
+  //  id: number = 0;
+  //  locations: Location = new Location();
+  //  apiResponse: ApiResponse | undefined;
+
+  //  ngOnInit(): void {
+  //   this.locations=new Location();
+  //   this.id=this.route.snapshot.params['id'];
+  //   this.locationService.getLocationById(this.id).subscribe(
+
+  //     data=>{
+  //       console.log(data)
+  //       this.locations=data;
+  //     }
   //   );
+
+
   // }
+
   
+  // onupdateLocation(){
+  //   this.locationService.updateLocation(this.id,this.locations).subscribe(
+  //     data=>console.log(data),error=> console.error()
+  //   );
+  //   this.locations=new Location();
+  //   this.listofLocation();
+  // }
+
+
+  //  updateLocation(lid:number){  
+  //     this.router.navigate(['updatestudent/',lid]);
+  //    }
+ 
 
 }

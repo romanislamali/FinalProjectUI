@@ -25,6 +25,7 @@ import { InventoryComponent } from './management/inventory/inventory.component';
 import { UserComponent } from './management/user/user.component';
 
 import { LocationComponent } from './management/location/location.component';
+import { RoomtypeComponent } from './management/roomtype/roomtype.component';
 
 
 
@@ -43,7 +44,8 @@ import { LocationComponent } from './management/location/location.component';
     HotelFacilitiesComponent,
     InventoryComponent,
     UserComponent,
-    LocationComponent
+    LocationComponent,
+    RoomtypeComponent
     
     
   ],
