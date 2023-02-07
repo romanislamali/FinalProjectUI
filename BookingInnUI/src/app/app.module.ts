@@ -26,6 +26,8 @@ import { HfUpdateComponent } from './management/hotel-facilities/hf-update/hf-up
 import { SideberComponent } from './sideber/sideber.component';
 import { InvCreateComponent } from './management/inventory/inv-create/inv-create.component';
 import { InvUpdateComponent } from './management/inventory/inv-update/inv-update.component';
+import { RoomtypeComponent } from './management/roomtype/roomtype.component';
+
 
 
 
@@ -49,6 +51,8 @@ import { InvUpdateComponent } from './management/inventory/inv-update/inv-update
     SideberComponent,
     InvCreateComponent,
     InvUpdateComponent,
+    RoomtypeComponent
+
     
     
   ],

@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ApiResponse } from '../model/api.response';
+import { Location } from '../model/location.model';
 
 
 
@@ -23,11 +24,16 @@ export class LocationService {
 
 
    deleteLocationById(lid : number): Observable<ApiResponse>{
-    return this.httpClient.delete<ApiResponse>(this.baseUrl+"/location/delete/{lid}");
+    return this.httpClient.delete<ApiResponse>(this.baseUrl+"/locationdelete/"+lid);
    }
 
-   
+   updateLocation(lid:number , location: Location):Observable<ApiResponse>{
+    return this.httpClient.put<ApiResponse>(this.baseUrl+"/location/update/"+location.lid+"/",location);
+  }
 
+  // getLocationById(id:number):Observable<any>{
+  //   return this.httpClient.get(this.baseUrl+"/getlocationbyid/"+id);
+  // }
 
 
 }
