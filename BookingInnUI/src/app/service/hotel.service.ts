@@ -13,41 +13,44 @@ import { Room } from '../model/room.model';
 export class HotelService {
 
 
-  baseUrl:string = "http://localhost:8085/";
+  baseUrl: string = "http://localhost:8085/";
 
 
-  constructor(private httpClient : HttpClient) { }
+  constructor(private httpClient: HttpClient) { }
 
 
-  getAllHotelByLocation(lid:number):Observable<Hotel>{
+  getAllHotelByLocation(lid: number): Observable<Hotel> {
 
-    return this.httpClient.get<Hotel>(this.baseUrl+"hotelbylocationid/"+lid);
-
-   }
-
-   
-   getAllLocation():Observable<Location>{
-    return this.httpClient.get<Location>(this.baseUrl+"location/all");
-   }
-
-   getAllHotel():Observable<Hotel>{
-    return this.httpClient.get<Hotel>(this.baseUrl+"hotel/all");
-   }
-
-  createFacilities(facilities: Hotelfacilities):Observable<ApiResponse>{
-    return this.httpClient.post<ApiResponse>(this.baseUrl+"hotelfacilities/add", facilities);
+    return this.httpClient.get<Hotel>(this.baseUrl + "hotelbylocationid/" + lid);
   }
 
-  getAllHotelFacilities():Observable<Hotelfacilities>{
-    return this.httpClient.get<Hotelfacilities>(this.baseUrl+"hotelfacilities/all");
+  getAllLocation(): Observable<Location> {
+    return this.httpClient.get<Location>(this.baseUrl + "location/all");
   }
 
-  deleteFacilities(id: number): Observable<ApiResponse>{
-    return this.httpClient.delete<ApiResponse>(this.baseUrl+"hotelfacilities/delete/"+id);
+  getAllHotel(): Observable<Hotel> {
+    return this.httpClient.get<Hotel>(this.baseUrl + "hotel/all");
   }
 
-  // updateFacilities(id: number): Observable<ApiResponse>{
-  //   return this.httpClient.delete<ApiResponse>(this.baseUrl+"hotelfacilities/update"+id);
-  // }
-  
+  createFacilities(facilities: Hotelfacilities): Observable<ApiResponse> {
+    return this.httpClient.post<ApiResponse>(this.baseUrl + "hotelfacilities/add", facilities);
+  }
+
+  getAllHotelFacilities(): Observable<Hotelfacilities> {
+    return this.httpClient.get<Hotelfacilities>(this.baseUrl + "hotelfacilities/all");
+  }
+
+  deleteFacilities(id: number): Observable<ApiResponse> {
+    return this.httpClient.delete<ApiResponse>(this.baseUrl + "hotelfacilities/delete/" + id);
+  }
+
+  updateHFacilities(id: number, hf: Hotelfacilities): Observable<ApiResponse> {
+    return this.httpClient.put<ApiResponse>(this.baseUrl + "hotelfacilities/update/" + hf.hfacid + "/", hf);
+  }
+
+  getFacilitiesByID(id: number): Observable<any> {
+    return this.httpClient.get(this.baseUrl + id);
+  }
+
+
 }

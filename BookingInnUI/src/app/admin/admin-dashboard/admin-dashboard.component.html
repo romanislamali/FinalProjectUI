@@ -1,11 +1,19 @@
 <!-- this is admin dashboard sideber start point -->
-<nav id="sidebarMenu" *ngIf="sidebertab" class="collapse d-lg-block sidebar collapse"
+<nav id="sidebarMenu"  class="collapse d-lg-block sidebar collapse"
   style="margin-top: 80px; background-color: lightseagreen;">
   <div class="position-sticky">
     <div class="list-group list-group-flush mx-3 mt-4">
-      <img src="assets/images/home/banner.jpg" height="20" width="" alt="" loading="" class="center" /> <br>
       <button class="btn btn-outline-light" (click)="showHotel()">
         <h1>Hotel</h1>
+      </button>
+      <button class="btn btn-outline-light" (click)="showHotelFacilities()">
+        <h1>Hotel Facilities</h1>
+      </button>
+      <button class="btn btn-outline-light" (click)="showHotelFacilities()">
+        <h1>Inventory</h1>
+      </button>
+      <button class="btn btn-outline-light" (click)="showHotelFacilities()">
+        <h1>Hotel Facilities</h1>
       </button>
       <button class="btn btn-outline-light" (click)="showRoom()">
         <h1>Room</h1>
@@ -26,13 +34,13 @@
   </div>
 </nav>
 <div >
-  <img src="assets/images/admin/admin.jpg" height="20" width="" alt="" loading="" class="center" /> <br>
+  <!-- <img src="assets/images/admin/admin.jpg" height="10px" width="" alt="" loading="" class="center" /> <br> -->
 </div>
 <!-- this is admin dashboard sideber end point -->
 
 
 <!-- This is start Hotel button tab -->
-<div>
+<!-- <div>
   <div class="container" *ngIf="locationbtntab">
     <div class="main">
       <a  (click)="showLocationList()">
@@ -43,15 +51,15 @@
           <button style="text-align:center;"><b>See All Location</b></button><br>
         </div>
       </a>
-    </div>
+    </div> -->
    
-  </div>
+  <!-- </div> -->
   <!-- This is end of Hotel button tab -->
 
 
-  <div class="container" *ngIf="locationshow">
+  <!-- <div class="container" *ngIf="locationshow">
     <div class="main">  
-       <app-location></app-location> 
+       <app-location></app-location>  -->
        <!-- <table class="table table-hover  bordered ">
         <thead>
             <tr>
@@ -85,8 +93,8 @@
 
 
 
-    </div>
-  </div>
+    <!-- </div>
+  </div> -->
 
 
   
@@ -95,7 +103,7 @@
 
 
   <!-- This is start Hotel button tab -->
-  <div class="container" *ngIf="hotelbtntab">
+  <!-- <div class="container" *ngIf="hotelbtntab">
     <div class="main">
       <a (click)="showHotelList()">
         <div class="gallery" style="text-align: center;">
@@ -114,12 +122,12 @@
         </div>
       </a>
     </div>
-  </div>
+  </div> -->
   <!-- This is end of Hotel button tab -->
 
 
   <!-- This is start of Room button tab -->
-  <div class="container" *ngIf="roombtntab">
+  <!-- <div class="container" *ngIf="roombtntab">
     <div class="main">
       <a href="">
         <div class="gallery" style="text-align: center;">
@@ -147,10 +155,10 @@
       </a>
     </div>
   </div>
-</div>
+</div> -->
 
 
-<div class="container" *ngIf="bookbtntab">
+<!-- <div class="container" *ngIf="bookbtntab">
   <div class="main">
     <a (click)="showBookList()">
       <div class="gallery" style="text-align: center;">
@@ -169,26 +177,24 @@
       </div>
     </a>
   </div>
-</div>
+</div> -->
 
 <!-- Routing to booking component -->
-<div class="container" *ngIf="booklist">
+<!-- <div class="container" *ngIf="blist">
   <div class="main">  
      <app-booking></app-booking> 
   </div>
-</div>
+</div> -->
 
 <!-- Routing to hotel component -->
-<div class="container" *ngIf="hotelList">
-  <div class="main">  
+<!-- <div class="container">
+  <div class="main" *ngIf="hlist">  
      <app-hotel></app-hotel> 
   </div>
-</div>
+</div> -->
 
 <!-- Routing to hotel-facilities component -->
-<div class="container" *ngIf="hotelFacilitieslist">
-  <div class="main">  
-     <app-hotel-facilities></app-hotel-facilities> 
-  </div>
+<div *ngIf="hflist">  
+     <app-hf-list></app-hf-list>
 </div>
 

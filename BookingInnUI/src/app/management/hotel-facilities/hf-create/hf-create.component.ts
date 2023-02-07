@@ -1,0 +1,33 @@
+import { HttpClient } from '@angular/common/http';
+import { Component, OnInit} from '@angular/core';
+import { Router } from '@angular/router';
+import { Hotelfacilities } from 'src/app/model/hotelfacilities.model';
+import { HotelService } from 'src/app/service/hotel.service';
+
+@Component({
+  selector: 'app-hf-create',
+  templateUrl: './hf-create.component.html',
+  styleUrls: ['./hf-create.component.css']
+})
+export class HfCreateComponent implements OnInit{
+  hf: Hotelfacilities = new Hotelfacilities();
+  submitted=false;
+
+  constructor(
+    private hotelService : HotelService,
+    private httpClient:HttpClient,
+    private router:Router) { }
+
+  ngOnInit(): void {
+  }
+
+  hFacilitiesAdd() {
+    this.submitted = true;
+    this.hotelService.createFacilities(this.hf).subscribe(
+      data => alert('Hotel Facilities added successfull!!'),
+       error => alert('Something is wrong, please try again!!')    
+    );  
+   
+  }
+
+}

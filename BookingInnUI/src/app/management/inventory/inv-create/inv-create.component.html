@@ -1,0 +1,15 @@
+<app-sideber></app-sideber>
+<div class="container">
+    <div class="row"  style="margin-top: 100px">
+        <div class="col-2">
+        </div>
+        <div class="card col-10" style="background-color: antiquewhite">
+            <button class="btn btn-info" routerLink="/allfacilities">See All</button>
+            <form (ngSubmit)="inventoryAdd()">
+                <input type="text" class="form-control" name="istartDate" placeholder="Start Date" [(ngModel)]="Inventory.istartDate" >
+                <input type="text" class="form-control" name="iendDate" placeholder="End Date" [(ngModel)]="Inventory.iendDate">
+                <button class="btn btn-info">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
