@@ -51,30 +51,22 @@ export class LocationComponent {
 
    }
 
-
-
-   deleteStudent(lid:number){
-
-    // this.studentService.deleteStudent(id).subscribe(
-    //   data=>{console.log(data);
-    //   this.students=this.studentService.getAllStudent;
-     
-    // },
-    // error=> console.error(error)
-    
-    // );
-
-    this.locationService.deleteLocationbyid(lid).subscribe(
-      data=>{console.log(data);
-      this.locationlist = this.locationService.getAllLocation();},
-      error=>console.error(error)
-      
+   deleteLocation(lid:number){
+    this.locationService.deleteLocationById(lid).subscribe(
+      data=>{alert('Location delete successfull!!');     
+    },
+     error =>alert('Something is wrong, Please try agin!!')
     );
-
-
    }
 
-
+  //  deleteHotelFacilities(id:number){
+  //   this.hotelService.deleteFacilities(id).subscribe(
+  //     data =>{alert('Facilities deleted!!');
+  //     this.ngOnInit();
+  //   },
+  //   error=>alert('Something is wrong!!')
+  //   );
+  // }
   
 
 }

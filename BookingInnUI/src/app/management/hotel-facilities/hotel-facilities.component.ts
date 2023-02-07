@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Hotelfacilities } from 'src/app/model/hotelfacilities.model';
 import { HotelService } from 'src/app/service/hotel.service';
@@ -10,8 +11,17 @@ import { HotelService } from 'src/app/service/hotel.service';
   styleUrls: ['./hotel-facilities.component.css']
 })
 export class HotelFacilitiesComponent {
-  constructor(private hotelService : HotelService){}
-    
+
+  // form:UntypedFormGroup;
+  submited = false;
+  isEdit =false;
+
+  constructor(fb: UntypedFormBuilder ,private hotelService : HotelService){}
+  
+    // this.form= fb.group({
+
+    // })
+
     facilitiesList: boolean = false;
     addform: boolean = false;
 
@@ -40,19 +50,20 @@ export class HotelFacilitiesComponent {
   deleteHotelFacilities(id:number){
     this.hotelService.deleteFacilities(id).subscribe(
       data =>{alert('Facilities deleted!!');
-      this.hotelService.getAllHotelFacilities();
+      this.ngOnInit();
     },
     error=>alert('Something is wrong!!')
     );
   }
+  updateHotelFacilities(Hotelfacilities:any){
+      // this.form.setValue({
+      //   id:Hotelfacilities.hfacid,
+      //   name:Hotelfacilities.hfacname,
+      //   description:Hotelfacilities.hfacdiscription,
+      //   keyword:Hotelfacilities.hfackeyword,
+      // });
 
-  facId?:any;
-  facById?:any;
-  updateHotelFacilities(value:any){
-    this.facilitiesList= false;
-    this.addform =true;
-    this.facId= value;
-    this.facById = this.hotelService.updateFacilities(this.facId);
+      this.isEdit=true;
   }
 
   clear(){

@@ -22,7 +22,7 @@ export class LocationService {
    }
 
 
-   deleteLocationbyid(lid : number): Observable<ApiResponse>{
+   deleteLocationById(lid : number): Observable<ApiResponse>{
     return this.httpClient.delete<ApiResponse>(this.baseUrl+"/location/delete/{lid}");
    }
 

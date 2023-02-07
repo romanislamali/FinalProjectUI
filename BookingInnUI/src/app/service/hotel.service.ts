@@ -43,11 +43,11 @@ export class HotelService {
   }
 
   deleteFacilities(id: number): Observable<ApiResponse>{
-    return this.httpClient.delete<ApiResponse>(this.baseUrl+"hotelfacilities/delete"+id);
+    return this.httpClient.delete<ApiResponse>(this.baseUrl+"hotelfacilities/delete/"+id);
   }
 
-  updateFacilities(id: number): Observable<ApiResponse>{
-    return this.httpClient.delete<ApiResponse>(this.baseUrl+"hotelfacilities/update"+id);
-  }
+  // updateFacilities(id: number): Observable<ApiResponse>{
+  //   return this.httpClient.delete<ApiResponse>(this.baseUrl+"hotelfacilities/update"+id);
+  // }
   
 }
