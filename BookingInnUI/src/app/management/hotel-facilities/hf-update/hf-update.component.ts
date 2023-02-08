@@ -10,10 +10,10 @@ import { HotelService } from 'src/app/service/hotel.service';
   styleUrls: ['./hf-update.component.css']
 })
 export class HfUpdateComponent implements OnInit{
-  hfacid: number = 0;
-  hf: Hotelfacilities = new Hotelfacilities();
-  apiResponse: ApiResponse | undefined;
 
+
+  id: number = 0;
+  hf: Hotelfacilities = new Hotelfacilities();
 
   constructor(private hotelService: HotelService,
     private route: ActivatedRoute,
@@ -21,27 +21,18 @@ export class HfUpdateComponent implements OnInit{
   ) { }
 
   ngOnInit(): void {
-    this.hf = new Hotelfacilities();
-    this.hfacid = this.route.snapshot.params['hfacid'];
-    this.hotelService.getFacilitiesByID(this.hfacid).subscribe(
+    this.id = this.route.snapshot.params['id'];
+    this.hotelService.getFacilitiesById(this.id).subscribe(
       data => {
-        console.log(data)
         this.hf = data;
       }
     );
-
   }
 
   updateFacilities(){
-    this.hotelService.updateHFacilities(this.hfacid, this.hf).subscribe(
-      data => console.log(data), error => console.error());
-    this.hf = new Hotelfacilities();
-    // this.router.navigate(['/allstudent']);
-    // setTimeout(() => {
-    //   setTimeout(() => {
-    //     this.router.navigate(["/allfacilities"]);
-    //   });
-    // }, 1000);
+    this.hotelService.updateHFacilities(this.id, this.hf).subscribe(
+      data => alert('Hotel facilities update successfull!!'),
+       error => alert('Something is wrong, please try again!!'));
+    this.router.navigate(['/allfacilities']);
   }
-
 }

@@ -22,6 +22,7 @@ const routes: Routes = [
 {path:'createfacilities', component:HfCreateComponent},
 {path:'allfacilities', component:HfListComponent},
 {path:'updatefacilities', component:HfUpdateComponent},
+{path:'updatefacilities/:id', component:HfUpdateComponent},
 {path:'createinventory', component:InvCreateComponent},
 {path:'allinventory', component:InvListComponent},
 {path:'updateinventory', component:InvUpdateComponent},

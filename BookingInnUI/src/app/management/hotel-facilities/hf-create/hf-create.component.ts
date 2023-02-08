@@ -1,6 +1,4 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit} from '@angular/core';
-import { Router } from '@angular/router';
 import { Hotelfacilities } from 'src/app/model/hotelfacilities.model';
 import { HotelService } from 'src/app/service/hotel.service';
 
@@ -14,9 +12,7 @@ export class HfCreateComponent implements OnInit{
   submitted=false;
 
   constructor(
-    private hotelService : HotelService,
-    private httpClient:HttpClient,
-    private router:Router) { }
+    private hotelService : HotelService) { }
 
   ngOnInit(): void {
   }

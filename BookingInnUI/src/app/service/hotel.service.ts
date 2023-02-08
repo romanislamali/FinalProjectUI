@@ -48,8 +48,8 @@ export class HotelService {
     return this.httpClient.put<ApiResponse>(this.baseUrl + "hotelfacilities/update/" + hf.hfacid + "/", hf);
   }
 
-  getFacilitiesByID(id: number): Observable<any> {
-    return this.httpClient.get(this.baseUrl + id);
+  getFacilitiesById(id: number): Observable<any> {
+    return this.httpClient.get(this.baseUrl+"hotelfacilities/"+id);
   }
 
 
