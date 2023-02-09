@@ -283,7 +283,7 @@
                             <a href="#">
                                 <p class="link-info">Show on map</p>
                             </a><br>
-                            <a class="btn btn-outline-primary" (click)="getHotelId(h.hid)">Available Room</a>
+                            <a class="btn btn-outline-primary" (click)="getAvailableRoomByHotelId(h.hid)">Available Room</a>
                         </div>
                         <div class="col-3">
                             <p><span>Average Price : $</span>{{h.haverageprice}}</p>
@@ -302,7 +302,7 @@
             <div class="col-md-12 mt-2 border p-1 border">
                 <mat-card class="p-4">
                     <div class="row" style="background-color: rgb(203, 215, 233)">
-                        <div class="col-12 ml-1" *ngFor="let r of roomList | async">
+                        <div class="col-12 ml-1" *ngFor="let r of roomList">
                             <h1><b>{{r.hotel.hname}}</b></h1>
                             <span>
                                 <a><span class="show_map_icon"></span></a>
@@ -361,12 +361,13 @@
                             </div>
                         </div><br>
                     </div><br>
-                    <div class="row" *ngFor="let r of roomList | async" style="background-color: rgb(40, 176, 203)">
+                    <div class="row" *ngFor="let r of roomList" style="background-color: rgb(40, 176, 203)">
                         <div class="text-center " style="background-color: burlywood;"><h1>
                             {{r.roomtype.rtName}}
                         </h1></div>
 
                         <div class="col-2" style="background-color: floralwhite">
+                            <li>Room Id: {{r.rid}}</li>
                             <li>Size: {{r.rroomSize}}</li>
                             <li>Bed: {{r.rbedNumber}}</li>
                             <li>{{r.roomtype.rtDescription}}</li>

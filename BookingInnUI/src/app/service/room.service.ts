@@ -19,8 +19,10 @@ export class RoomService {
 
    }
 
-  //  blockBookedRoom(id: number): Observable<ApiResponse> {
-  //   return this.httpClient.post<ApiResponse>(this.baseUrl +"room/status/"+id);
-  // }
+  //  PatchMapping
+
+   blockBookedRoom(id: number) {
+    return this.httpClient.patch(this.baseUrl+"room/status/"+id, id);
+  }
 
 }

@@ -77,11 +77,16 @@ export class UserIndexComponent {
 
 
   hotelId?: any;
-  roomList?: any;
+  roomList: any[]=[];
 
-  public getHotelId(value: any) {
+  public getAvailableRoomByHotelId(value: any) {
     this.hotelId = value;
-    this.roomList = this.roomService.getAllRoomByHotelId(this.hotelId);
+    this.roomService.getAllRoomByHotelId(this.hotelId).subscribe(
+      data=>{
+        this.roomList=data
+        this.roomList=this.roomList.filter(rl=>rl.rstatus!=1)
+      }
+    )
     this.roomListCard = true;
     this.hotelListCard = false;
 
@@ -101,17 +106,20 @@ export class UserIndexComponent {
     this.booking.rid = this.roomId;
     this.booking.uid = this.userid;
 
-    // this.roomService.blockBookedRoom(this.roomId);
+
     this.bookingservice.createbooking(this.booking).subscribe(
       (data) => {
-        console.log(data);
         alert('Booking successfully');
       },
       (error) => {
-        console.log(error);
         alert('Something wrong, try again ');
       }
     )
+
+    this.roomService.blockBookedRoom(this.roomId).subscribe(
+      data=>console.log(data)
+    )
+    // console.log(this.roomId)
     
   }
 
