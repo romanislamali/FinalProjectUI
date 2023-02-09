@@ -101,7 +101,7 @@ export class UserIndexComponent {
     this.booking.rid = this.roomId;
     this.booking.uid = this.userid;
 
-
+    // this.roomService.blockBookedRoom(this.roomId);
     this.bookingservice.createbooking(this.booking).subscribe(
       (data) => {
         console.log(data);
@@ -112,6 +112,7 @@ export class UserIndexComponent {
         alert('Something wrong, try again ');
       }
     )
+    
   }
 
   sendAllIdToLoginTs() {

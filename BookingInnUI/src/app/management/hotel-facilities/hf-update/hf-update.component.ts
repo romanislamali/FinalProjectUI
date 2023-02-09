@@ -22,6 +22,7 @@ export class HfUpdateComponent implements OnInit{
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
+    // this.hotelService.getAllHotelFacilities();
     this.hotelService.getFacilitiesById(this.id).subscribe(
       data => {
         this.hf = data;
@@ -33,6 +34,8 @@ export class HfUpdateComponent implements OnInit{
     this.hotelService.updateHFacilities(this.id, this.hf).subscribe(
       data => alert('Hotel facilities update successfull!!'),
        error => alert('Something is wrong, please try again!!'));
+      //  this.ngOnInit();
     this.router.navigate(['/allfacilities']);
+    
   }
 }
