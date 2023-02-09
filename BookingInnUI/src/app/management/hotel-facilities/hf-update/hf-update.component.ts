@@ -34,5 +34,6 @@ export class HfUpdateComponent implements OnInit{
       data => alert('Hotel facilities update successfull!!'),
        error => alert('Something is wrong, please try again!!'));
     this.router.navigate(['/allfacilities']);
+    
   }
 }
