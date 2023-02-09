@@ -167,249 +167,305 @@
 
 <!--about-us end -->
 
-    <section>
-        <div class="row">
-            <div class="col-md-8 offset-md-2 border p-1 bg-success " style="margin-top: 100px;">
-                <mat-card class="p-4" style="background-color: lightseagreen">
-                    <marquee behavior="" direction=""><h1 style="color:aliceblue">CHOOSE YOUR FAVOURITE HOTEL</h1></marquee>
-                    <form (ngSubmit)="onSubmit()">
-                        <div class="row form-control">
-                            <div class="col-3">
-                                <p>Locaction choose</p>
-                                <select class="col-12 " [(ngModel)]="locationId" (ngModelChange)="getLid($event)" name="sdf">
-                                    <option *ngFor="let l of location | async" name="lid" [ngValue]="l.lid">
-                                        {{l.lname}}</option>
-                                </select>
-                            </div>
-                            <div class="col-2 ">
-                                <p>Check in</p>
-                                <input type="date">
-                            </div>
-                            <div style="width: auto;">
-                            </div>
-                            <div class="col-2 ">
-                                <p class="mr-1">Check Out</p>
-                                <input class="mr-1" type="date">
-                            </div>
-                            <div style="width: auto;">
-                            </div>
+<section>
+    <div class="row">
+        <div class="col-md-8 offset-md-2 border p-1 " style="margin-top: 100px;">
+            <!-- <mat-card class="p-4" style="background-color: lightseagreen">
+                <marquee behavior="" direction="">
+                    <h1 style="color:aliceblue">CHOOSE YOUR FAVOURITE HOTEL</h1>
+                </marquee>
+                <form (ngSubmit)="onSubmit()">
+                    <div class="row form-control">
+                        <div class="col-3">
+                            <p>Locaction choose</p>
+                            <select class="col-12 " [(ngModel)]="locationId" (ngModelChange)="getLid($event)"
+                                name="sdf">
+                                <option *ngFor="let l of location | async" name="lid" [ngValue]="l.lid">
+                                    {{l.lname}}</option>
+                            </select>
+                        </div>
+                        <div class="col-2 ">
+                            <p>Check in</p>
+                            <input type="date">
+                        </div>
+                        <div style="width: auto;">
+                        </div>
+                        <div class="col-2 ">
+                            <p class="mr-1">Check Out</p>
+                            <input class="mr-1" type="date">
+                        </div>
+                        <div style="width: auto;">
+                        </div>
 
-                            <div class="col-4 mt-2  ">
-                                <mat-card>
-                                    <a class="mr-1 btn btn-link" style="text-decoration: none" (click)="onclick()">
-                                        <span>{{valueadult}}</span> <span> : Adult ; </span>
-                                        <span>{{valuechildren}}</span> <span> : Children ; </span>
-                                        <span>{{valueroom}}</span> <span> : Room need ;</span>
-                                    </a>
-                                </mat-card>
+                        <div class="col-4 mt-2  ">
+                            <mat-card>
+                                <a class="mr-1 btn btn-link" style="text-decoration: none" (click)="onclick()">
+                                    <span>{{valueadult}}</span> <span> : Adult ; </span>
+                                    <span>{{valuechildren}}</span> <span> : Children ; </span>
+                                    <span>{{valueroom}}</span> <span> : Room need ;</span>
+                                </a>
+                            </mat-card>
+                        </div>
+                    </div>
+                    <div class="col-12" style="text-align: right;">
+                        <p></p>
+                        <p></p>
+                        <button class="btn btn-primary">Search</button>
+                    </div>
+                </form>
+            </mat-card> -->
+        </div>
+    </div>
+
+    <!-- fjlkdsjaflkjdsfakl -->
+    <div class="container">
+        <div class="row">
+            <div class="card col-md-10 offset-md-1 border" style="background-color: lightseagreen">
+
+                <div class="row text-center">
+                    <marquee behavior="" direction="">
+                        <h1 style="color:aliceblue">CHOOSE YOUR FAVOURITE HOTEL</h1>
+                    </marquee>
+                    <form (ngSubmit)="onSubmit()" class=" mt-5 mb-5">
+                        <div class="col-md-7">
+                            <div class="row">
+                                <div class="col-md-6 mb-5">
+                                    <h1>Locaction choose</h1>
+                                    <select class="col-12" [(ngModel)]="locationId" (ngModelChange)="getLid($event)"
+                                        name="sdf">
+                                        <option *ngFor="let l of location | async" name="lid" [ngValue]="l.lid">
+                                            {{l.lname}}</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <h1>Check In--Check Out</h1>
+                                    <input type="date" class="col-12">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="d-grid gap-2 col-4 mx-auto mt-5">
+                                    <button class="btn btn-outline-secondary">
+                                        <h1>Search</h1>
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-12" style="text-align: right;">
-                            <p></p>
-                            <p></p>
-                            <button class="btn btn-primary">Search</button>
+                        <div class="col-md-5 mb-5">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h1>Select Room & Person</h1>
+                                    <a class="mr-1 btn btn-link bg-white" style="text-decoration: none"
+                                        (click)="onclick()">
+                                        <p>Adult : {{valueadult}}</p>
+                                        <p>Children : {{valuechildren}}</p>
+                                        <p>Room need : {{valueroom}}</p>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </form>
-                </mat-card>
+                </div>
             </div>
         </div>
+    </div>
 
+    <!-- ****************Person selection tab start************** -->
 
-        <!-- ****************Person selection tab start************** -->
-
-        <div class="row">
-            <div *ngIf="persontab" class="col-6 offset-md-3 mt-5" style="background-color:rgb(252, 255, 255);">
-                <mat-card class="p-4">
-                    <div class="row border text-dark bg-opacity-10 p-1">
-                        <div class="col-4">
-                            <h4> Adult</h4>
-                        </div>
-                        <button class=" col-2 btn btn-outline-primary  text-center"
-                            [ngClass]="{disabled : valueadult==9 }" (click)="adultcount('add')">+</button>
-                        <div class="col-2 text-center">
-                            <h4> {{valueadult}}</h4>
-                        </div>
-                        <button class="col-2 btn btn-outline-primary  text-center "
-                            [ngClass]="{disabled : valueadult==1 }" (click)="adultcount('substract')">-</button>
+    <div class="row">
+        <div *ngIf="persontab" class="col-6 offset-md-3 mt-5" style="background-color:rgb(252, 255, 255);">
+            <mat-card class="p-4">
+                <div class="row border text-dark bg-opacity-10 p-1">
+                    <div class="col-4">
+                        <h4> Adult</h4>
                     </div>
-
-                    <div class="row border text-dark bg-opacity-10 p-1">
-                        <div class="col-4">
-                            <h4> Children</h4>
-                        </div>
-                        <button class=" col-2 btn btn-outline-primary  text-center"
-                            [ngClass]="{disabled : valuechildren==9 }" (click)="childrencount('add')">+</button>
-                        <div class="col-2 text-center">
-                            <h4> {{valuechildren}}</h4>
-                        </div>
-                        <button class="col-2 btn btn-outline-primary  text-center "
-                            [ngClass]="{disabled : valuechildren==0 }" (click)="childrencount('substract')">-</button>
+                    <button class=" col-2 btn btn-outline-primary  text-center" [ngClass]="{disabled : valueadult==9 }"
+                        (click)="adultcount('add')">+</button>
+                    <div class="col-2 text-center">
+                        <h4> {{valueadult}}</h4>
                     </div>
+                    <button class="col-2 btn btn-outline-primary  text-center " [ngClass]="{disabled : valueadult==1 }"
+                        (click)="adultcount('substract')">-</button>
+                </div>
 
-                    <div class="row border text-dark bg-opacity-10 p-1 ">
-                        <div class="col-4">
-                            <h4> Room</h4>
-                        </div>
-                        <button class=" col-2 btn btn-outline-primary  text-center"
-                            [ngClass]="{disabled : valueroom==9 }" (click)="roomcount('add')">+</button>
-                        <div class="col-2 text-center">
-                            <h4> {{valueroom}}</h4>
-                        </div>
-                        <button class="col-2 btn btn-outline-primary  text-center "
-                            [ngClass]="{disabled : valueroom==1 }" (click)="roomcount('substract')">-</button>
+                <div class="row border text-dark bg-opacity-10 p-1">
+                    <div class="col-4">
+                        <h4> Children</h4>
                     </div>
-                </mat-card>
-            </div>
+                    <button class=" col-2 btn btn-outline-primary  text-center"
+                        [ngClass]="{disabled : valuechildren==9 }" (click)="childrencount('add')">+</button>
+                    <div class="col-2 text-center">
+                        <h4> {{valuechildren}}</h4>
+                    </div>
+                    <button class="col-2 btn btn-outline-primary  text-center "
+                        [ngClass]="{disabled : valuechildren==0 }" (click)="childrencount('substract')">-</button>
+                </div>
 
+                <div class="row border text-dark bg-opacity-10 p-1 ">
+                    <div class="col-4">
+                        <h4> Room</h4>
+                    </div>
+                    <button class=" col-2 btn btn-outline-primary  text-center" [ngClass]="{disabled : valueroom==9 }"
+                        (click)="roomcount('add')">+</button>
+                    <div class="col-2 text-center">
+                        <h4> {{valueroom}}</h4>
+                    </div>
+                    <button class="col-2 btn btn-outline-primary  text-center " [ngClass]="{disabled : valueroom==1 }"
+                        (click)="roomcount('substract')">-</button>
+                </div>
+            </mat-card>
         </div>
 
-        <!-- ****************Person selection tab start************** -->
+    </div>
 
-        <!-- ***************Hotel list card start******************** -->
+    <!-- ****************Person selection tab start************** -->
 
-        <div class="container mt-5" style="margin: top 200px;" *ngIf="hotelListCard">
-            <div class="col-md-12 mt-2 border p-1 border" *ngFor="let h of hotelList | async">
-                <mat-card class="p-4" style="background-color: lightyellow">
+    <!-- ***************Hotel list card start******************** -->
+
+    <div class="container mt-5" style="margin: top 200px;" *ngIf="hotelListCard">
+        <div class="col-md-12 mt-2 border p-1 border" *ngFor="let h of hotelList | async">
+            <mat-card class="p-4" style="background-color: lightyellow">
+                <div class="row">
+                    <div class="col-3">
+                        <img src="assets/images/hotel/h2.jpg" alt="samima" height="250" width="250">
+                    </div>
+                    <div class="col-6 ml-1">
+                        <h1>{{h.hname}}</h1>
+                        <p>{{h.hfacname}}</p>
+                        <a href="#">
+                            <p>{{h.haddress}}</p>
+                        </a><br>
+                        <a href="#">
+                            <p class="link-info">Show on map</p>
+                        </a><br>
+                        <a class="btn btn-outline-primary" (click)="getAvailableRoomByHotelId(h.hid)">Available Room</a>
+                    </div>
+                    <div class="col-3">
+                        <p><span>Average Price : $</span>{{h.haverageprice}}</p>
+                        <p><span>Rating : </span>{{h.hrating}}*</p>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+    <!-- ***************Hotel list card end******************** -->
+
+
+    <!-- **************************** Room list card start ************************* -->
+
+    <div class="container mt-5" *ngIf="roomListCard">
+        <div class="col-md-12 mt-2 border p-1 border">
+            <mat-card class="p-4">
+                <div class="row" style="background-color: rgb(203, 215, 233)">
+                    <div class="col-12 ml-1" *ngFor="let r of roomList">
+                        <h1><b>{{r.hotel.hname}}</b></h1>
+                        <span>
+                            <a><span class="show_map_icon"></span></a>
+                            {{r.hotel.haddress}}
+                            <a href="#">
+                                <p class="link-success">Show map</p>
+                            </a>
+                        </span>
+                    </div>
                     <div class="row">
-                        <div class="col-3">
-                            <img src="assets/images/hotel/h2.jpg" alt="samima" height="250" width="250">
+                        <div class="col-4">
+                            <div class="row">
+                                <img src="assets/images/hotel/h1.jpg" alt="samima" height="100" width="200">
+                            </div><br>
+                            <div class="row">
+                                <img src="assets/images/hotel/h3.jpg" alt="samima" height="100" width="200">
+                            </div><br>
                         </div>
-                        <div class="col-6 ml-1">
-                            <h1>{{h.hname}}</h1>
-                            <p>{{h.hfacname}}</p>
-                            <a href="#">
-                                <p>{{h.haddress}}</p>
-                            </a><br>
-                            <a href="#">
-                                <p class="link-info">Show on map</p>
-                            </a><br>
-                            <a class="btn btn-outline-primary" (click)="getAvailableRoomByHotelId(h.hid)">Available Room</a>
-                        </div>
-                        <div class="col-3">
-                            <p><span>Average Price : $</span>{{h.haverageprice}}</p>
-                            <p><span>Rating : </span>{{h.hrating}}*</p>
+                        <div class="col-8">
+                            <img src="assets/images/hotel/h2.jpg" alt="samima" height="200" width="760">
                         </div>
                     </div>
-                </mat-card>
-            </div>
-        </div>
-        <!-- ***************Hotel list card end******************** -->
+                </div><br>
 
+                <div class="row" style="background-color: rgb(40, 176, 203)">
+                    <div class="col-2 card rc">
+                        Entire apartment
+                    </div>
+                    <div class="col-2 card rc">
+                        150 m² Size
+                    </div>
 
-        <!-- **************************** Room list card start ************************* -->
-
-        <div class="container mt-5" *ngIf="roomListCard">
-            <div class="col-md-12 mt-2 border p-1 border">
-                <mat-card class="p-4">
-                    <div class="row" style="background-color: rgb(203, 215, 233)">
-                        <div class="col-12 ml-1" *ngFor="let r of roomList">
-                            <h1><b>{{r.hotel.hname}}</b></h1>
-                            <span>
-                                <a><span class="show_map_icon"></span></a>
-                                {{r.hotel.haddress}}
-                                <a href="#">
-                                    <p class="link-success">Show map</p>
-                                </a>
-                            </span>
-                        </div>
-                        <div class="row">
-                            <div class="col-4">
-                                <div class="row">
-                                    <img src="assets/images/hotel/h1.jpg" alt="samima" height="100" width="200">
-                                </div><br>
-                                <div class="row">
-                                    <img src="assets/images/hotel/h3.jpg" alt="samima" height="100" width="200">
-                                </div><br>
-                            </div>
-                            <div class="col-8">
-                                <img src="assets/images/hotel/h2.jpg" alt="samima" height="200" width="760">
-                            </div>
-                        </div>
+                    <div class="col-1 card rc">
+                        View
+                    </div>
+                    <div class="col-1 card rc">
+                        Balcony
+                    </div>
+                    <div class="col-2 card rc">
+                        Kitchen
+                    </div>
+                    <div class="col-2 card rc">
+                        Washing machine
                     </div><br>
 
-                    <div class="row" style="background-color: rgb(40, 176, 203)">
-                        <div class="col-2 card rc">
-                            Entire apartment
-                        </div>
-                        <div class="col-2 card rc">
-                            150 m² Size
-                        </div>
 
-                        <div class="col-1 card rc">
-                            View
+                    <div class="row">
+                        <div class="col-4 card rc">
+                            Free parking
                         </div>
-                        <div class="col-1 card rc">
-                            Balcony
+                        <div class="col-3 card rc">
+                            Air conditioning
                         </div>
-                        <div class="col-2 card rc">
-                            Kitchen
+                        <div class="col-4 card rc">
+                            Parking on site
                         </div>
-                        <div class="col-2 card rc">
-                            Washing machine
-                        </div><br>
-
-
-                        <div class="row">
-                            <div class="col-4 card rc">
-                                Free parking
-                            </div>
-                            <div class="col-3 card rc">
-                                Air conditioning
-                            </div>
-                            <div class="col-4 card rc">
-                                Parking on site
-                            </div>
-                        </div><br>
                     </div><br>
-                    <div class="row" *ngFor="let r of roomList" style="background-color: rgb(40, 176, 203)">
-                        <div class="text-center " style="background-color: burlywood;"><h1>
+                </div><br>
+                <div class="row" *ngFor="let r of roomList" style="background-color: rgb(40, 176, 203)">
+                    <div class="text-center " style="background-color: burlywood;">
+                        <h1>
                             {{r.roomtype.rtName}}
-                        </h1></div>
-
-                        <div class="col-2" style="background-color: floralwhite">
-                            <li>Room Id: {{r.rid}}</li>
-                            <li>Size: {{r.rroomSize}}</li>
-                            <li>Bed: {{r.rbedNumber}}</li>
-                            <li>{{r.roomtype.rtDescription}}</li>
-                        </div>
-                        <div class="col-2" style="background-color: floralwhite">
-                            <h3>Sleeps</h3>
-                            <li>Adult Person: {{r.radultNumber}}</li>
-                            <li>Child Person: {{r.rchildrenNumber}}</li>
-                            <li>{{r.roomtype.rtDescription}}</li>
-                        </div>
-                        <div class="col-2" style="background-color: floralwhite">
-                            <h3>Room Facilities</h3>
-                            <li>Facilities: {{r.roomFacilities.rfName}}</li>
-                            <li>Details: {{r.roomFacilities.rfDescription}}</li>
-                        </div>
-                        <div class="col-2" style="background-color: floralwhite">
-                            <h3>Today's price</h3>
-                            <li>Price: ${{r.rroomPrice}}</li>
-                            <li>Discount: {{r.rdiscount}}</li>
-                        </div>
-                        <div class="col-2" style="background-color: floralwhite">
-                            <h3>Your choice</h3>
-                            <li>Total cost to cancel</li>
-                            <span>NO PREPAYMENT NEEDED</span>
-                            "- pay at the property"
-                            <p><span>Room Type : </span></p>
-                        </div>
-                        <div class="col-2" style="background-color: floralwhite">
-                            <p>* Confirmation is immediate</p>
-                            <p>* No booking or credit card fees!</p>
-                            <b>No credit card</b>
-                            "needed!"
-                            <a class="btn btn-outline-primary" (click)="bookRoom(r.rid)">Book Now</a>
-                        </div>
-                        <hr>
+                        </h1>
                     </div>
-                </mat-card>
-            </div>
-            <br>
+
+                    <div class="col-2" style="background-color: floralwhite">
+                        <li>Room Id: {{r.rid}}</li>
+                        <li>Size: {{r.rroomSize}}</li>
+                        <li>Bed: {{r.rbedNumber}}</li>
+                        <li>{{r.roomtype.rtDescription}}</li>
+                    </div>
+                    <div class="col-2" style="background-color: floralwhite">
+                        <h3>Sleeps</h3>
+                        <li>Adult Person: {{r.radultNumber}}</li>
+                        <li>Child Person: {{r.rchildrenNumber}}</li>
+                        <li>{{r.roomtype.rtDescription}}</li>
+                    </div>
+                    <div class="col-2" style="background-color: floralwhite">
+                        <h3>Room Facilities</h3>
+                        <li>Facilities: {{r.roomFacilities.rfName}}</li>
+                        <li>Details: {{r.roomFacilities.rfDescription}}</li>
+                    </div>
+                    <div class="col-2" style="background-color: floralwhite">
+                        <h3>Today's price</h3>
+                        <li>Price: ${{r.rroomPrice}}</li>
+                        <li>Discount: {{r.rdiscount}}</li>
+                    </div>
+                    <div class="col-2" style="background-color: floralwhite">
+                        <h3>Your choice</h3>
+                        <li>Total cost to cancel</li>
+                        <span>NO PREPAYMENT NEEDED</span>
+                        "- pay at the property"
+                        <p><span>Room Type : </span></p>
+                    </div>
+                    <div class="col-2" style="background-color: floralwhite">
+                        <p>* Confirmation is immediate</p>
+                        <p>* No booking or credit card fees!</p>
+                        <b>No credit card</b>
+                        "needed!"
+                        <a class="btn btn-outline-primary" (click)="bookRoom(r.rid)">Book Now</a>
+                    </div>
+                    <hr>
+                </div>
+            </mat-card>
         </div>
-        <!-- **************************** Room list card end ************************* -->
-    </section>
+        <br>
+    </div>
+    <!-- **************************** Room list card end ************************* -->
+</section>
 
 
 <!--galley start-->
