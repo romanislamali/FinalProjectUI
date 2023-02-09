@@ -19,7 +19,7 @@ export class Room{
     rroomSize: number | undefined;
     ravailability: number | undefined;
     rdetails: string | undefined;
-   
+    rstatus: number | undefined;
     roomFacilities: number | undefined;
     roomtype: number | undefined;
     hotel: number | undefined;
