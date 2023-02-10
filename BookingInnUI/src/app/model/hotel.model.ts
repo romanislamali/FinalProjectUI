@@ -20,9 +20,7 @@ export class Hotel{
     hrating: string | undefined;
     hlogo: string | undefined;
     hphoto: string | undefined;
-
-
     location: number | undefined;
     hotelfacilities: number | undefined;
-
+        
 }

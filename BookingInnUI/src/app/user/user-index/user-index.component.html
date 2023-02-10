@@ -424,24 +424,24 @@
 
                     <div class="col-2" style="background-color: floralwhite">
                         <li>Room Id: {{r.rid}}</li>
-                        <li>Size: {{r.rroomSize}}</li>
-                        <li>Bed: {{r.rbedNumber}}</li>
-                        <li>{{r.roomtype.rtDescription}}</li>
+                        <li>Size: {{r.rsize}}</li>
+                        <li>Bed: {{r.rtotalbed}}</li>
+                        <li>Details: {{r.rdetails}}</li>
                     </div>
                     <div class="col-2" style="background-color: floralwhite">
                         <h3>Sleeps</h3>
-                        <li>Adult Person: {{r.radultNumber}}</li>
-                        <li>Child Person: {{r.rchildrenNumber}}</li>
+                        <li>Adult Person: {{r.radultcapacity}}</li>
+                        <li>Child Person: {{r.rchildcapacity}}</li>
                         <li>{{r.roomtype.rtDescription}}</li>
                     </div>
                     <div class="col-2" style="background-color: floralwhite">
                         <h3>Room Facilities</h3>
-                        <li>Facilities: {{r.roomFacilities.rfName}}</li>
-                        <li>Details: {{r.roomFacilities.rfDescription}}</li>
+                        <li>Facilities: {{r.roomfacilities.rfName}}</li>
+                        <li>Description: {{r.roomfacilities.rfDescription}}</li>
                     </div>
                     <div class="col-2" style="background-color: floralwhite">
                         <h3>Today's price</h3>
-                        <li>Price: ${{r.rroomPrice}}</li>
+                        <li>Price: ${{r.rprice}}</li>
                         <li>Discount: {{r.rdiscount}}</li>
                     </div>
                     <div class="col-2" style="background-color: floralwhite">
