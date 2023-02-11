@@ -15,7 +15,6 @@ import { AvailableRoomComponent } from './user/available-room/available-room.com
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
-import { HotelComponent } from './management/hotel/hotel.component';
 import { RoomComponent } from './management/room/room.component';
 import { BookingComponent } from './management/booking/booking.component';
 import { UserComponent } from './management/user/user.component';
@@ -40,7 +39,6 @@ import { RoomtypeComponent } from './management/roomtype/roomtype.component';
     AvailableRoomComponent,
     AdminDashboardComponent,
     LoginComponent,
-    HotelComponent,
     RoomComponent,
     BookingComponent,
     UserComponent,

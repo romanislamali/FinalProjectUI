@@ -5,7 +5,6 @@ import { LoginComponent } from './login/login.component';
 import { HfCreateComponent } from './management/hotel-facilities/hf-create/hf-create.component';
 import { HfListComponent } from './management/hotel-facilities/hf-list/hf-list.component';
 import { HfUpdateComponent } from './management/hotel-facilities/hf-update/hf-update.component';
-import { HotelComponent } from './management/hotel/hotel.component';
 import { InvCreateComponent } from './management/inventory/inv-create/inv-create.component';
 import { InvListComponent } from './management/inventory/inv-list/inv-list.component';
 import { InvUpdateComponent } from './management/inventory/inv-update/inv-update.component';
@@ -17,7 +16,6 @@ const routes: Routes = [
 {path:'availableroom/:id', component:AvailableRoomComponent},
 {path: 'admindash', component:AdminDashboardComponent},
 {path:'login', component:LoginComponent},
-{path:'allhotel', component:HotelComponent},
 {path:'location', component:LocationComponent},
 {path:'createfacilities', component:HfCreateComponent},
 {path:'allfacilities', component:HfListComponent},

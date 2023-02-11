@@ -19,10 +19,14 @@ export class RoomService {
 
    }
 
-  //  PatchMapping
-
-   blockBookedRoom(id: number) {
+  //Make room deactive
+  blockBookedRoom(id: number) {
     return this.httpClient.patch(this.baseUrl+"room/status/"+id, id);
+  }
+
+  //Make room active
+  activeBookedRoom(id: number) {
+    return this.httpClient.patch(this.baseUrl+"room/status/true/"+id, id);
   }
 
 }
