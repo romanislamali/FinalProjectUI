@@ -1,11 +1,9 @@
 export class User{
 
-    uid:Number | undefined;
-    uname: string | undefined;
-    uaddress: string | undefined;
-    ucell: string | undefined;
-    uemail: string | undefined;
-    upassword: string | undefined;
-   
-
+    id:Number | undefined;
+    firstname: string | undefined;
+    lastname: string | undefined;
+    cell: string | undefined;
+    email: string | undefined;
+    password: string | undefined;
 }

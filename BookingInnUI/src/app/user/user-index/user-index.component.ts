@@ -13,6 +13,7 @@ import { RoomService } from 'src/app/service/room.service';
 })
 export class UserIndexComponent {
 
+  
 
   persontab: boolean = false;
   hotelListCard: boolean = false;
@@ -45,7 +46,7 @@ export class UserIndexComponent {
 
 
   hotelList?: any;
-  onSubmit() {
+  searchHotel() {
     this.hotelList = this.hotelService.getAllHotelByLocation(this.locationId);
     this.hotelListCard = true;
     this.roomListCard = false;
@@ -86,25 +87,27 @@ export class UserIndexComponent {
         this.roomList=data
         this.roomList=this.roomList.filter(rl=>rl.rstatus!=1)
       }
+
     )
     this.roomListCard = true;
     this.hotelListCard = false;
 
   }
 
- booking: Booking = new Booking();
+  booking: Booking = new Booking();
   user: User = new User();
   roomId?: any;
   userid: number = 1;
+  
 
   bookRoom(value: any) {
     this.roomId = value;
 
-    this.booking.bdate = "date";
-    this.booking.lid = this.locationId;
-    this.booking.hid = this.hotelId;
-    this.booking.rid = this.roomId;
-    this.booking.uid = this.userid;
+    // this.booking.bdate = ;
+    this.booking.hotelname = this.hotelList.hname;
+    // this.booking.hotelname = this.hotelId;
+    // this.booking.rid = this.roomId;
+    // this.booking.uid = this.userid;
 
 
     this.bookingservice.createbooking(this.booking).subscribe(
@@ -118,9 +121,7 @@ export class UserIndexComponent {
 
     this.roomService.blockBookedRoom(this.roomId).subscribe(
       data=>console.log(data)
-    )
-    // console.log(this.roomId)
-    
+    ) 
   }
 
   sendAllIdToLoginTs() {
@@ -128,5 +129,4 @@ export class UserIndexComponent {
     console.log(this.hotelId);
     console.log(this.roomId);
   }
-
 }

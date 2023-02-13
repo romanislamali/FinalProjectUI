@@ -226,10 +226,10 @@
                     <marquee behavior="" direction="">
                         <h1 style="color:aliceblue">CHOOSE YOUR FAVOURITE HOTEL</h1>
                     </marquee>
-                    <form (ngSubmit)="onSubmit()" class=" mt-5 mb-5">
+                    <form (ngSubmit)="searchHotel()" class=" mt-5 mb-5">
                         <div class="col-md-7">
                             <div class="row">
-                                <div class="col-md-6 mb-5">
+                                <div class="col-md-4 mb-5">
                                     <h1>Locaction choose</h1>
                                     <select class="col-12" [(ngModel)]="locationId" (ngModelChange)="getLid($event)"
                                         name="sdf">
@@ -237,9 +237,13 @@
                                             {{l.lname}}</option>
                                     </select>
                                 </div>
-                                <div class="col-md-6">
-                                    <h1>Check In--Check Out</h1>
-                                    <input type="date" class="col-12">
+                                <div class="col-md-4">
+                                    <h1>Check In</h1>
+                                    <input type="date" class="col-12" name="checkin" [(ngModel)]="booking.checkin">
+                                </div>
+                                <div class="col-md-4">
+                                    <h1>Check Out</h1>
+                                    <input type="date" class="col-12" name="checkout" [(ngModel)]="booking.checkout">
                                 </div>
                             </div>
                             <div class="row">

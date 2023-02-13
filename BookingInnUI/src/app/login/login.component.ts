@@ -40,7 +40,7 @@ export class LoginComponent {
   }
 
   login(){
-    if(this.user.uemail==this.alluser.uemail){
+    if(this.user.email==this.alluser.email){
       console.log("******************");
       alert('Login Successfull');
     }
@@ -56,7 +56,7 @@ export class LoginComponent {
   
     console.log(this.user);
     
-    if(this.user.uname == '' || this.user.uname == null){
+    if(this.user.firstname == '' || this.user.email == null){
       alert('user name is required');
       return;
     } else{
@@ -78,11 +78,11 @@ export class LoginComponent {
   }
 
   clear(){
-    this.user.uname='';
-    this.user.ucell='';
-    this.user.uaddress='';
-    this.user.uemail='';
-    this.user.upassword='';
+    this.user.firstname='';
+    this.user.lastname='';
+    this.user.cell='';
+    this.user.email='';
+    this.user.password='';
 
   }
 

@@ -11,7 +11,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { UserIndexComponent } from './user/user-index/user-index.component';
 import { HeaderComponent } from './header/header.component';
-import { AvailableRoomComponent } from './user/available-room/available-room.component';
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
@@ -39,7 +38,6 @@ import { RoomUpdateComponent } from './management/room/room-update/room-update.c
     HeaderComponent,
     FooterComponent,
     UserIndexComponent,
-    AvailableRoomComponent,
     AdminDashboardComponent,
     LoginComponent,
     RoomComponent,
