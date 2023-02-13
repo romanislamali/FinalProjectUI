@@ -1,9 +1,15 @@
 
 import { Component, OnInit } from '@angular/core';
 import { Booking } from 'src/app/model/booking.model';
+
+import { Hotel } from 'src/app/model/hotel.model';
+import { Location } from 'src/app/model/location.model';
+import { Room } from 'src/app/model/room.model';
+
 import { User } from 'src/app/model/user.model';
 import { BookingService } from 'src/app/service/booking.service';
 import { HotelService } from 'src/app/service/hotel.service';
+import { LocationService } from 'src/app/service/location.service';
 import { RoomService } from 'src/app/service/room.service';
 
 @Component({
@@ -30,20 +36,18 @@ export class UserIndexComponent {
     private hotelService: HotelService,
     private roomService: RoomService,
     private bookingservice: BookingService,
-    ) {
+    private locationService: LocationService,
+  ) {
   }
 
   ngOnInit() {
     this.location = this.hotelService.getAllLocation();
   }
 
-
   locationId?: any;
   getLid(value: any) {
     this.locationId = value;
   }
-
-
 
   hotelList?: any;
   searchHotel() {
@@ -76,40 +80,68 @@ export class UserIndexComponent {
     }
   }
 
-
   hotelId?: any;
-  roomList: any[]=[];
+  roomList: any[] = [];
 
   public getAvailableRoomByHotelId(value: any) {
     this.hotelId = value;
     this.roomService.getAllRoomByHotelId(this.hotelId).subscribe(
-      data=>{
-        this.roomList=data
-        this.roomList=this.roomList.filter(rl=>rl.rstatus!=1)
+      data => {
+        this.roomList = data
+        this.roomList = this.roomList.filter(rl => rl.rstatus != 1)
       }
-
     )
     this.roomListCard = true;
     this.hotelListCard = false;
-
   }
 
-  booking: Booking = new Booking();
-  user: User = new User();
+
   roomId?: any;
   userid: number = 1;
 
   hotelnames?: any;
 
-  bookRoom(value: any) {
+  bookingRoom(value:any){  
     this.roomId = value;
 
+
     // this.booking.bdate = ;
-    this.booking.hotelname = this.hotelnames;
+    // this.booking.hotelname = this.hotelnames;
     // this.booking.hotelname = this.hotelId;
     // this.booking.rid = 
     // this.booking.uid = this.userid;
 
+    this.confirmBooking();
+  }
+
+  booking: Booking = new Booking();
+  loc: Location = new Location();
+  hot: Hotel = new Hotel();
+  room: Room = new Room();
+  user: User = new User();
+
+  confirmBooking() {
+    this.roomService.getRoomById(this.roomId).subscribe(
+      data => {
+        this.room = data;
+      }
+    );
+    this.locationService.getLocationById(this.locationId).subscribe(
+      data => {
+        this.loc = data;
+      }
+    )
+    this.hotelService.getHotelById(this.hotelId).subscribe(
+      data => {
+        this.hot = data;
+      }
+    )
+
+
+    this.booking.roomnumber = this.room.rnumber;
+    this.booking.location = this.loc.lname;
+    this.booking.hotelname = this.hot.hname;
+    this.booking.hoteladdress = this.hot.haddress;
 
     this.bookingservice.createbooking(this.booking).subscribe(
       (data) => {
@@ -122,8 +154,9 @@ export class UserIndexComponent {
     )
 
     this.roomService.blockBookedRoom(this.roomId).subscribe(
-      data=>console.log(data)
-    ) 
+      
+    )
+    // window.location.reload();
   }
 
   sendAllIdToLoginTs() {
