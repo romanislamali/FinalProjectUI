@@ -32,6 +32,10 @@ export class HotelService {
     return this.httpClient.get<Hotel>(this.baseUrl + "hotel/all");
   }
 
+  getHotelById(hid: number): Observable<any> {
+    return this.httpClient.get<any>(this.baseUrl+"hotel/"+hid);
+  }
+
   createFacilities(facilities: Hotelfacilities): Observable<ApiResponse> {
     return this.httpClient.post<ApiResponse>(this.baseUrl + "hotelfacilities/add", facilities);
   }

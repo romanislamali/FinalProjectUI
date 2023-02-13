@@ -17,23 +17,21 @@ export class LocationService {
   public createlocation(location: any) {
     return this.httpClient.post(`${this.baseUrl}/location/add`, location);
   }
-  
-  getAllLocation():Observable<Location>{
+
+  getAllLocation(): Observable<Location> {
     return this.httpClient.get<Location>(this.baseUrl+"/location/all");
-   }
-
-
-   deleteLocationById(lid : number): Observable<ApiResponse>{
-    return this.httpClient.delete<ApiResponse>(this.baseUrl+"/locationdelete/"+lid);
-   }
-
-   updateLocation(lid:number , location: Location):Observable<ApiResponse>{
-    return this.httpClient.put<ApiResponse>(this.baseUrl+"/location/update/"+location.lid+"/",location);
   }
 
-  // getLocationById(id:number):Observable<any>{
-  //   return this.httpClient.get(this.baseUrl+"/getlocationbyid/"+id);
-  // }
+  getLocationById(lid: number): Observable<any> {
+    return this.httpClient.get<any>(this.baseUrl+"/location/"+lid);
+  }
 
+  deleteLocationById(lid: number): Observable<ApiResponse> {
+    return this.httpClient.delete<ApiResponse>(this.baseUrl+"/locationdelete/"+lid);
+  }
+
+  updateLocation(lid: number, location: Location): Observable<ApiResponse> {
+    return this.httpClient.put<ApiResponse>(this.baseUrl+"/location/update/"+location.lid +"/", location);
+  }
 
 }
