@@ -1,1 +1,47 @@
-<p>room-create works!</p>
+<!-- <p>room-create works!</p> -->
+<div class="container">
+    <div class="row" style="margin-top: 100px">
+        <div class="col-2">
+        </div>
+        <div class="card col-10" style="background-color: antiquewhite">
+            <div class="col-1 p-3">
+                <button class="btn btn-info" routerLink="/allfacilities">See All</button>
+            </div>
+            <h1 class="text-center">Add New Room</h1>
+            <form (ngSubmit)="roomAdd()">
+                <p>Locaction choose</p>
+                            <select class="col-4 " [(ngModel)]="locationId" (ngModelChange)="getLid($event)"
+                                name="sdf">
+                                <option (click)="searchHotel()"  *ngFor="let l of location | async" name="lid" [ngValue]="l.lid">
+                                    {{l.lname}}</option>
+                            </select>
+                        
+                <p>Hotel choose</p>
+                            <select class="col-4 " [(ngModel)]="hotelId" (ngModelChange)="getHid($event)"
+                                name="sdf">
+                                <option *ngFor="let h of hotelList | async" name="hid" [ngValue]="h.hid">
+                                    {{h.hname}}</option>
+                            </select>
+
+
+
+                <input type="text" class="form-control" name="hfacname" placeholder="room number"
+                    [(ngModel)]="room.rnumber">
+                <input type="text" class="form-control" name="hfacdiscription" placeholder="room details"
+                    [(ngModel)]="room.rdetails">
+                <input type="text" class="form-control" name="hfackeyword" placeholder="room price"
+                    [(ngModel)]="room.rprice">
+                <input type="text" class="form-control" name="hfackeyword" placeholder="room size"
+                    [(ngModel)]="room.rsize">
+                <input type="text" class="form-control" name="hfackeyword" placeholder="room status"
+                    [(ngModel)]="room.rstatus">
+                <div class="col-1 p-3">
+                    <button class="btn btn-info">Submit</button>
+                </div>
+            </form>
+
+
+          
+        </div>
+    </div>
+</div>

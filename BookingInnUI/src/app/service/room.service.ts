@@ -35,4 +35,11 @@ export class RoomService {
     return this.httpClient.patch(this.baseUrl+"room/status/true/"+id, id);
   }
 
+  createRoom(r: Room): Observable<ApiResponse> {
+    return this.httpClient.post<ApiResponse>(this.baseUrl + "room/add", r);
+  }
+
+
+
+
 }

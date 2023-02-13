@@ -20,7 +20,6 @@ export class HotelService {
 
 
   getAllHotelByLocation(lid: number): Observable<Hotel> {
-
     return this.httpClient.get<Hotel>(this.baseUrl + "hotelbylocationid/" + lid);
   }
 
