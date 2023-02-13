@@ -1,6 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { Booking } from 'src/app/model/booking.model';
+import { Room } from 'src/app/model/room.model';
 import { User } from 'src/app/model/user.model';
 import { BookingService } from 'src/app/service/booking.service';
 import { HotelService } from 'src/app/service/hotel.service';
@@ -93,18 +94,26 @@ export class UserIndexComponent {
     this.hotelListCard = false;
 
   }
-
+  room: Room =  new Room()
   booking: Booking = new Booking();
   user: User = new User();
   roomId?: any;
-  userid: number = 1;
-  
 
   bookRoom(value: any) {
     this.roomId = value;
-
+    console.log(this.roomId)
+    this.roomService.getRoomById(this.roomId).subscribe(
+      data => {
+        this.room = data;
+      }
+    );
+    console.log(this.room.rnumber)
+    
+  //  for (var r of this.room) {
+  //   console.log(r.rnumber)
+  // }
     // this.booking.bdate = ;
-    this.booking.hotelname = this.hotelList.hname;
+    // this.booking.hotelname = this.hotelList.hname;
     // this.booking.hotelname = this.hotelId;
     // this.booking.rid = this.roomId;
     // this.booking.uid = this.userid;

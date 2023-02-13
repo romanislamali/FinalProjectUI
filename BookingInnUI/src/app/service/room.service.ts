@@ -17,6 +17,10 @@ export class RoomService {
     return this.httpClient.get<Room>(this.baseUrl+"room/all");
   }
 
+  getRoomById(rid:number): Observable<any>{
+    return this.httpClient.get<any>(this.baseUrl+"room/"+rid);
+  }
+
   getAllRoomByHotelId(hid:number): Observable<any>{
     return this.httpClient.get<any>(this.baseUrl+"roombyhotelid/"+hid);
   }
