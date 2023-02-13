@@ -13,11 +13,13 @@ export class RoomService {
 
   constructor(private httpClient : HttpClient) { }
 
+  getAllRoom(): Observable<Room> {
+    return this.httpClient.get<Room>(this.baseUrl+"room/all");
+  }
+
   getAllRoomByHotelId(hid:number): Observable<any>{
-
     return this.httpClient.get<any>(this.baseUrl+"roombyhotelid/"+hid);
-
-   }
+  }
 
   //Make room deactive
   blockBookedRoom(id: number) {

@@ -37,15 +37,15 @@ export class HotelService {
   }
 
   getAllHotelFacilities(): Observable<Hotelfacilities> {
-    return this.httpClient.get<Hotelfacilities>(this.baseUrl + "hotelfacilities/all");
+    return this.httpClient.get<Hotelfacilities>(this.baseUrl+"hotelfacilities/all");
   }
 
   deleteFacilities(id: number): Observable<ApiResponse> {
-    return this.httpClient.delete<ApiResponse>(this.baseUrl + "hotelfacilities/delete/" + id);
+    return this.httpClient.delete<ApiResponse>(this.baseUrl+"hotelfacilities/delete/"+id);
   }
 
   updateHFacilities(id: number, hf: Hotelfacilities): Observable<ApiResponse> {
-    return this.httpClient.put<ApiResponse>(this.baseUrl + "hotelfacilities/update/" + hf.hfacid + "/", hf);
+    return this.httpClient.put<ApiResponse>(this.baseUrl+"hotelfacilities/update/"+hf.hfacid+"/", hf);
   }
 
   getFacilitiesById(id: number): Observable<any> {

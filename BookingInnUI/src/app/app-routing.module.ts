@@ -9,6 +9,8 @@ import { InvCreateComponent } from './management/inventory/inv-create/inv-create
 import { InvListComponent } from './management/inventory/inv-list/inv-list.component';
 import { InvUpdateComponent } from './management/inventory/inv-update/inv-update.component';
 import { LocationComponent } from './management/location/location.component';
+import { RoomCreateComponent } from './management/room/room-create/room-create.component';
+import { RoomListComponent } from './management/room/room-list/room-list.component';
 import { AvailableRoomComponent } from './user/available-room/available-room.component';
 import { UserIndexComponent } from './user/user-index/user-index.component';
 const routes: Routes = [
@@ -24,9 +26,8 @@ const routes: Routes = [
 {path:'createinventory', component:InvCreateComponent},
 {path:'allinventory', component:InvListComponent},
 {path:'updateinventory', component:InvUpdateComponent},
-
-
-
+{path:'createroom', component:RoomCreateComponent},
+{path:'allroom', component:RoomListComponent},
 ];
 
 @NgModule({

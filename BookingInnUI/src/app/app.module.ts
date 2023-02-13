@@ -26,6 +26,9 @@ import { SideberComponent } from './sideber/sideber.component';
 import { InvCreateComponent } from './management/inventory/inv-create/inv-create.component';
 import { InvUpdateComponent } from './management/inventory/inv-update/inv-update.component';
 import { RoomtypeComponent } from './management/roomtype/roomtype.component';
+import { RoomCreateComponent } from './management/room/room-create/room-create.component';
+import { RoomListComponent } from './management/room/room-list/room-list.component';
+import { RoomUpdateComponent } from './management/room/room-update/room-update.component';
 
 
 
@@ -49,7 +52,10 @@ import { RoomtypeComponent } from './management/roomtype/roomtype.component';
     SideberComponent,
     InvCreateComponent,
     InvUpdateComponent,
-    RoomtypeComponent
+    RoomtypeComponent,
+    RoomCreateComponent,
+    RoomListComponent,
+    RoomUpdateComponent
 
     
     
