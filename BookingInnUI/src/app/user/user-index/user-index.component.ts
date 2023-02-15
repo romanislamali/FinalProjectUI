@@ -19,8 +19,6 @@ import { RoomService } from 'src/app/service/room.service';
 })
 export class UserIndexComponent {
 
-
-
   persontab: boolean = false;
   hotelListCard: boolean = false;
   roomListCard: boolean = false;
@@ -50,10 +48,12 @@ export class UserIndexComponent {
   }
 
   hotelList?: any;
-  searchHotel() {
+  searchHotel(value1: any, value2: any) {
     this.hotelList = this.hotelService.getAllHotelByLocation(this.locationId);
     this.hotelListCard = true;
     this.roomListCard = false;
+    this.checkin = value1;
+    this.checkout = value2;
   }
 
   onclick() {
@@ -97,22 +97,15 @@ export class UserIndexComponent {
 
 
   roomId?: any;
-  userid: number = 1;
+  checkin?: any;
+  checkout?: any;
 
   hotelnames?: any;
 
-  bookingRoom(value:any){  
-    this.roomId = value;
-
-
-    // this.booking.bdate = ;
-    // this.booking.hotelname = this.hotelnames;
-    // this.booking.hotelname = this.hotelId;
-    // this.booking.rid = 
-    // this.booking.uid = this.userid;
-
-    this.confirmBooking();
-  }
+  // bookingRoom(value: any) {
+  //   this.roomId = value;
+  //   this.confirmBooking();
+  // }
 
   booking: Booking = new Booking();
   loc: Location = new Location();
@@ -120,7 +113,8 @@ export class UserIndexComponent {
   room: Room = new Room();
   user: User = new User();
 
-  confirmBooking() {
+  confirmBooking(value: any) {
+    this.roomId = value;
     this.roomService.getRoomById(this.roomId).subscribe(
       data => {
         this.room = data;
@@ -137,16 +131,19 @@ export class UserIndexComponent {
       }
     )
 
-
+    this.booking.checkin = this.checkin;
+    this.booking.checkout = this.checkout;
     this.booking.roomnumber = this.room.rnumber;
     this.booking.location = this.loc.lname;
     this.booking.hotelname = this.hot.hname;
     this.booking.hoteladdress = this.hot.haddress;
 
     this.bookingservice.createbooking(this.booking).subscribe(
+
+
       (data) => {
         alert('Booking successfully');
-       
+
       },
       (error) => {
         alert('Something wrong, try again ');
@@ -154,7 +151,7 @@ export class UserIndexComponent {
     )
 
     this.roomService.blockBookedRoom(this.roomId).subscribe(
-      
+
     )
     // window.location.reload();
   }
@@ -164,4 +161,6 @@ export class UserIndexComponent {
     console.log(this.hotelId);
     console.log(this.roomId);
   }
+
+
 }

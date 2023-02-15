@@ -8,14 +8,14 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Booking Date</th>
-                        <th>Checkin Date</th>
-                        <th>Checkout Date</th>
-                        <th>Hotel Location</th>
+                        <th>Booking Date & Time</th>
+                        <th>Customar Name</th>
                         <th>Hotel Name</th>
                         <th>Hotel Address</th>
+                        <th>Hotel Location</th>
+                        <th>Checkin Date</th>
+                        <th>Checkout Date</th>
                         <th>Room Number</th>
-                        <th>Customar Name</th>
                         <th>Email</th>
                         <th>Cell</th>
                     </tr>
@@ -23,13 +23,14 @@
                 <tbody>
                     <tr *ngFor="let bl of bookingList | async">
                         <td>#{{bl.bid}}</td>
-                        <td>{{bl.bdate}}</td>
+                        <td>{{bl.bdatetime}}</td>
+                        <td>{{bl.firstname}}</td>
+                        <td>{{bl.hotelname}}</td>
+                        <td>{{bl.hoteladdress}}</td>
+                        <td>{{bl.location}}</td>
                         <td>{{bl.checkin}}</td>
                         <td>{{bl.checkout}}</td>
-                        <td>{{bl.location}}</td>
-                        <td>{{bl.hotelname}}</td>
                         <td>{{bl.roomnumber}}</td>
-                        <td>{{bl.firstname}}</td>
                         <td>{{bl.email}}</td>
                         <td>{{bl.cell}}</td>
                     </tr>
