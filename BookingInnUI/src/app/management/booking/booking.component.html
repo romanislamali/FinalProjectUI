@@ -1,0 +1,40 @@
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>User Name</th>
+            <th>Phone Number</th>
+            <th>Location</th>
+            <th>Hotel Name</th>
+            <th>Room Number</th>
+            <th>Amount</th>
+            <th>Date</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let b of booklist | async">
+            <td>{{b.bid}}</td>
+            <td>{{b.hid}}</td>
+            <td>{{b.uid}}</td>
+            <td>{{b.rid}}</td>
+            <td>{{b.lid}}</td>
+
+            <!-- <td>{{b.uname}}</td>
+            <td>{{b.ucell}}</td>
+            <td>{{b.lname}}</td>
+            <td>{{b.hname}}</td>
+            <td>{{b.r_room_price}}</td>
+            <td>{{b.bdate}}</td> -->
+            
+           
+
+            <td>
+                <button class="btn btn-danger">Delete</button>
+                <button class="btn btn-success">Update</button>
+                <!-- <button class="btn btn-worning" (click)="updateStudent(student.id)">Update</button> -->
+
+
+            </td>
+        </tr>
+    </tbody>
+</table>

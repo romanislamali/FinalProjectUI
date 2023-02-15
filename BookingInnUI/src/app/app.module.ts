@@ -15,6 +15,7 @@ import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { RoomComponent } from './management/room/room.component';
+import { BookingComponent } from './management/booking/booking.component';
 import { UserComponent } from './management/user/user.component';
 import { LocationComponent } from './management/location/location.component';
 import { HfListComponent } from './management/hotel-facilities/hf-list/hf-list.component';
@@ -27,7 +28,6 @@ import { RoomtypeComponent } from './management/roomtype/roomtype.component';
 import { RoomCreateComponent } from './management/room/room-create/room-create.component';
 import { RoomListComponent } from './management/room/room-list/room-list.component';
 import { RoomUpdateComponent } from './management/room/room-update/room-update.component';
-import { BookingListComponent } from './management/booking/booking-list/booking-list.component';
 
 
 
@@ -41,6 +41,7 @@ import { BookingListComponent } from './management/booking/booking-list/booking-
     AdminDashboardComponent,
     LoginComponent,
     RoomComponent,
+    BookingComponent,
     UserComponent,
     LocationComponent,
     HfListComponent,
@@ -52,8 +53,7 @@ import { BookingListComponent } from './management/booking/booking-list/booking-
     RoomtypeComponent,
     RoomCreateComponent,
     RoomListComponent,
-    RoomUpdateComponent,
-    BookingListComponent
+    RoomUpdateComponent
 
     
     

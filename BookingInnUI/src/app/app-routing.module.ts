@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
 import { LoginComponent } from './login/login.component';
-import { BookingListComponent } from './management/booking/booking-list/booking-list.component';
 import { HfCreateComponent } from './management/hotel-facilities/hf-create/hf-create.component';
 import { HfListComponent } from './management/hotel-facilities/hf-list/hf-list.component';
 import { HfUpdateComponent } from './management/hotel-facilities/hf-update/hf-update.component';
@@ -27,7 +26,6 @@ const routes: Routes = [
 {path:'updateinventory', component:InvUpdateComponent},
 {path:'createroom', component:RoomCreateComponent},
 {path:'allroom', component:RoomListComponent},
-{path:'allbooking', component:BookingListComponent}
 ];
 
 @NgModule({

@@ -8,20 +8,22 @@ import { Booking } from '../model/booking.model';
 })
 export class BookingService {
 
-  baseUrl: string = "http://localhost:8085/";
+  baseUrl:string = "http://localhost:8085/";
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient : HttpClient) { }
 
   public createbooking(booking: any) {
     return this.httpClient.post(`${this.baseUrl}booksave`, booking);
+
   }
 
-  getAllBooking(): Observable<Booking> {
-    return this.httpClient.get<Booking>(this.baseUrl+"booking/all");
-  }
+  getBookDtlByUser(uid:number):Observable<Booking>{
 
-  getBookingDetailsByEmail(email: number): Observable<any> {
-    return this.httpClient.get<any>(this.baseUrl + "booking/"+email);
-  }
+    return this.httpClient.get<Booking>(this.baseUrl+"/bookdtlbyuser/"+uid);
+
+   }
+
+
+
 
 }
