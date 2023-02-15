@@ -48,12 +48,12 @@ export class UserIndexComponent {
   }
 
   hotelList?: any;
-  searchHotel(value1: any, value2: any) {
+  searchHotel() {
     this.hotelList = this.hotelService.getAllHotelByLocation(this.locationId);
     this.hotelListCard = true;
     this.roomListCard = false;
-    this.checkin = value1;
-    this.checkout = value2;
+    // this.checkin = value1;
+    // this.checkout = value2;
   }
 
   onclick() {
@@ -115,44 +115,57 @@ export class UserIndexComponent {
 
   confirmBooking(value: any) {
     this.roomId = value;
-    this.roomService.getRoomById(this.roomId).subscribe(
-      data => {
-        this.room = data;
-      }
-    );
+    
     this.locationService.getLocationById(this.locationId).subscribe(
       data => {
         this.loc = data;
+
+        // Get Hotel Start
+        this.hotelService.getHotelById(this.hotelId).subscribe(
+          data => {
+            this.hot = data;
+            // Get Room start 
+            this.roomService.getRoomById(this.roomId).subscribe(
+              data => {
+                this.room = data;
+                
+                // Load Data 
+                this.booking.roomnumber = this.room.rnumber;
+                this.booking.location = this.loc.lname;
+                this.booking.hotelname = this.hot.hname;
+                this.booking.hoteladdress = this.hot.haddress;
+
+                // Save Load Data 
+                this.bookingservice.createbooking(this.booking).subscribe(
+                  (data) => {
+                    alert('Booking successfully');
+                  },
+                  (error) => {
+                    alert('Something wrong, try again ');
+                  }
+                )
+                   // Save Load Data 
+
+                   this.roomService.blockBookedRoom(this.roomId).subscribe(
+                    )
+
+              }
+            )
+             // Get Room End
+          }
+        )
+             // Get Hotel End
       }
     )
-    this.hotelService.getHotelById(this.hotelId).subscribe(
-      data => {
-        this.hot = data;
-      }
-    )
+   
 
-    this.booking.checkin = this.checkin;
-    this.booking.checkout = this.checkout;
-    this.booking.roomnumber = this.room.rnumber;
-    this.booking.location = this.loc.lname;
-    this.booking.hotelname = this.hot.hname;
-    this.booking.hoteladdress = this.hot.haddress;
-
-    this.bookingservice.createbooking(this.booking).subscribe(
+    // this.booking.checkin = this.checkin;
+    // this.booking.checkout = this.checkout;
 
 
-      (data) => {
-        alert('Booking successfully');
+    
 
-      },
-      (error) => {
-        alert('Something wrong, try again ');
-      }
-    )
 
-    this.roomService.blockBookedRoom(this.roomId).subscribe(
-
-    )
     // window.location.reload();
   }
 
