@@ -19,7 +19,7 @@ export class Room{
         roomfacilities: number | undefined;
 
         hid_fk:number | undefined;
-        hotels : Hotel[] | undefined;
+        // hotels : Hotel[] | undefined;
 
 
 

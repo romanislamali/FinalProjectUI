@@ -27,6 +27,7 @@ export class AdminDashboardComponent implements OnInit {
   // hotelList: boolean = false;
   // hotelFacilitieslist: boolean = false;
   hlist:boolean=false;
+  roomlist:boolean=false;
   hflist:boolean=false;
   blist:boolean=false;
 
@@ -57,6 +58,7 @@ export class AdminDashboardComponent implements OnInit {
     // this.hotelbtntab = false;
     // this.locationbtntab = false;
     // this.bookbtntab=false;
+   
   }
 
   showLocation() {

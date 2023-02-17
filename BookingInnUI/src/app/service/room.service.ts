@@ -42,7 +42,16 @@ export class RoomService {
   deleteRoom(id: number): Observable<ApiResponse> {
     return this.httpClient.delete<ApiResponse>(this.baseUrl+"room/delete/"+id);
   }
+  
+  findRoomById(rid:number): Observable<any>{
+    return this.httpClient.get<any>(this.baseUrl+"roombyid/"+rid);
+  }
+  getFacilitiesById(id: number): Observable<any> {
+    return this.httpClient.get(this.baseUrl+"hotelfacilities/"+id);
+  }
 
-
+  updateRoom(id: number, r: Room): Observable<ApiResponse> {
+    return this.httpClient.put<ApiResponse>(this.baseUrl+"room/update/"+r.rid+"/", r);
+  }
 
 }

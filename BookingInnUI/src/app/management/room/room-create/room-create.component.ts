@@ -34,25 +34,21 @@ export class RoomCreateComponent {
 
 
     hotelList?: any;
-  
-
-   
-  
   hotels: Hotel = new Hotel();
-room : Room = new Room();
-submitted:boolean=false;
+  room : Room = new Room();
+  submitted:boolean=false;
   roomAdd(){
     this.submitted = true;
       this.roomService.createRoom(this.room).subscribe(
       data => alert('Room added successfull!!'),
              error => alert('Something is wrong, please try again!!')  
+             
          
-    );  
+    ); 
+    this.room.hid_fk=this.hotelId; 
     console.log(this.hotelList);
 
-this.rooms ;
-  }
 
-  rooms : Room = new Room();
+  }
 
 }

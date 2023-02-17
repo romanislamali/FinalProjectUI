@@ -11,6 +11,7 @@ import { InvUpdateComponent } from './management/inventory/inv-update/inv-update
 import { LocationComponent } from './management/location/location.component';
 import { RoomCreateComponent } from './management/room/room-create/room-create.component';
 import { RoomListComponent } from './management/room/room-list/room-list.component';
+import { RoomUpdateComponent } from './management/room/room-update/room-update.component';
 import { UserIndexComponent } from './user/user-index/user-index.component';
 const routes: Routes = [
 {path:'', component:UserIndexComponent},
@@ -26,6 +27,7 @@ const routes: Routes = [
 {path:'updateinventory', component:InvUpdateComponent},
 {path:'createroom', component:RoomCreateComponent},
 {path:'allroom', component:RoomListComponent},
+{path:'updateroom', component:RoomUpdateComponent},
 
 ];
 
