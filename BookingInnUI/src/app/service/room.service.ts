@@ -39,6 +39,9 @@ export class RoomService {
     return this.httpClient.post<ApiResponse>(this.baseUrl + "room/add", r);
   }
 
+  deleteRoom(id: number): Observable<ApiResponse> {
+    return this.httpClient.delete<ApiResponse>(this.baseUrl+"room/delete/"+id);
+  }
 
 
 

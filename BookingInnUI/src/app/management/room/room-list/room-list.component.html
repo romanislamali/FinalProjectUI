@@ -21,10 +21,11 @@
                         <td>#{{r.rnumber}}</td>
                         <td>{{r.rprice}}</td>
                         <td>{{r.rstatus}}</td>
-                        <!-- <td>
-                            <button class="btn btn-success" (click)="updateHotelFacilities(hf.hfacid)">Update</button>
-                            <button class="btn btn-danger" (click)="deleteHotelFacilities(hf.hfacid)">Delete</button>
-                        </td> -->
+                        <td>
+                            <!-- <button class="btn btn-success" (click)="updateHotelFacilities(hf.hfacid)">Update</button> -->
+                            <button class="btn btn-danger" (click)="deleteroom(r.rid)">Delete</button>
+                           
+                        </td>
                     </tr>
                 </tbody>
             </table>
