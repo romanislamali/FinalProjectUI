@@ -8,7 +8,7 @@
                 <button class="btn btn-info" routerLink="/allroom">See All</button>
             </div>
             <h1 class="text-center">Add New Room</h1>
-            <form (ngSubmit)="roomUpdate()">
+            <form (ngSubmit)="updateroom()">
                 <p>Select your hotel </p>
                             <select class="col-4 " [(ngModel)]="hotelId" (ngModelChange)="getHid($event)"
                                 name="sdf">

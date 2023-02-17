@@ -27,7 +27,7 @@ const routes: Routes = [
 {path:'updateinventory', component:InvUpdateComponent},
 {path:'createroom', component:RoomCreateComponent},
 {path:'allroom', component:RoomListComponent},
-{path:'updateroom', component:RoomUpdateComponent},
+{path:'updateallroom', component:RoomUpdateComponent},
 
 ];
 

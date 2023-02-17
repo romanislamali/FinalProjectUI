@@ -31,22 +31,8 @@ export class RoomListComponent implements OnInit{
     }
 
 
-    // deleteHotelFacilities(id: number){
-    //   this.roomService.deleteFacilities(id).subscribe(
-    //     data=>{alert('Hotel Facilities successfully deleted!!'); 
-    //       this.ngOnInit(); 
-    //     },
-    //     error=>alert('Somethig wrong, please try again!!')      
-    //     );         
-    // }
-  
-    // updateHotelFacilities(id: number){
-    //   this.router.navigate(['updatefacilities/',id]);
-    // }
-
-  
-    updateRoom(id: number){
-      this.router.navigate(['updateroom/',id]);
+    updateroom(id: number){
+      this.router.navigate(['updateallroom/',id]);
     }
 
    

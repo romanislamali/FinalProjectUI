@@ -53,7 +53,7 @@ export class RoomUpdateComponent {
   }
 
 
-  updateFacilities(){
+  updateroom(){
     this.roomService.updateRoom(this.id, this.room).subscribe(
       data => alert('Hotel facilities update successfull!!'),
        error => alert('Something is wrong, please try again!!'));
