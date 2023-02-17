@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Hotel } from 'src/app/model/hotel.model';
 import { Room } from 'src/app/model/room.model';
 import { HotelService } from 'src/app/service/hotel.service';
 import { RoomService } from 'src/app/service/room.service';
@@ -36,6 +37,8 @@ export class RoomCreateComponent {
 
     hotelList?: any;
   searchHotel() {
+
+   
     this.hotelList = this.hotelService.getAllHotelByLocation(this.locationId);
     this.hotelListCard = true;
     this.roomListCard = false;
@@ -43,11 +46,14 @@ export class RoomCreateComponent {
   }
 
    
-
+  
+  hotels: Hotel = new Hotel();
 room : Room = new Room();
 submitted:boolean=false;
   roomAdd(){
     this.submitted = true;
+    this.room.hid_fk=this.locationId;
+    console.log(this.locationId);
     this.roomService.createRoom(this.room).subscribe(
       data => alert('Room added successfull!!'),
       

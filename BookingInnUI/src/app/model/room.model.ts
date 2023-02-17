@@ -1,3 +1,4 @@
+import { Hotel } from "./hotel.model";
 
 export class Room{
     
@@ -17,7 +18,8 @@ export class Room{
         roomtype: number | undefined;
         roomfacilities: number | undefined;
 
-
+        hid_fk:number | undefined;
+        hotels : Hotel[] | undefined;
 
 
 
