@@ -10,18 +10,28 @@
             <h1 class="text-center">Add New Room</h1>
             <form (ngSubmit)="roomAdd()">
                 <p>Locaction choose</p>
-                            <select class="col-4 " [(ngModel)]="locationId" (ngModelChange)="getLid($event)"
-                                name="sdf">
-                                <option (click)="searchHotel()"  *ngFor="let l of location | async" name="lid" [ngValue]="l.lid">
-                                    {{l.lname}}</option>
-                            </select>
-                        
+                <select class="col-4 " [(ngModel)]="locationId" (ngModelChange)="getLid($event)" name="sdf">
+                    <option *ngFor="let l of locationList | async" name="location" [ngValue]="l.lid">
+                        {{l.lname}}</option>
+                </select>
+
                 <p>Hotel choose</p>
-                            <select class="col-4 " [(ngModel)]="hotelId" (ngModelChange)="getHid($event)"
-                                name="sdf">
-                                <option *ngFor="let h of hotelList | async" name="hid" [ngValue]="h.hid">
-                                    {{h.hname}}</option>
-                            </select>
+                <select class="col-4 " [(ngModel)]="hotelId" (ngModelChange)="getHid($event)" name="sdf">
+                    <option *ngFor="let h of hotelList | async" name="hotel" [ngValue]="h.hid">
+                        {{h.hname}}</option>
+                </select>
+
+                <p>Room Type</p>
+                <select class="col-4 " >
+                    <option *ngFor="let rt of roomType | async" name="roomtype" [ngValue]="rt.rtName">
+                        {{rt.rtName}}</option>
+                </select>
+
+                <p>Room Facilities</p>
+                <select class="col-4 ">
+                    <option *ngFor="let rf of roomFacilities | async" name="roomFacilities" [ngValue]="rf.rfName">
+                        {{rf.rfName}}</option>
+                </select>
 
 
 
@@ -33,15 +43,13 @@
                     [(ngModel)]="room.rprice">
                 <input type="text" class="form-control" name="hfackeyword" placeholder="room size"
                     [(ngModel)]="room.rsize">
-                <input type="text" class="form-control" name="hfackeyword" placeholder="room status"
-                    [(ngModel)]="room.rstatus">
                 <div class="col-1 p-3">
                     <button class="btn btn-info">Submit</button>
                 </div>
             </form>
 
 
-          
+
         </div>
     </div>
 </div>

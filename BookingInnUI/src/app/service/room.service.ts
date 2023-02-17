@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { Room } from '../model/room.model';
 import { Observable } from 'rxjs';
 import { ApiResponse } from '../model/api.response';
+import { Roomtype } from '../model/roomtype.model';
+import { RoomFacilities } from '../model/roomfacilities.model';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +14,10 @@ export class RoomService {
   baseUrl:string = "http://localhost:8085/";
 
   constructor(private httpClient : HttpClient) { }
+
+  createRoom(r: Room): Observable<ApiResponse> {
+    return this.httpClient.post<ApiResponse>(this.baseUrl + "room/add", r);
+  }
 
   getAllRoom(): Observable<Room> {
     return this.httpClient.get<Room>(this.baseUrl+"room/all");
@@ -25,6 +31,15 @@ export class RoomService {
     return this.httpClient.get<any>(this.baseUrl+"roombyhotelid/"+hid);
   }
 
+  getAllRoomType(): Observable<Roomtype> {
+    return this.httpClient.get<Roomtype>(this.baseUrl+"roomtype/all");
+  }
+
+  getAllRoomFacilities(): Observable<RoomFacilities> {
+    return this.httpClient.get<RoomFacilities>(this.baseUrl+"roomfacilities/all");
+  }
+
+
   //Make room deactive
   blockBookedRoom(id: number) {
     return this.httpClient.patch(this.baseUrl+"room/status/"+id, id);
@@ -34,12 +49,6 @@ export class RoomService {
   activeBookedRoom(id: number) {
     return this.httpClient.patch(this.baseUrl+"room/status/true/"+id, id);
   }
-
-  createRoom(r: Room): Observable<ApiResponse> {
-    return this.httpClient.post<ApiResponse>(this.baseUrl + "room/add", r);
-  }
-
-
 
 
 }

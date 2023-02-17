@@ -13,6 +13,7 @@ export class Room{
         rchildcapacity: number | undefined;
         rtotalbed: number | undefined;
         rsize: number | undefined;
+        location: number| undefined;
         hotel: number | undefined;
         roomtype: number | undefined;
         roomfacilities: number | undefined;
