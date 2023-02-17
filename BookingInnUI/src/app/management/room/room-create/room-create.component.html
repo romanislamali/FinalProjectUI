@@ -9,11 +9,11 @@
             </div>
             <h1 class="text-center">Add New Room</h1>
             <form (ngSubmit)="roomAdd()">
-                <p>Locaction choose</p>
-                            <select class="col-4 " [(ngModel)]="locationId" (ngModelChange)="getLid($event)"
+                <p>Select your hotel </p>
+                            <select class="col-4 " [(ngModel)]="hotelId" (ngModelChange)="getHid($event)"
                                 name="sdf">
-                                <option   *ngFor="let l of location | async" name="lid" [ngValue]="l.lid">
-                                    {{l.lname}}</option>
+                                <option   *ngFor="let h of hotel | async" name="lid" [ngValue]="h.hid">
+                                    {{h.hname}}</option>
                             </select>
                         
                 <!-- <p>Hotel choose</p>
@@ -23,7 +23,7 @@
                                     {{h.hname}}</option>
                             </select> -->
 
-
+                            <p>Add your room </p>
 
                 <input type="text" class="form-control" name="hfacname" placeholder="room number"
                     [(ngModel)]="room.rnumber">

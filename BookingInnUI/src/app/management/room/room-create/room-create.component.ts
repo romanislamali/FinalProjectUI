@@ -15,35 +15,26 @@ export class RoomCreateComponent {
     private hotelService : HotelService
     ) { }
     ngOnInit() {
-      this.location = this.hotelService.getAllLocation();
-      this.hotelList = this.hotelService.getAllHotelByLocation(this.locationId);
+     
+      this.hotel = this.hotelService.getAllHotel();
+     
     }
 
 
-    location: any;
-    locationId?: any;
+   
     hotelListCard: boolean = false;
     roomListCard: boolean = false;
     hotelId?:any;
     hotel:any;
 
-    getLid(value: any) {
-      this.locationId = value;
-    }
+   
     getHid(value:any){
       this.hotelId=value;
     }
 
 
     hotelList?: any;
-  searchHotel() {
-
-   
-    this.hotelList = this.hotelService.getAllHotelByLocation(this.locationId);
-    this.hotelListCard = true;
-    this.roomListCard = false;
   
-  }
 
    
   
@@ -52,16 +43,16 @@ room : Room = new Room();
 submitted:boolean=false;
   roomAdd(){
     this.submitted = true;
-    this.room.hid_fk=this.locationId;
-    console.log(this.locationId);
-    this.roomService.createRoom(this.room).subscribe(
+      this.roomService.createRoom(this.room).subscribe(
       data => alert('Room added successfull!!'),
-      
-       error => alert('Something is wrong, please try again!!')  
+             error => alert('Something is wrong, please try again!!')  
          
     );  
     console.log(this.hotelList);
+
+this.rooms ;
   }
 
+  rooms : Room = new Room();
 
 }
