@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LocationComponent } from './location.component';
+import { RoomTypeUpdateComponent } from './room-type-update.component';
 
-describe('LocationComponent', () => {
-  let component: LocationComponent;
-  let fixture: ComponentFixture<LocationComponent>;
+describe('RoomTypeUpdateComponent', () => {
+  let component: RoomTypeUpdateComponent;
+  let fixture: ComponentFixture<RoomTypeUpdateComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LocationComponent ]
+      declarations: [ RoomTypeUpdateComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(LocationComponent);
+    fixture = TestBed.createComponent(RoomTypeUpdateComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
