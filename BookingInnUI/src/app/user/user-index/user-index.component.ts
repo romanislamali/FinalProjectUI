@@ -52,8 +52,6 @@ export class UserIndexComponent {
     this.hotelList = this.hotelService.getAllHotelByLocation(this.locationId);
     this.hotelListCard = true;
     this.roomListCard = false;
-    // this.checkin = value1;
-    // this.checkout = value2;
   }
 
   onclick() {
@@ -102,11 +100,6 @@ export class UserIndexComponent {
 
   hotelnames?: any;
 
-  // bookingRoom(value: any) {
-  //   this.roomId = value;
-  //   this.confirmBooking();
-  // }
-
   booking: Booking = new Booking();
   loc: Location = new Location();
   hot: Hotel = new Hotel();
@@ -148,7 +141,6 @@ export class UserIndexComponent {
 
                    this.roomService.blockBookedRoom(this.roomId).subscribe(
                     )
-
               }
             )
              // Get Room End
@@ -157,17 +149,8 @@ export class UserIndexComponent {
              // Get Hotel End
       }
     )
-   
-
-    // this.booking.checkin = this.checkin;
-    // this.booking.checkout = this.checkout;
-
-
-    
-
-
     // window.location.reload();
-  }
+   }
 
   sendAllIdToLoginTs() {
     console.log(this.locationId);

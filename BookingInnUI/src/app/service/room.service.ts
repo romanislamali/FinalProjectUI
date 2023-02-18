@@ -30,16 +30,7 @@ export class RoomService {
   getAllRoomByHotelId(hid:number): Observable<any>{
     return this.httpClient.get<any>(this.baseUrl+"roombyhotelid/"+hid);
   }
-
-  getAllRoomType(): Observable<Roomtype> {
-    return this.httpClient.get<Roomtype>(this.baseUrl+"roomtype/all");
-  }
-
-  getAllRoomFacilities(): Observable<RoomFacilities> {
-    return this.httpClient.get<RoomFacilities>(this.baseUrl+"roomfacilities/all");
-  }
-
-
+  
   //Make room deactive
   blockBookedRoom(id: number) {
     return this.httpClient.patch(this.baseUrl+"room/status/"+id, id);
