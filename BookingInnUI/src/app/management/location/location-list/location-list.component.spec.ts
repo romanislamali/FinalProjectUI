@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InvListComponent } from './inv-list.component';
+import { LocationListComponent } from './location-list.component';
 
-describe('InvListComponent', () => {
-  let component: InvListComponent;
-  let fixture: ComponentFixture<InvListComponent>;
+describe('LocationListComponent', () => {
+  let component: LocationListComponent;
+  let fixture: ComponentFixture<LocationListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ InvListComponent ]
+      declarations: [ LocationListComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(InvListComponent);
+    fixture = TestBed.createComponent(LocationListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

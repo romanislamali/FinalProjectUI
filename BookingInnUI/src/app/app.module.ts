@@ -19,8 +19,6 @@ import { HfListComponent } from './management/hotel-facilities/hf-list/hf-list.c
 import { HfCreateComponent } from './management/hotel-facilities/hf-create/hf-create.component';
 import { HfUpdateComponent } from './management/hotel-facilities/hf-update/hf-update.component';
 import { SideberComponent } from './sideber/sideber.component';
-import { InvCreateComponent } from './management/inventory/inv-create/inv-create.component';
-import { InvUpdateComponent } from './management/inventory/inv-update/inv-update.component';
 import { RoomCreateComponent } from './management/room/room-create/room-create.component';
 import { RoomListComponent } from './management/room/room-list/room-list.component';
 import { RoomUpdateComponent } from './management/room/room-update/room-update.component';
@@ -31,6 +29,12 @@ import { RoomTypeUpdateComponent } from './management/room-type/room-type-update
 import { RoomFacilitiesListComponent } from './management/room-facilities/room-facilities-list/room-facilities-list.component';
 import { RoomFacilitiesCreateComponent } from './management/room-facilities/room-facilities-create/room-facilities-create.component';
 import { RoomFacilitiesUpdateComponent } from './management/room-facilities/room-facilities-update/room-facilities-update.component';
+import { LocationUpdateComponent } from './management/location/location-update/location-update.component';
+import { LocationListComponent } from './management/location/location-list/location-list.component';
+import { LocationCreateComponent } from './management/location/location-create/location-create.component';
+import { HotelCreateComponent } from './management/hotel/hotel-create/hotel-create.component';
+import { HotelListComponent } from './management/hotel/hotel-list/hotel-list.component';
+import { HotelUpdateComponent } from './management/hotel/hotel-update/hotel-update.component';
 
 
 
@@ -48,8 +52,6 @@ import { RoomFacilitiesUpdateComponent } from './management/room-facilities/room
     HfCreateComponent,
     HfUpdateComponent,
     SideberComponent,
-    InvCreateComponent,
-    InvUpdateComponent,
     RoomCreateComponent,
     RoomListComponent,
     RoomUpdateComponent,
@@ -59,7 +61,13 @@ import { RoomFacilitiesUpdateComponent } from './management/room-facilities/room
     RoomTypeUpdateComponent,
     RoomFacilitiesListComponent,
     RoomFacilitiesCreateComponent,
-    RoomFacilitiesUpdateComponent
+    RoomFacilitiesUpdateComponent,
+    LocationUpdateComponent,
+    LocationListComponent,
+    LocationCreateComponent,
+    HotelCreateComponent,
+    HotelListComponent,
+    HotelUpdateComponent
 
     
     
