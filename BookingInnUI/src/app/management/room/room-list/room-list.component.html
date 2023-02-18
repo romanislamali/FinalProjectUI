@@ -10,20 +10,25 @@
             <table class="table table-hover">
                 <thead>
                     <tr>
+                        <th>ID</th>
                         <th>Room Number</th>
                         <th>Price</th>
                         <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let r of roomList | async">
-                        <td>#{{r.rnumber}}</td>
+                    <tr *ngFor="let r of roomList">
+                        <td>#{{r.rid}}</td>
+                        <td>{{r.rnumber}}</td>
                         <td>{{r.rprice}}</td>
-                        <td>{{r.rstatus}}</td>
-                        <!-- <td>
-                            <button class="btn btn-success" (click)="updateHotelFacilities(hf.hfacid)">Update</button>
-                            <button class="btn btn-danger" (click)="deleteHotelFacilities(hf.hfacid)">Delete</button>
-                        </td> -->
+                        <td>
+                            <button *ngIf="activeRoomBtn" class="btn btn-warning" (click)="activeRoom(r.rid)">Active</button>
+                            <button *ngIf="dactiveRoomBtn" class="btn btn-danger" (click)="dactiveRoom(r.rid)">Dactive</button>
+                        </td>
+                        <td>
+                            <button class="btn btn-success" (click)="updateRoom(r.rid)">Update</button>
+                            <button class="btn btn-danger" (click)="deleteRoom(r.rid)">Delete</button>
+                        </td>
                     </tr>
                 </tbody>
             </table>

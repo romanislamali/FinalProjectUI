@@ -12,23 +12,48 @@ export class RoomListComponent implements OnInit{
     private roomService : RoomService,
     private router:Router
     ){}
-  
-    roomList?: any;
+    
+    activeRoomBtn: boolean = true;
+    dactiveRoomBtn: boolean = true;
+   
+
+     
   
     ngOnInit(){
-    this.roomList = this.roomService.getAllRoom();
+      this.getAllRoomList();
+    }
+
+    roomList:any;
+    
+    getAllRoomList(){
+      this.roomService.getAllRoom().subscribe(
+        data => {
+          this.roomList=data;
+          console.log(data)
+        }
+      );
+      
     }
   
-    // deleteHotelFacilities(id: number){
-    //   this.roomService.deleteFacilities(id).subscribe(
-    //     data=>{alert('Hotel Facilities successfully deleted!!'); 
-    //       this.ngOnInit(); 
-    //     },
-    //     error=>alert('Somethig wrong, please try again!!')      
-    //     );         
-    // }
   
-    // updateHotelFacilities(id: number){
-    //   this.router.navigate(['updatefacilities/',id]);
-    // }
+    updateRoom(id: number){
+      this.router.navigate(['updateroom/',id]);
+    }
+
+    deleteRoom(id: number){
+      this.roomService.deleteRoom(id).subscribe(
+        data=>{alert('Room successfully deleted!!');
+        this.ngOnInit();   
+        },
+        error=>alert('Somethig wrong, please try again!!')      
+        );        
+    }
+
+    activeRoom(id:number){
+      this.roomService.activeRoom(id).subscribe();
+    }
+
+    dactiveRoom(id:number){
+      this.roomService.dactiveRoom(id).subscribe();
+    }
 }

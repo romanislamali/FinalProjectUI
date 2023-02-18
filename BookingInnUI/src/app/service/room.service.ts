@@ -23,6 +23,14 @@ export class RoomService {
     return this.httpClient.get<Room>(this.baseUrl+"room/all");
   }
 
+  updateRoom(id: number, room: Room): Observable<ApiResponse> {
+    return this.httpClient.put<ApiResponse>(this.baseUrl+"room/update/"+room.rid+"/", room);
+  }
+
+  deleteRoom(id: number): Observable<ApiResponse> {
+    return this.httpClient.delete<ApiResponse>(this.baseUrl+"room/delete/"+id);
+  }
+
   getRoomById(rid:number): Observable<any>{
     return this.httpClient.get<any>(this.baseUrl+"room/"+rid);
   }
@@ -32,13 +40,15 @@ export class RoomService {
   }
   
   //Make room deactive
-  blockBookedRoom(id: number) {
-    return this.httpClient.patch(this.baseUrl+"room/status/"+id, id);
+  dactiveRoom(id: number) {
+    console.log(id);
+    return this.httpClient.patch(this.baseUrl+"room/dactive/"+id, id);
   }
 
   //Make room active
-  activeBookedRoom(id: number) {
-    return this.httpClient.patch(this.baseUrl+"room/status/true/"+id, id);
+  activeRoom(id: number) {    
+    console.log(id);
+    return this.httpClient.patch(this.baseUrl+"room/active/"+id, id);
   }
 
 

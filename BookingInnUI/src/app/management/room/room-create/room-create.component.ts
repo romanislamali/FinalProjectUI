@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Room } from 'src/app/model/room.model';
 import { HotelService } from 'src/app/service/hotel.service';
 import { RoomFacilitiesService } from 'src/app/service/room-facilities.service';
 import { RoomTypeService } from 'src/app/service/room-type.service';
 import { RoomService } from 'src/app/service/room.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-room-create',
@@ -11,6 +12,8 @@ import { RoomService } from 'src/app/service/room.service';
   styleUrls: ['./room-create.component.css']
 })
 export class RoomCreateComponent implements OnInit{
+
+  @ViewChild('addroom')addroom:NgForm;
   
   room : Room = new Room();
   constructor(
@@ -25,6 +28,22 @@ export class RoomCreateComponent implements OnInit{
   locationList:any;
   roomType:any;
   roomFacilities:any;
+
+  roomArr:any;
+
+  fkArr={
+    "location":{
+      "lid":""
+    },
+
+    "hotel":{
+      "hid":""
+    },
+
+    "roomtype":{
+      "rtid":""
+    }
+  }
 
   ngOnInit() {
     this.locationList = this.hotelService.getAllLocation();
@@ -49,6 +68,13 @@ export class RoomCreateComponent implements OnInit{
 
   submitted: boolean = false;
   roomAdd() {
+    this.roomArr=this.addroom.value;
+    this.fkArr.location.lid=this.addroom.value.locatioId;
+    this.fkArr.hotel.hid=this.addroom.value.hotelId;
+    this.fkArr.roomtype.rtid=this.addroom.value.roomTypeId;
+
+    this.room=Object.assign(this.roomArr, this.fkArr);
+    
     this.submitted = true;
     this.roomService.createRoom(this.room).subscribe(
       data => alert('Room added successfull!!'),
@@ -56,7 +82,7 @@ export class RoomCreateComponent implements OnInit{
       error => alert('Something is wrong, please try again!!')
 
     );
-    console.log(this.hotelList);
+    
   }
 
 

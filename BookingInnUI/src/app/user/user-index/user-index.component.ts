@@ -139,7 +139,7 @@ export class UserIndexComponent {
                 )
                    // Save Load Data 
 
-                   this.roomService.blockBookedRoom(this.roomId).subscribe(
+                   this.roomService.dactiveRoom(this.roomId).subscribe(
                     )
               }
             )

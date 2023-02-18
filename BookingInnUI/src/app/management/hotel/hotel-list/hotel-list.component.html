@@ -1,1 +1,39 @@
-<p>hotel-list works!</p>
+<div class="container">
+    <div class="row" style="margin-top: 100px">
+        <div class="col-2">
+        </div>
+        <div class="card col-10" style="background-color: antiquewhite">                
+            <h1 class="text-center">All Hotel</h1>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Hotel Name</th>
+                        <th>Address</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Address</th>
+                        <th>Location</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let h of hotelList | async">
+                        <td>#{{h.hid}}</td>
+                        <td>{{h.hname}}</td>
+                        <td>{{h.haddress}}</td>
+                        <td>{{h.hemail}}</td>
+                        <td>{{h.hphone}}</td>
+                        <td>{{h.location.lname}}</td>
+                      
+            
+                        <td>
+                            <button class="btn btn-success" (click)="updateHotel(h.hid)">Update</button>
+                            <button class="btn btn-danger" (click)="deleteHotel(h.hid)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

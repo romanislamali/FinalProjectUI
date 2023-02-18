@@ -4,7 +4,7 @@ import { Location } from "./location.model";
 
 
 export class Hotel{
-    hId: number | undefined;
+    hid: number | undefined;
     hname: string | undefined;
     hdescription: string | undefined;
     haddress: string | undefined;
