@@ -1,9 +1,10 @@
+<app-admin-dashboard></app-admin-dashboard>
 <div class="container">
     <div class="row" style="margin-top: 100px">
         <div class="col-2">
         </div>
         <div class="card col-10" style="background-color: antiquewhite">
-            <h1 class="text-center">Add New Room</h1>
+            <h1 class="text-center">Add Hotel</h1>
             <form (ngSubmit)="hotelCreate()">
                 <div class="row">
                     <div class="col-6">
@@ -25,9 +26,7 @@
                     </div>
                     <div class="col-6">
                         
-                        <label>Room Price: </label>
-                        <input type="text" class="form-control" [(ngModel)]="hotel.hwebsite" name="hwebsite">
-                                                
+                        
                     </div>
                     <div class="col-1 p-3">
                         <button class="btn btn-info">Submit</button>

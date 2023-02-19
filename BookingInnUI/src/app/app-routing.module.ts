@@ -8,6 +8,12 @@ import { HfListComponent } from './management/hotel-facilities/hf-list/hf-list.c
 import { HfUpdateComponent } from './management/hotel-facilities/hf-update/hf-update.component';
 import { HotelCreateComponent } from './management/hotel/hotel-create/hotel-create.component';
 import { HotelListComponent } from './management/hotel/hotel-list/hotel-list.component';
+import { LocationCreateComponent } from './management/location/location-create/location-create.component';
+import { LocationListComponent } from './management/location/location-list/location-list.component';
+import { RoomFacilitiesCreateComponent } from './management/room-facilities/room-facilities-create/room-facilities-create.component';
+import { RoomFacilitiesListComponent } from './management/room-facilities/room-facilities-list/room-facilities-list.component';
+import { RoomTypeCreateComponent } from './management/room-type/room-type-create/room-type-create.component';
+import { RoomTypeListComponent } from './management/room-type/room-type-list/room-type-list.component';
 import { RoomCreateComponent } from './management/room/room-create/room-create.component';
 import { RoomListComponent } from './management/room/room-list/room-list.component';
 import { RoomUpdateComponent } from './management/room/room-update/room-update.component';
@@ -25,8 +31,14 @@ const routes: Routes = [
 {path:'updatehotel/:id', component:HotelCreateComponent},
 {path:'createroom', component:RoomCreateComponent},
 {path:'allroom', component:RoomListComponent},
+{path:'addroomfacilities', component:RoomFacilitiesCreateComponent},
+{path:'allroomfacilities', component:RoomFacilitiesListComponent},
+{path:'addroomtype', component:RoomTypeCreateComponent},
+{path:'allroomtype', component:RoomTypeListComponent},
 {path:'updateroom/:id', component:RoomUpdateComponent},
-{path:'allbooking', component:BookingListComponent}
+{path:'allbooking', component:BookingListComponent},
+{path:'alllocation', component:LocationListComponent},
+{path:'addlocation', component:LocationCreateComponent}
 ];
 
 @NgModule({

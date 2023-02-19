@@ -1,200 +1,51 @@
-<!-- this is admin dashboard sideber start point -->
+
 <nav id="sidebarMenu"  class="collapse d-lg-block sidebar collapse"
   style="margin-top: 80px; background-color: lightseagreen;">
   <div class="position-sticky">
     <div class="list-group list-group-flush mx-3 mt-4">
-      <button class="btn btn-outline-light" (click)="showHotel()">
-        <h1>Hotel</h1>
+      <button class="btn btn-outline-light h" routerLink="/alllocation">
+        <h4>Location</h4>
       </button>
-      <button class="btn btn-outline-light" (click)="showHotelFacilities()">
-        <h1>Hotel Facilities</h1>
+      <button class="btn btn-outline-light h" routerLink="/allhotel">
+        <h4>Hotel</h4>
       </button>
-      <button class="btn btn-outline-light" (click)="showHotelFacilities()">
-        <h1>Inventory</h1>
+      <button class="btn btn-outline-light h" routerLink="/allfacilities">
+        <h4>Hotel Faciliteis</h4>
       </button>
-      <button class="btn btn-outline-light" (click)="showHotelFacilities()">
-        <h1>Hotel Facilities</h1>
+      <button class="btn btn-outline-light h" routerLink="/allroom">
+        <h4>Room</h4>
       </button>
-      <button class="btn btn-outline-light" (click)="showRoom()">
-        <h1>Room</h1>
+      <button class="btn btn-outline-light h" routerLink="/allroomfacilities">
+        <h4>Room Faciliteis</h4>
       </button>
-      <button class="btn btn-outline-light" (click)="showLocation()">
-        <h1>Location</h1>
+      <button class="btn btn-outline-light h" routerLink="/allroomtype">
+        <h4>Room Type</h4>
       </button>
-      <button class="btn btn-outline-light" (click)="showBook()">
-        <h1>Booking</h1>
+      <button class="btn btn-outline-light h" routerLink="/allbooking">
+        <h4>Booking</h4>
+      </button><br><br>
+
+
+      
+      <button class="btn btn-outline-light h" routerLink="/addlocation">
+        <h4>Add Location</h4>
       </button>
-      <button class="btn btn-outline-light" (click)="showHotel()">
-        <h1>Payment</h1>
+      <button class="btn btn-outline-light h" routerLink="/addhotel">
+        <h4>Add Hotel</h4>
       </button>
-      <button class="btn btn-outline-light" (click)="showHotel()">
-        <h1>User</h1>
+      <button class="btn btn-outline-light h" routerLink="/createfacilities">
+        <h4>Add Hotel Faciliteis</h4>
+      </button>
+      <button class="btn btn-outline-light h" routerLink="/createroom">
+        <h4>Add Room</h4>
+      </button>
+      <button class="btn btn-outline-light h" routerLink="/addroomfacilities">
+        <h4>Add Room Faciliteis</h4>
+      </button>
+      <button class="btn btn-outline-light h" routerLink="/addroomtype">
+        <h4>Add Room Type</h4>
       </button>
     </div>
   </div>
 </nav>
-<div >
-  <!-- <img src="assets/images/admin/admin.jpg" height="10px" width="" alt="" loading="" class="center" /> <br> -->
-</div>
-<!-- this is admin dashboard sideber end point -->
-
-
-<!-- This is start Hotel button tab -->
-<!-- <div>
-  <div class="container" *ngIf="locationbtntab">
-    <div class="main">
-      <a  (click)="showLocationList()">
-        <div class="gallery" style="text-align: center;">
-          <h1 style="text-align:center;color: rgb(49, 78, 204);">Location</h1><br>
-          <h3 style="text-align:center;">Total Location: 12</h3>
-          <h3 style="text-align:center;">Newely Added: 3</h3><br>
-          <button style="text-align:center;"><b>See All Location</b></button><br>
-        </div>
-      </a>
-    </div> -->
-   
-  <!-- </div> -->
-  <!-- This is end of Hotel button tab -->
-
-
-  <!-- <div class="container" *ngIf="locationshow">
-    <div class="main">  
-       <app-location></app-location>  -->
-       <!-- <table class="table table-hover  bordered ">
-        <thead>
-            <tr>
-                <th>Country Name</th>
-                <th>Description</th>
-                <th>Lat</th>
-                <th>Long</th>
-                <th>Location Name</th>
-                <th>Photo</th>
-                <th>ZipCode</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let l of locationlist | async">
-                <td>{{l.lcountry}}</td>
-                <td>{{l.ldescription}}</td>
-                <td>{{l.llat}}</td>
-                <td>{{l.llong}}</td>
-                <td>{{l.lname}}</td>
-                <td>{{l.lphoto}}</td>
-                <td>{{l.lzipcode}}</td>
-                <td>
-                    <button class="btn btn-danger">Delete</button>
-                    <button class="btn btn-success">Update</button>
-                    <button class="btn btn-worning" (click)="updateStudent(student.id)">Update</button>
-                </td>
-            </tr>
-        </tbody>
-    </table> -->
-
-
-
-    <!-- </div>
-  </div> -->
-
-
-  
-
-
-
-
-  <!-- This is start Hotel button tab -->
-  <!-- <div class="container" *ngIf="hotelbtntab">
-    <div class="main">
-      <a (click)="showHotelList()">
-        <div class="gallery" style="text-align: center;">
-          <h1 style="text-align:center;color: rgb(49, 78, 204);">Hotel</h1><br>
-          <h3 style="text-align:center;">Total Hotel: 12</h3>
-          <h3 style="text-align:center;">Newely Added: 3</h3><br>
-          <h1 style="text-align:center;"><b>See All Hotel</b></h1><br>
-        </div>
-      </a>
-      <a (click)="showHotelFacilitiesList()">
-        <div class="gallery" style="text-align: center;">
-          <h1 style="text-align:center;color: rgb(49, 78, 204);">Hotel Facilities</h1><br>
-          <h3 style="text-align:center;">Total Facilities: 12</h3>
-          <h3 style="text-align:center;">Newely Added: 3</h3><br>
-          <h1 style="text-align:center;"><b>See All Facilities</b></h1><br>
-        </div>
-      </a>
-    </div>
-  </div> -->
-  <!-- This is end of Hotel button tab -->
-
-
-  <!-- This is start of Room button tab -->
-  <!-- <div class="container" *ngIf="roombtntab">
-    <div class="main">
-      <a href="">
-        <div class="gallery" style="text-align: center;">
-          <h1 style="text-align:center;color: rgb(49, 78, 204);">Room</h1><br>
-          <h3 style="text-align:center;">Total Room: 12</h3>
-          <h3 style="text-align:center;">Newely Added: 3</h3><br>
-          <h1 style="text-align:center;"><b>See All Room</b></h1><br>
-        </div>
-      </a>
-      <a href="">
-        <div class="gallery" style="text-align: center;">
-          <h1 style="text-align:center;color: rgb(49, 78, 204);">Room Facilities</h1><br>
-          <h3 style="text-align:center;">Total Room: 12</h3>
-          <h3 style="text-align:center;">Newely Added: 3</h3><br>
-          <h1 style="text-align:center;"><b>All Room Facilities</b></h1><br>
-        </div>
-      </a>
-      <a href="">
-        <div class="gallery" style="text-align: center;">
-          <h1 style="text-align:center;color: rgb(49, 78, 204);">Room Type</h1><br>
-          <h3 style="text-align:center;">Total Room Type: 12</h3>
-          <h3 style="text-align:center;">Newely Added: 3</h3><br>
-          <h1 style="text-align:center;"><b>All Room Type</b></h1><br>
-        </div>
-      </a>
-    </div>
-  </div>
-</div> -->
-
-
-<!-- <div class="container" *ngIf="bookbtntab">
-  <div class="main">
-    <a (click)="showBookList()">
-      <div class="gallery" style="text-align: center;">
-        <h1 style="text-align:center;color: rgb(49, 78, 204);">Book</h1><br>
-        <h3 style="text-align:center;">Total Hotel: 50</h3>
-        <h3 style="text-align:center;">Newely Added: 3</h3><br>
-        <h1 style="text-align:center;"><b>All show BookList</b></h1><br>
-      </div>
-    </a>
-    <a href="">
-      <div class="gallery" style="text-align: center;">
-        <h1 style="text-align:center;color: rgb(49, 78, 204);">Request Book</h1><br>
-        <h3 style="text-align:center;">Total Request accepted: 12</h3>
-        <h3 style="text-align:center;">Newely Request: 3</h3><br>
-        <h1 style="text-align:center;"><b>See All </b></h1><br>
-      </div>
-    </a>
-  </div>
-</div> -->
-
-<!-- Routing to booking component -->
-<!-- <div class="container" *ngIf="blist">
-  <div class="main">  
-     <app-booking></app-booking> 
-  </div>
-</div> -->
-
-<!-- Routing to hotel component -->
-<!-- <div class="container">
-  <div class="main" *ngIf="hlist">  
-     <app-hotel></app-hotel> 
-  </div>
-</div> -->
-
-<!-- Routing to hotel-facilities component -->
-<div *ngIf="hflist">  
-     <app-hf-list></app-hf-list>
-</div>
 

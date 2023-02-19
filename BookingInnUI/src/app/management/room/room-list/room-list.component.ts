@@ -12,12 +12,7 @@ export class RoomListComponent implements OnInit{
     private roomService : RoomService,
     private router:Router
     ){}
-    
-    activeRoomBtn: boolean = true;
-    dactiveRoomBtn: boolean = true;
-   
 
-     
   
     ngOnInit(){
       this.getAllRoomList();
@@ -49,11 +44,30 @@ export class RoomListComponent implements OnInit{
         );        
     }
 
+  //  myFunction(value:any) {
+  //     var x = document.getElementById("changeStatus");
+  //     if (x!.innerHTML === "Active") {        
+  //       this.dactiveRoom(value);
+  //       x!.innerHTML = "Dactive";
+  //     } else {
+  //       this.activeRoom(value);
+  //       x!.innerHTML = "Active";
+  //     }
+  //   }  
+
+    activeRoomBtn: boolean = true;
+    dactiveRoomBtn: boolean = true;
+      
+
     activeRoom(id:number){
       this.roomService.activeRoom(id).subscribe();
+      this.activeRoomBtn=false;
+      this.dactiveRoomBtn=true;
     }
 
     dactiveRoom(id:number){
       this.roomService.dactiveRoom(id).subscribe();
+      this.dactiveRoomBtn=false;
+      this.activeRoomBtn=true;
     }
 }
