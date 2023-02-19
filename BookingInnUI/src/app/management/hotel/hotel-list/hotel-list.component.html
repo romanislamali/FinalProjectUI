@@ -10,21 +10,23 @@
                     <tr>
                         <th>ID</th>
                         <th>Hotel Name</th>
+                        <th>Location</th>
                         <th>Address</th>
+                        <th>Rating</th>
                         <th>Email</th>
                         <th>Phone</th>
-                        <th>Address</th>
-                        <th>Location</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor="let h of hotelList | async">
                         <td>#{{h.hid}}</td>
                         <td>{{h.hname}}</td>
+                        <td>{{h.location.lname}}</td>
                         <td>{{h.haddress}}</td>
+                        <td>{{h.hrating}}*</td>
                         <td>{{h.hemail}}</td>
                         <td>{{h.hphone}}</td>
-                        <td>{{h.location.lname}}</td>
                       
             
                         <td>
