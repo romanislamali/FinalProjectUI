@@ -12,6 +12,7 @@ import { LocationComponent } from './management/location/location.component';
 import { RoomCreateComponent } from './management/room/room-create/room-create.component';
 import { RoomListComponent } from './management/room/room-list/room-list.component';
 import { RoomUpdateComponent } from './management/room/room-update/room-update.component';
+import { RoomtypeComponent } from './management/roomtype/roomtype.component';
 import { UserIndexComponent } from './user/user-index/user-index.component';
 const routes: Routes = [
 {path:'', component:UserIndexComponent},
@@ -28,6 +29,7 @@ const routes: Routes = [
 {path:'createroom', component:RoomCreateComponent},
 {path:'allroom', component:RoomListComponent},
 {path:'updateallroom', component:RoomUpdateComponent},
+{path:'createroomtype', component:RoomtypeComponent},
 
 ];
 
