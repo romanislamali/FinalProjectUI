@@ -1,8 +1,8 @@
 export class RoomFacilities{
 
-    rfId:Number | undefined;
-    rfName: string | undefined;
-    rfDescription: string | undefined;
+    rfid:Number | undefined;
+    rfname: string | undefined;
+    rfdescription: string | undefined;
 
 
 

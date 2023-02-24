@@ -27,11 +27,11 @@ export class RoomFacilitiesService {
   }
 
   
-  updateRoomtype(id: number, rfac: RoomFacilities): Observable<ApiResponse> {
-    return this.httpClient.put<ApiResponse>(this.baseUrl+"roomfacilities/update/"+rfac.rfId+"/", rfac);
+  updateRoomFacilities(id: number, rfac: RoomFacilities): Observable<ApiResponse> {
+    return this.httpClient.put<ApiResponse>(this.baseUrl+"roomfacilities/update/"+rfac.rfid+"/", rfac);
   }
 
-  getRoomtypeById(id: number): Observable<any> {
+  getRoomFacById(id: number): Observable<any> {
     return this.httpClient.get(this.baseUrl+"roomfacilities/"+id);
   }
 

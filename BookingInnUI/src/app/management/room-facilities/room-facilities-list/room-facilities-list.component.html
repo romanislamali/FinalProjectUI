@@ -17,13 +17,13 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let rf of roomFacilitiesList | async">
-                        <td>#{{rf.rfId}}</td>
-                        <td>{{rf.rfName}}</td>
-                        <td>{{rf.rfDescription}}</td>
-                    
+                        <td>#{{rf.rfid}}</td>
+                        <td>{{rf.rfname}}</td>
+                        <td>{{rf.rfdescription}}</td>
+                        
                         <td>
-                            <button class="btn btn-success" (click)="updateHotelFacilities(rf.rfacid)">Update</button>
-                            <button class="btn btn-danger" (click)="deleteHotelFacilities(rf.rfacid)">Delete</button>
+                            <button class="btn btn-success" (click)="updateRoomFacilities(rf.rfid)">Update</button>
+                            <button class="btn btn-danger" (click)="deleteRoomFacilities(rf.rfid)">Delete</button>
                         </td>
                     </tr>
                 </tbody>

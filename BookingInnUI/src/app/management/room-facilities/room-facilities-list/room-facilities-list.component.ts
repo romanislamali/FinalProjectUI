@@ -19,8 +19,9 @@ export class RoomFacilitiesListComponent {
     ngOnInit(){
     this.roomFacilitiesList = this.roomFacService.getAllRoomFacilities();
     }
+
    
-    deleteHotelFacilities(id: number){
+    deleteRoomFacilities(id: number){
       this.roomFacService.deleteRoomFacilities(id).subscribe(
         data=>{alert('Room Facilities successfully deleted!!'); 
           this.ngOnInit(); 
@@ -28,8 +29,9 @@ export class RoomFacilitiesListComponent {
         error=>alert('Somethig wrong, please try again!!')      
         );         
     }
+
    
-    updateHotelFacilities(id: number){
-      this.router.navigate(['updatefacilities/',id]);
+    updateRoomFacilities(id: number){
+      this.router.navigate(['updateroomfacilities/',id]);
     }
 }
