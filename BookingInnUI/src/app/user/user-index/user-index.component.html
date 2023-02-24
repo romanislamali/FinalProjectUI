@@ -1,22 +1,22 @@
 <section>
     <div class="row">
-        <div class="col-md-8 offset-md-2 border p-1 " style="margin-top: 100px;">
+        <div style="margin-top: 100px;">
         </div>
     </div>
 
     <div class="container">
         <div class="row">
-            <div class="card col-md-10 offset-md-1 border" style="background-color: lightseagreen">
+            <div class="card shadow rounded col-md-10 offset-md-1 border" style="background-color:#162d5d">
 
                 <div class="row text-center">
-                    <marquee behavior="" direction="">
-                        <h1 style="color:aliceblue">CHOOSE YOUR FAVOURITE HOTEL</h1>
-                    </marquee>
+                    <!-- <marquee behavior="" direction=""></marquee> -->
+                        <h1 style="color:white; margin-top: 20px;">CHOOSE YOUR FAVOURITE HOTEL</h1>
+                    
                     <form (ngSubmit)="searchHotel()" class=" mt-5 mb-5">
                         <div class="col-md-7">
                             <div class="row">
                                 <div class="col-md-4 mb-5">
-                                    <h1>Locaction choose</h1>
+                                    <h1 style="color:white">Locaction</h1>
                                     <select class="col-12" [(ngModel)]="locationId" (ngModelChange)="getLid($event)"
                                         name="sdf">
                                         <option *ngFor="let l of location | async" name="lid" [ngValue]="l.lid">
@@ -24,18 +24,18 @@
                                     </select>
                                 </div>
                                 <div class="col-md-4">
-                                    <h1>Check In</h1>
+                                    <h1 style="color:white">Check In</h1>
                                     <input type="date" class="col-12" name="checkin" [(ngModel)]="booking.checkin">
                                 </div>
                                 <div class="col-md-4">
-                                    <h1>Check Out</h1>
+                                    <h1 style="color:white">Check Out</h1>
                                     <input type="date" class="col-12" name="checkout" [(ngModel)]="booking.checkout">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="d-grid gap-2 col-4 mx-auto mt-5">
                                     <button class="btn btn-outline-secondary">
-                                        <h1>Search</h1>
+                                        <h1 style="color:white">Search</h1>
                                     </button>
                                 </div>
                             </div>
@@ -43,7 +43,7 @@
                         <div class="col-md-5 mb-5">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <h1>Select Room & Person</h1>
+                                    <h1 style="color:white">Select Room & Person</h1>
                                     <a class="mr-1 btn btn-link bg-white" style="text-decoration: none"
                                         (click)="onclick()">
                                         <p>Adult : {{valueadult}}</p>

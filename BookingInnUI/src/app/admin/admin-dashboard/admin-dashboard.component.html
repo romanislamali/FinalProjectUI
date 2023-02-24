@@ -1,6 +1,5 @@
-
-<nav id="sidebarMenu"  class="collapse d-lg-block sidebar collapse"
-  style="margin-top: 80px; background-color: lightseagreen;">
+<!-- <nav id="sidebarMenu"  class="collapse d-lg-block sidebar collapse"
+  style="margin-top: 80px; background-color: #162d5d">
   <div class="position-sticky">
     <div class="list-group list-group-flush mx-3 mt-4">
       <button class="btn btn-outline-light h" routerLink="/alllocation">
@@ -47,5 +46,208 @@
       </button>
     </div>
   </div>
-</nav>
+</nav> -->
+<!-- ======= Sidebar ======= -->
 
+<aside id="sidebar" class="sidebar" style="background-color:#162d5d; margin-top:50px; margin-bottom: 50px;">
+  <ul class="sidebar-nav" id="sidebar-nav" style="background-color:aliceblue; margin-right:20px;">
+
+    <li class="nav-item">
+      <a class="nav-link " routerLink="home">
+        <i class="bi bi-grid"></i>
+        <h1> Dashboard</h1>
+      </a>
+    </li>
+
+    <!-- End Dashboard Nav -->
+
+    <!-- Start Location Nav -->
+    <li class="nav-item bg-white">
+      <a class="nav-link collapsed" data-bs-target="#hrm-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-hr"></i>
+        <h1> Locaton </h1><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="hrm-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
+          <a routerLink="/alllocation">
+            <i class="bi bi-circle"></i>
+            <h3> All Location</h3>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/addlocation">
+            <i class="bi bi-circle"></i>
+            <h3> Add Location</h3>
+          </a>
+        </li>
+      </ul>
+    </li><!-- End Location Nav -->
+
+
+
+    <!-- Start Hotel Nav -->
+    <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#client-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-hr"></i>
+        <h1> Hotel </h1><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="client-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
+          <a routerLink="/allhotel">
+            <i class="bi bi-circle"></i>
+            <h3>All Hotel</h3>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/addhotel">
+            <i class="bi bi-circle"></i>
+            <h3>Add Hotel</h3>
+          </a>
+        </li>
+      </ul>
+    </li><!-- End Hotel Nav -->
+
+        <!-- Start Hotel Facilities Nav -->
+        <li class="nav-item">
+          <a class="nav-link collapsed" data-bs-target="#hotelF-nav" data-bs-toggle="collapse" href="#">
+            <i class="bi bi-hr"></i>
+            <h1> Hotel Faciliteis </h1><i class="bi bi-chevron-down ms-auto"></i>
+          </a>
+          <ul id="hotelF-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+            <li>
+              <a routerLink="/allhotelfacilities">
+                <i class="bi bi-circle"></i>
+                <h3>All Hotel Faciliteis</h3>
+              </a>
+            </li>
+            <li>
+              <a routerLink="/addhotelfacilities">
+                <i class="bi bi-circle"></i>
+                <h3>Add Hotel Faciliteis</h3>
+              </a>
+            </li>
+          </ul>
+        </li><!-- End Hotel Facilities Nav -->
+
+    <!-- Start Room Nav -->
+    <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#room-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-hr"></i>
+        <h1> Room </h1><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="room-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
+          <a routerLink="/allroom">
+            <i class="bi bi-circle"></i>
+            <h3>All Room</h3>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/addroom">
+            <i class="bi bi-circle"></i>
+            <h3>Add Room</h3>
+          </a>
+        </li>
+      </ul>
+    </li>
+    <!-- End Room Nav -->
+
+    <!-- Start Room Type Nav -->
+    <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#rtype-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-menu-button-wide"></i>
+        <h1>Room Type</h1><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="rtype-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
+          <a routerLink="/allroomtype">
+            <i class="bi bi-circle"></i>
+            <h3>All Room Type</h3>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/addroomtype">
+            <i class="bi bi-circle"></i>
+            <h3>Add Room Type</h3>
+          </a>
+        </li>
+
+      </ul>
+    </li>
+    <!-- End Room Type Nav -->
+
+    <!-- Start Room Facilities Nav -->
+    <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#rfacilities-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-menu-button-wide"></i>
+        <h1>Room Facilities</h1><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="rfacilities-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
+          <a routerLink="/allroomfacilities">
+            <i class="bi bi-circle"></i>
+            <h3>All Room Faciliteis</h3>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/addroomfacilities">
+            <i class="bi bi-circle"></i>
+            <h3>Add Room Faciliteis</h3>
+          </a>
+        </li>
+
+      </ul>
+    </li>
+    <!-- End Room Facilities Nav -->
+
+    <!-- Start Booking Nav -->
+    <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#booking-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-menu-button-wide"></i>
+        <h1>Booking</h1><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="booking-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
+          <a routerLink="/allbooking">
+            <i class="bi bi-circle"></i>
+            <h3>All Booking</h3>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/addbooking">
+            <i class="bi bi-circle"></i>
+            <h3>Add Booking</h3>
+          </a>
+        </li>
+      </ul>
+    </li>
+
+    <!-- End Booking Nav -->
+
+    <!-- Start Customar Nav -->
+    <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#customar-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-menu-button-wide"></i>
+        <h1>Customar</h1><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="customar-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
+          <a routerLink="/allcustomar">
+            <i class="bi bi-circle"></i>
+            <h3>All Customar</h3>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/addcustomar">
+            <i class="bi bi-circle"></i>
+            <h3>Add Customar</h3>
+          </a>
+        </li>
+      </ul>
+    </li>
+    
+    <!-- End Booking Nav -->
+  </ul>
+
+</aside><!-- End Sidebar-->
+<!-- <router-outlet></router-outlet> -->
