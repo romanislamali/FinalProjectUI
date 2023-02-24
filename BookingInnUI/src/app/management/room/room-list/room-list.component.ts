@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { RoomService } from 'src/app/service/room.service';
+import {DomSanitizer} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-room-list',
@@ -10,7 +11,8 @@ import { RoomService } from 'src/app/service/room.service';
 export class RoomListComponent implements OnInit{
   constructor( 
     private roomService : RoomService,
-    private router:Router
+    private router:Router,
+    private sanitizer:DomSanitizer
     ){}
 
   
@@ -18,16 +20,45 @@ export class RoomListComponent implements OnInit{
       this.getAllRoomList();
     }
 
-    roomList:any;
-    
+    roomList:any[];
+    xxRoom: any[];
+    imgList:any[];
+    x:any[];
     getAllRoomList(){
       this.roomService.getAllRoom().subscribe(
         data => {
           this.roomList=data;
+          // this.xxRoom = data;
           console.log(data)
+          this.roomService.getAllImg().subscribe(
+            data => {
+              this.imgList = data;
+              this.x = this.roomList.map((item, i)=> Object.assign({}, item, 
+                this.imgList.find(imgn => imgn.name == item.rgallery)
+                ))
+
+            }
+          )
+            
+          
         }
       );
       
+    }
+
+    convertImg(imgbase64: any){
+      return this.sanitizer.bypassSecurityTrustResourceUrl(`data:image/png;base64, ${imgbase64}`)
+    }
+
+    imageGet:any;
+    getImages(img:string){
+      this.roomService.getImagesByName(img).subscribe(
+        data=>{
+          this.imageGet=data;
+          console.log(this.imageGet);
+          // return this.sanitizer.bypassSecurityTrustResourceUrl(`data:image/png;base64, ${this.imageGet}`);
+        }
+      )
     }
   
   

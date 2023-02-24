@@ -19,8 +19,22 @@ export class RoomService {
     return this.httpClient.post<ApiResponse>(this.baseUrl + "room/add", r);
   }
 
-  getAllRoom(): Observable<Room> {
-    return this.httpClient.get<Room>(this.baseUrl+"room/all");
+  uploadImg(file: File){
+    const formData: FormData = new FormData();
+    formData.append('file', file);
+    return this.httpClient.post(this.baseUrl+"uploadImg", formData);
+  }
+
+  getImagesByName(imageNmae:string){
+    return this.httpClient.get(this.baseUrl+"get_img_by_name/"+imageNmae);
+  }
+
+  getAllImg(){
+    return this.httpClient.get<any[]>(this.baseUrl+"get_img");
+  }
+
+  getAllRoom(): Observable<Room[]> {
+    return this.httpClient.get<Room[]>(this.baseUrl+"room/all");
   }
 
   updateRoom(id: number, room: Room): Observable<ApiResponse> {

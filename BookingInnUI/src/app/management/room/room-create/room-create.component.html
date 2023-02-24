@@ -9,7 +9,7 @@
                 <div class="row">
                     <div class="col-6">
                         <label>Upload Photos: </label>
-                        <input type="file" name="rgallery" ngModel>
+                        <input type="file" name="rgallery" (change)="getImages($event)">
 
                         <label>Select Locaction: </label>
                         <select class="col-4" class="form-control" 

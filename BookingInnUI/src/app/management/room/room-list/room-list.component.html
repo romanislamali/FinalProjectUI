@@ -9,6 +9,7 @@
                 <thead>
                     <tr>
                         <th>ID</th>
+                        <th>Images</th>
                         <th>Room Number</th>
                         <th>Room Type</th>
                         <th>Hotel Name</th>
@@ -20,8 +21,11 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let r of roomList">
+                    <tr *ngFor="let r of x">
                         <td>#{{r.rid}}</td>
+                        <td>{{r.rgallery}}
+                            <img [src]="convertImg(r.imageData)" width="200px"/>
+                        </td>
                         <td>{{r.rnumber}}</td>
                         <td>{{r.roomtype.rtName}}</td>
                         <td>{{r.hotel.hname}}</td>

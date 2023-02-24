@@ -65,6 +65,12 @@ export class RoomCreateComponent implements OnInit{
     this.hotelId=value;
   }
 
+  images:File
+  getImages(event:any){
+    this.images=event.target.files[0];
+    console.log(this.images);
+  }
+
 
   submitted: boolean = false;
   roomAdd() {
@@ -76,13 +82,17 @@ export class RoomCreateComponent implements OnInit{
     this.room=Object.assign(this.roomArr, this.fkArr);
     
     this.submitted = true;
-    this.roomService.createRoom(this.room).subscribe(
-      data => alert('Room added successfull!!'),
-
-      error => alert('Something is wrong, please try again!!')
-
-    );
+    this.roomService.uploadImg(this.images).subscribe(
+      data=>{
+        this.roomService.createRoom(this.room).subscribe(
+          data => alert('Room added successfull!!'),
     
+          error => alert('Something is wrong, please try again!!')
+    
+        );
+      }
+    )
+        
   }
 
 
