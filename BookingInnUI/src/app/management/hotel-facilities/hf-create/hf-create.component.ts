@@ -15,6 +15,7 @@ export class HfCreateComponent implements OnInit{
     private hotelService : HotelService) { }
 
   ngOnInit(): void {
+    
   }
 
   hFacilitiesAdd() {

@@ -10,10 +10,12 @@ import { HotelCreateComponent } from './management/hotel/hotel-create/hotel-crea
 import { HotelListComponent } from './management/hotel/hotel-list/hotel-list.component';
 import { LocationCreateComponent } from './management/location/location-create/location-create.component';
 import { LocationListComponent } from './management/location/location-list/location-list.component';
+import { LocationUpdateComponent } from './management/location/location-update/location-update.component';
 import { RoomFacilitiesCreateComponent } from './management/room-facilities/room-facilities-create/room-facilities-create.component';
 import { RoomFacilitiesListComponent } from './management/room-facilities/room-facilities-list/room-facilities-list.component';
 import { RoomTypeCreateComponent } from './management/room-type/room-type-create/room-type-create.component';
 import { RoomTypeListComponent } from './management/room-type/room-type-list/room-type-list.component';
+import { RoomTypeUpdateComponent } from './management/room-type/room-type-update/room-type-update.component';
 import { RoomCreateComponent } from './management/room/room-create/room-create.component';
 import { RoomListComponent } from './management/room/room-list/room-list.component';
 import { RoomUpdateComponent } from './management/room/room-update/room-update.component';
@@ -38,7 +40,9 @@ const routes: Routes = [
 {path:'updateroom/:id', component:RoomUpdateComponent},
 {path:'allbooking', component:BookingListComponent},
 {path:'alllocation', component:LocationListComponent},
-{path:'addlocation', component:LocationCreateComponent}
+{path:'addlocation', component:LocationCreateComponent},
+{path:'updatelocation', component:LocationUpdateComponent},
+{path:'updateroomtype', component:RoomTypeUpdateComponent}
 ];
 
 @NgModule({

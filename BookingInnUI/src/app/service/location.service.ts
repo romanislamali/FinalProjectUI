@@ -22,16 +22,24 @@ export class LocationService {
     return this.httpClient.get<Location>(this.baseUrl+"/location/all");
   }
 
-  getLocationById(lid: number): Observable<any> {
-    return this.httpClient.get<any>(this.baseUrl+"/location/"+lid);
-  }
+  
 
   deleteLocationById(lid: number): Observable<ApiResponse> {
-    return this.httpClient.delete<ApiResponse>(this.baseUrl+"/locationdelete/"+lid);
+    return this.httpClient.delete<ApiResponse>(this.baseUrl+"/location/delete/"+lid);
   }
 
   updateLocation(lid: number, location: Location): Observable<ApiResponse> {
     return this.httpClient.put<ApiResponse>(this.baseUrl+"/location/update/"+location.lid +"/", location);
   }
+
+  getLocationById(lid: number): Observable<any> {
+    return this.httpClient.get<any>(this.baseUrl+"/location/"+lid);
+  }
+  
+
+
+
+
+
 
 }

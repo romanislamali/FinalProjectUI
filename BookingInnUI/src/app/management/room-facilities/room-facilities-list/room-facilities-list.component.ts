@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { RoomFacilitiesService } from 'src/app/service/room-facilities.service';
 
 @Component({
   selector: 'app-room-facilities-list',
@@ -7,4 +9,27 @@ import { Component } from '@angular/core';
 })
 export class RoomFacilitiesListComponent {
 
+  constructor( 
+    private roomFacService : RoomFacilitiesService,
+    private router:Router
+    ){}
+  
+   roomFacilitiesList?: any;
+  
+    ngOnInit(){
+    this.roomFacilitiesList = this.roomFacService.getAllRoomFacilities();
+    }
+   
+    deleteHotelFacilities(id: number){
+      this.roomFacService.deleteRoomFacilities(id).subscribe(
+        data=>{alert('Room Facilities successfully deleted!!'); 
+          this.ngOnInit(); 
+        },
+        error=>alert('Somethig wrong, please try again!!')      
+        );         
+    }
+   
+    updateHotelFacilities(id: number){
+      this.router.navigate(['updatefacilities/',id]);
+    }
 }

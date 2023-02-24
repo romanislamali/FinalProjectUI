@@ -19,7 +19,7 @@ constructor(
   ngOnInit(){
   this.hotelFacilitiesList = this.hotelService.getAllHotelFacilities();
   }
-
+ 
   deleteHotelFacilities(id: number){
     this.hotelService.deleteFacilities(id).subscribe(
       data=>{alert('Hotel Facilities successfully deleted!!'); 
@@ -28,7 +28,7 @@ constructor(
       error=>alert('Somethig wrong, please try again!!')      
       );         
   }
-
+ 
   updateHotelFacilities(id: number){
     this.router.navigate(['updatefacilities/',id]);
   }
