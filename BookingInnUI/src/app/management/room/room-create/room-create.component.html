@@ -34,8 +34,8 @@
                         <label>Room Facilities: </label>
                         <select class="col-4 " class="form-control">
                             <option *ngFor="let rf of roomFacilities | async" name="roomFacilities" ngModel
-                                [ngValue]="rf.rfName">
-                                {{rf.rfName}}</option>
+                                [ngValue]="rf.rfname">
+                                {{rf.rfname}}</option>
                         </select>
                         <label>Room Details: </label>
                         <textarea class="form-control" name="rdetails" ngModel></textarea>

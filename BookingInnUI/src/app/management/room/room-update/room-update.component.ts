@@ -53,9 +53,7 @@ export class RoomUpdateComponent implements OnInit{
     this.roomService.getRoomById(this.id).subscribe(
       data=>{
         this.roomArr=data;
-        console.log(data);
-      
-    // this.addroom=this.roomArr;
+        console.log(this.roomArr);
       }
     );
     this.locationList = this.hotelService.getAllLocation();
@@ -79,6 +77,9 @@ export class RoomUpdateComponent implements OnInit{
 
   submitted: boolean = false;
   roomUpdate() {
+    // this.addroom.setValue(RoomFacilitiesService)
+
+
     // this.roomArr=this.addroom.value;
     // this.fkArr.location.lid=this.addroom.value.locatioId;
     // this.fkArr.hotel.hid=this.addroom.value.hotelId;
@@ -93,10 +94,10 @@ export class RoomUpdateComponent implements OnInit{
     //   error => alert('Something is wrong, please try again!!')
 
     // );
-    this.roomService.updateRoom(this.id, this.room).subscribe(
-      data=> alert('Room update successfull!!'),
-      error => alert('Something is wrong, please try again!!'));
-      this.router.navigate(['/allroom']);
+    // this.roomService.updateRoom(this.id, this.room).subscribe(
+    //   data=> alert('Room update successfull!!'),
+    //   error => alert('Something is wrong, please try again!!'));
+    //   this.router.navigate(['/allroom']);
   }
   // updateFacilities(){
   //   this.hotelService.updateHFacilities(this.id, this.hf).subscribe(

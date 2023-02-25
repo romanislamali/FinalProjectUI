@@ -145,59 +145,44 @@
     <div class="container mt-5" *ngIf="roomListCard">
         <div class="col-md-12 mt-2 border p-1 border">
             <mat-card class="p-4">
-                <div class="row" *ngFor="let r of roomList" style="background-color: rgb(40, 176, 203)">
+                <div class="row" *ngFor="let r of roomList" >
                     <div class="text-center " style="background-color: bisque">
+                        <br>
                         <h1>
                             {{r.roomtype.rtName}}
                         </h1>
                         <h3>
                             Room Number: {{r.rnumber}}
                         </h3>
+                        <br>
                     </div>
 
-                    <div class="col-2" style="background-color: rgb(122, 225, 198)">
-                        <h1>Room Details</h1>
-                        <hr>
-                        <li>Size: {{r.rsize}}</li>
-                        <li>Bed: {{r.rtotalbed}}</li>
-                        <li>Details: {{r.rdetails}}</li>
+                    <div class="col-5">
+                        <img src="assets/images/rooms/r.jpg" alt="samima" height="250" width="650">
                     </div>
-                    <div class="col-2" style="background-color: rgb(220, 196, 169)">
-                        <h1>Sleeps</h1>
-                        <hr>
-                        <li>Adult Person: {{r.radultcapacity}}</li>
-                        <li>Child Person: {{r.rchildcapacity}}</li>
-                        <li>{{r.roomtype.rtDescription}}</li>
-                    </div>
-                    <div class="col-2" style="background-color: rgb(122, 225, 198)">
-                        <h1>Room Facilities</h1>
-                        <hr>
-                        <li>Facilities: {{r.roomfacilities.rfName}}</li>
-                        <li>Description: {{r.roomfacilities.rfDescription}}</li>
-                    </div>
-                    <div class="col-2" style="background-color: rgb(220, 196, 169)">
-                        <h1>Today's price</h1>
-                        <hr>
+                    <div class="col-5" style="background-color:white">
+                        <br>
+                        <li>Room Details: {{r.rdetails}}</li>
+                        <li>Room Size: {{r.rsize}} sqft</li>
+                        <li>Total Bed: {{r.rtotalbed}}</li>
+                        <li>Adult Capacity: {{r.radultcapacity}}</li>
+                        <li>Child Capacity:{{r.rchildcapacity}}</li>
+                        <li>Room Facilities: {{r.roomfacilities.rfdescription}}</li>
                         <li>Price: ${{r.rprice}}</li>
                         <li>Discount: {{r.rdiscount}}</li>
+                        <br>
                     </div>
-                    <div class="col-2" style="background-color:rgb(122, 225, 198)">
-                        <h1>Your choice</h1>
-                        <hr>
-                        <li>Total cost to cancel</li>
-                        <span>NO PREPAYMENT NEEDED</span>
-                        "- pay at the property"
-                        <p><span>Room Type : </span></p>
-                    </div>
-                    <div class="col-2" style="background-color: floralwhite">
+                    
+                    <div class="col-2" style="background-color: bisque">
                         <p>* Confirmation is immediate</p>
                         <p>* No booking or credit card fees!</p>
                         <b>No credit card</b>
                         "needed!"
-                        <a class="btn btn-outline-primary" (click)="confirmBooking(r.rid)">Book Now</a>
+                        <button  class="btn btn-outline-info btn-lg" (click)="confirmBooking(r.rid)">Book Now</button>
                     </div>
                     <hr>
                 </div>
+                <br>
             </mat-card>
         </div>
         <br>
