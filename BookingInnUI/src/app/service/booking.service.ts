@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { ApiResponse } from '../model/api.response';
 import { Booking } from '../model/booking.model';
 
 @Injectable({
@@ -18,6 +19,14 @@ export class BookingService {
 
   getAllBooking(): Observable<Booking> {
     return this.httpClient.get<Booking>(this.baseUrl+"booking/all");
+  }
+
+  getMaxBookingId(): Observable<number> {
+    return this.httpClient.get<number>(this.baseUrl+"booking/maxid");
+  }
+
+  updateBooking(id: number, b: Booking): Observable<ApiResponse> {
+    return this.httpClient.put<ApiResponse>(this.baseUrl+"booking/update/"+b.bid+"/", b);
   }
 
   getBookingDetailsByEmail(email: number): Observable<any> {

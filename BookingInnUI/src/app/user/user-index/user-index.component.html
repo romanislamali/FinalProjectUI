@@ -149,7 +149,7 @@
                     <div class="text-center " style="background-color: bisque">
                         <br>
                         <h1>
-                            {{r.roomtype.rtName}}
+                            <b>{{r.roomtype.rtName}}</b>
                         </h1>
                         <h3>
                             Room Number: {{r.rnumber}}
@@ -181,11 +181,13 @@
                         <button  class="btn btn-outline-info btn-lg" (click)="confirmBooking(r.rid)">Book Now</button>
                     </div>
                     <hr>
+                    <div>
+                        <H1 style="background-color: aqua">.</H1>
+                    </div>
                 </div>
                 <br>
             </mat-card>
         </div>
-        <br>
     </div>
     <!-- **************************** Room list card end ************************* -->
 </section>
