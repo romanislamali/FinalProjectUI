@@ -1,5 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Booking } from 'src/app/model/booking.model';
 
 import { Hotel } from 'src/app/model/hotel.model';
@@ -35,6 +36,7 @@ export class UserIndexComponent {
     private roomService: RoomService,
     private bookingservice: BookingService,
     private locationService: LocationService,
+    private router: Router
   ) {
   }
 
@@ -131,10 +133,11 @@ export class UserIndexComponent {
                 // Save Load Data 
                 this.bookingservice.createbooking(this.booking).subscribe(
                   (data) => {
-                    alert('Booking successfully');
+                    this.router.navigate(['/login']);
+                    // alert('Booking successfully');
                   },
                   (error) => {
-                    alert('Something wrong, try again ');
+                    // alert('Something wrong, try again ');
                   }
                 )
                    // Save Load Data 

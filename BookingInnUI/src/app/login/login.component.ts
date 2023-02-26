@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { User } from '../model/user.model';
+import { BookingService } from '../service/booking.service';
 import { UserService } from '../service/userservice.service';
 
 @Component({
@@ -10,7 +11,9 @@ import { UserService } from '../service/userservice.service';
 export class LoginComponent {
 
 
-  constructor(private userservice : UserService){
+  constructor(private userservice : UserService,
+              private bookingService : BookingService
+              ){
 
   }
 
@@ -38,15 +41,22 @@ export class LoginComponent {
     this.alluser = this.userservice.getAllUser();
     
   }
+  ngOnInit(){
+  }
+
 
   login(){
-    if(this.user.email==this.alluser.email){
-      console.log("******************");
-      alert('Login Successfull');
-    }
-    else{
-      alert('Email or Password invaid!!');
-    }
+    
+    
+    console.log(this.bookingService.getMaxBookingId());
+        // this.bookingService.updateBooking();
+    // if(this.user.email==this.alluser.email){
+    //   console.log("******************");
+    //   alert('Login Successfull');
+    // }
+    // else{
+    //   alert('Email or Password invaid!!');
+    // }
 
   }
 
