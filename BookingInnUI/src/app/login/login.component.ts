@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Booking } from '../model/booking.model';
 import { User } from '../model/user.model';
 import { BookingService } from '../service/booking.service';
 import { UserService } from '../service/userservice.service';
@@ -44,19 +45,28 @@ export class LoginComponent {
   ngOnInit(){
   }
 
-
+  b : Booking = new Booking();
+  maxid:number;
   login(){
+   
     
-    
-    console.log(this.bookingService.getMaxBookingId());
-        // this.bookingService.updateBooking();
-    // if(this.user.email==this.alluser.email){
-    //   console.log("******************");
-    //   alert('Login Successfull');
-    // }
-    // else{
-    //   alert('Email or Password invaid!!');
-    // }
+     this.bookingService.getMaxBookingId().subscribe(
+      (value) => {
+        console.log(value);
+      this.maxid=value-1;   
+
+      this.bookingService.updateBooking(this.maxid, this.b).subscribe(
+        data => alert('book room successfully!!'),
+         error => alert('Something is wrong, please try again!!'));
+
+      },
+      (error: any) => {  
+      }
+    );
+
+
+   
+
 
   }
 

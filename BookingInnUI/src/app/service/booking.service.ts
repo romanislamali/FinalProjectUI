@@ -26,7 +26,7 @@ export class BookingService {
   }
 
   updateBooking(id: number, b: Booking): Observable<ApiResponse> {
-    return this.httpClient.put<ApiResponse>(this.baseUrl+"booking/update/"+b.bid+"/", b);
+    return this.httpClient.put<ApiResponse>(this.baseUrl+"booking/update/"+id+"/", b);
   }
 
   getBookingDetailsByEmail(email: number): Observable<any> {
