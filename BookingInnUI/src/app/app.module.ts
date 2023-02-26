@@ -35,6 +35,7 @@ import { LocationCreateComponent } from './management/location/location-create/l
 import { HotelCreateComponent } from './management/hotel/hotel-create/hotel-create.component';
 import { HotelListComponent } from './management/hotel/hotel-list/hotel-list.component';
 import { HotelUpdateComponent } from './management/hotel/hotel-update/hotel-update.component';
+import { PrintComponent } from './management/print/print.component';
 
 
 
@@ -67,7 +68,8 @@ import { HotelUpdateComponent } from './management/hotel/hotel-update/hotel-upda
     LocationCreateComponent,
     HotelCreateComponent,
     HotelListComponent,
-    HotelUpdateComponent
+    HotelUpdateComponent,
+    PrintComponent
 
     
     
