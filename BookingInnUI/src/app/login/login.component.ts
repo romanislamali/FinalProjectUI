@@ -56,7 +56,7 @@ export class LoginComponent {
       this.maxid=value;   
 
       this.bookingService.updateBooking(this.maxid, this.b).subscribe(
-        data => alert('book room successfully!!'),
+        data => alert('Room successfully booking, please check your email!!'),
          error => alert('Something is wrong, please try again!!'));
           this.router.navigate(['']);
       },
