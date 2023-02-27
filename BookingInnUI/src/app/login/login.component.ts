@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Booking } from '../model/booking.model';
 import { User } from '../model/user.model';
 import { BookingService } from '../service/booking.service';
@@ -13,7 +14,8 @@ export class LoginComponent {
 
 
   constructor(private userservice : UserService,
-              private bookingService : BookingService
+              private bookingService : BookingService,
+              private router: Router
               ){
 
   }
@@ -47,31 +49,23 @@ export class LoginComponent {
 
   b : Booking = new Booking();
   maxid:number;
-  login(){
-   
-    
+  login(){   
      this.bookingService.getMaxBookingId().subscribe(
       (value) => {
         console.log(value);
-      this.maxid=value-1;   
+      this.maxid=value;   
 
       this.bookingService.updateBooking(this.maxid, this.b).subscribe(
         data => alert('book room successfully!!'),
          error => alert('Something is wrong, please try again!!'));
-
+          this.router.navigate(['']);
       },
       (error: any) => {  
       }
     );
-
-
-   
-
-
   }
 
-  
-
+ 
   formSubmit(){
   
     console.log(this.user);
